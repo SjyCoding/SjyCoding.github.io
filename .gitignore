@@ -5,3 +5,8 @@ db.json
 node_modules/
 public/
 .deploy*/
+
+
+# WebStrom相关配置文件
+.idea
+
