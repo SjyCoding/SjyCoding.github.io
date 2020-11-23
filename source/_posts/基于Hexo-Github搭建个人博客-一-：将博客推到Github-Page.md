@@ -1,8 +1,13 @@
 ---
 title: 基于Hexo Github搭建个人博客(一)：将博客推到Github Page
 date: 2020-11-06 16:41:21
-tags:
 updated:
+
+categories: 
+- Hexo搭建博客 
+tags: 
+- hexo
+- volantis
 ---
 
 

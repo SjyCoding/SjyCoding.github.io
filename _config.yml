@@ -7,7 +7,7 @@
 title: Sun's Blog
 favicon: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico
 subtitle: 'CodeSun' # 网站副标题
-description: 'CodeSun的个人博客' # 网站描述
+description: '这是一段关于这个网站的描述文字' # 网站描述
 keywords: ['博客','java','前端']  #网站关键词 可以是多个
 author: Code Sun
 #language: en # 默认
@@ -40,7 +40,7 @@ skip_render:
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
-titlecase: false # Transform title into titlecase
+titlecase: true # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
