@@ -58,7 +58,7 @@ highlight:
   wrap: true
   hljs: false
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
@@ -110,5 +110,5 @@ theme: volantis
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Sun-j-y/Sun-j-y.github.io
+  repo: https://Sun-j-y:azx1.2.3.@github.com/Sun-j-y/Sun-j-y.github.io
   branch: dist
