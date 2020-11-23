@@ -9,7 +9,7 @@ favicon: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico
 subtitle: 'CodeSun' # 网站副标题
 description: '这是一段关于这个网站的描述文字' # 网站描述
 keywords: ['博客','java','前端']  #网站关键词 可以是多个
-author: Code Sun
+author: "Code Sun"
 #language: en # 默认
 language:
   - zh-CN

@@ -1,12 +1,12 @@
-- group: # 分组标题
+- group: 程序猿/媛 # 分组标题
   description:  # 分组描述
   items:
-    - title: # 名称
-      avatar: # 头像
-      url: # 链接
-      screenshot: # 截图
-      keywords: # 关键词
-      description: # 描述
+    - title: "Code Sun" # 名称
+      avatar: https://s3.ax1x.com/2020/11/23/DYmOUI.jpg # 头像
+      url: https://sun-j-y.github.io/ # 链接
+      screenshot: https://s3.ax1x.com/2020/11/23/DYnkan.jpg # 截图
+      keywords: [ Java,前端 ] # 关键词
+      description: 一个苦逼的码农 # 描述
     - title: # 名称
       avatar: # 头像
       url: # 链接
