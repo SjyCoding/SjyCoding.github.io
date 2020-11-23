@@ -572,7 +572,7 @@ plugins:
     # Optional
     fixed: false      # enable fixed mode
     theme: '#1BCDFC'  # main color
-    autoplay: true   # audio autoplay
+    autoplay: false   # audio autoplay
     order: list       # player play order, values: 'list', 'random'
     loop: all         # player loop play, values: 'all', 'one', 'none'
     volume: 0.3       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
@@ -667,7 +667,7 @@ rightmenu:
 search:
   enable: true
   service: hexo  # hexo, google, algolia, azure, baidu
-  js: y
+  js: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2.6.4/js/search.js
   google:
     apiKey:
     engineId:
