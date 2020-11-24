@@ -3,11 +3,10 @@ navbar:
   visiable: auto # always, auto
   logo: # choose [img] or [icon + title]
     #    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img: https://s3.ax1x.com/2020/11/23/DYNG0x.jpg
     icon:
     title:
   menu:
-
     - name: 主页
       icon: fas fa-rss
       url: /
@@ -29,14 +28,14 @@ navbar:
     - name: 暗黑模式 # 可自定义
       icon: fas fa-moon # 可自定义
       toggle: darkmode
-  search: Search...   # Search bar placeholder
+  search: 搜索博客中文章...   # Search bar placeholder
 ############################### Navigation Bar ############################### > end
 
 ############################### Cover ############################### > start
 # 网站与文章封面
 cover:
   height_scheme: half # full, half
-  layout_scheme: search # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+  layout_scheme: dock # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
   display:
     home: true
     archive: true
@@ -47,31 +46,31 @@ cover:
   subtitle: ''
   search: 搜索博客中文章 # search bar placeholder
   features:
-    - name: 首页
+    - name: Blog
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
       #      url: /v4/getting-started/
       url: /
-    - name: 帮助
+    - name: Github
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
-      url: faqs/
-    - name: 示例
+      url: https://github.com/Sun-j-y
+    - name: Gitee
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
-      url: /examples/
-    - name: 社区
+      url: https://gitee.com/sunforits
+    - name: Steam
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
-      url: /contributors/
-    - name: 博客
+      url: https://steamcommunity.com/profiles/76561198887261581
+    - name: Mail
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
-      url: /archives/
-    - name: 源码
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
-      url: https://github.com/Sun-j-y/Sun-j-y.github.io/
+      url: mailto:forits@qq.com
+#    - name: 源码
+#      icon: #
+#      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
+#      url: https://github.com/Sun-j-y/Sun-j-y.github.io/
 ##      url: https://github.com/volantis-x/hexo-theme-volantis/
 ############################### Cover ############################### > end
 
@@ -88,7 +87,7 @@ article:
   preview:
     scheme: landscape # landscape
     # pin icon for post
-#    pin_icon: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg
+    #    pin_icon: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg
     #    pin_icon: https://s3.ax1x.com/2020/11/23/DYdntf.jpg  # 没用
     # auto generate title if not exist
     auto_title: true # false, true
@@ -538,7 +537,7 @@ plugins:
   backstretch:
     enable: true #true
     js: https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js
-    position: cover       # cover: sticky on the cover.   fixed: Fixed as background for the site.
+    position: fixed       # cover: sticky on the cover.   fixed: Fixed as background for the site.
     shuffle: true         # shuffle playlist
     duration: 10000       # Duration (ms)
     fade: 1500            # fade duration (ms) (Not more than 1500)
