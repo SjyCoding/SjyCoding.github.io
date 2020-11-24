@@ -1,4 +1,4 @@
-- group: 站长 # 分组标题
+- group: 博主 # 分组标题
   description:  # 分组描述
   items:
     - title: "Code Sun" # 名称

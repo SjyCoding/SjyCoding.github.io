@@ -3,9 +3,9 @@ navbar:
   visiable: auto # always, auto
   logo: # choose [img] or [icon + title]
     #    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-    img: https://s3.ax1x.com/2020/11/23/DYNG0x.jpg
-    icon:
-    title:
+    img: https://s3.ax1x.com/2020/11/24/DNN3Bn.png
+  #    icon: https://s3.ax1x.com/2020/11/24/DNN3Bn.png
+  #    title: "Sun's Blog"
   menu:
     - name: 主页
       icon: fas fa-rss
@@ -67,11 +67,7 @@ cover:
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
       url: mailto:forits@qq.com
-#    - name: 源码
-#      icon: #
-#      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
-#      url: https://github.com/Sun-j-y/Sun-j-y.github.io/
-##      url: https://github.com/volantis-x/hexo-theme-volantis/
+
 ############################### Cover ############################### > end
 
 
@@ -87,7 +83,7 @@ article:
   preview:
     scheme: landscape # landscape
     # pin icon for post
-    #    pin_icon: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4cc.svg
+    pin_icon:
     #    pin_icon: https://s3.ax1x.com/2020/11/23/DYdntf.jpg  # 没用
     # auto generate title if not exist
     auto_title: true # false, true
@@ -484,7 +480,7 @@ plugins:
     enable: true
     js: https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js
     onlypost: false
-    loadingImg: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3/img/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg
+    loadingImg: '' # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@3/img/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg
     blurIn: true # 模糊加载效果 （loadingImg为空时有效）
 
   ######## Plugins to optimize the experience:
