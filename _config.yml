@@ -111,5 +111,5 @@ theme: volantis
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Sun-j-y/Sun-j-y.github.io
+  repo: https://github.com/SjyCoding/SjyCoding.github.io
   branch: dist

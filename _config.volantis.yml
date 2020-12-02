@@ -313,7 +313,8 @@ sidebar:
     blogger:
       class: blogger
       display: [ desktop, mobile ] # [desktop, mobile]
-      avatar: https://s3.ax1x.com/2020/11/23/DYNG0x.jpg
+      avatar: https://s3.ax1x.com/2020/11/25/DdU9f0.jpg
+      # https://s3.ax1x.com/2020/11/23/DYNG0x.jpg
       #      avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
       shape: circle # circle, rectangle
       url: /about/
