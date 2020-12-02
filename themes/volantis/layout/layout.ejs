@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="<%- config.language %>">
+<%- partial('_partial/head') %>
+<body>
+<%- partial('_partial/header', null, {cache: false, path: path}) %>
+<div id="l_body">
+    <%- partial('_partial/cover') %>
+    <div id='safearea'>
+        <div class='body-wrapper' id="pjax-container">
+            <%- body %>
+            <% if (page.snackbar && site.data.notification && (page.snackbar in site.data.notification)) { %>
+                <%- partial('_partial/snackbar') %>
+            <% } %>
+            <% if (theme.plugins.pjax.enable) { %>
+                <%- partial('_third-party/pjax/pdata') %>
+            <% } %>
+        </div>
+        <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+        <a id="s-top" class="fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+</div>
+<div>
+    <%- partial('_partial/scripts/index') %>
+    <% if (theme.plugins.pjax.enable) { %>
+        <%- partial('_third-party/pjax/index') %>
+    <% } %>
+</div>
+
+<!-- 页面特效 -->
+<!--<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/sakura.js"></script>     &lt;!&ndash;  樱花&ndash;&gt;-->
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>    <!-- 鼠标滑动特效 -->
+<script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js"></script>    <!-- 鼠标点击特效 -->
+</body>
+</html>
