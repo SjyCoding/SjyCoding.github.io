@@ -19,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>所有标签 - Sun&#39;s Blog</title>
+  <title>基于Hexo-Github搭建个人博客二：更改博客主题 - Sun&#39;s Blog</title>
+  
+    <meta name="keywords" content="hexo,volantis">
   
 
   
@@ -327,7 +329,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper tag dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -395,23 +397,299 @@
         <div class='body-wrapper' id="pjax-container">
             
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="tag" class="post article white-box reveal shadow">
-          <h2>所有标签</h2>
-          <div class="all-tags">
-            
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/" rel="tag">CentOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/" rel="tag">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volantis/" rel="tag">volantis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E8%AF%AD%E8%A8%80/" rel="tag">系统语言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%95%9C%E5%83%8F%E6%BA%90/" rel="tag">镜像源</a><span class="tag-list-count">2</span></li></ul>
-          </div>
-          <br>
+    
+    
+      <h1 class="title">
+        基于Hexo-Github搭建个人博客二：更改博客主题
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Code Sun</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Hexo搭建博客</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年11月23日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="基于Hexo-Github搭建个人博客二：更改博客主题" data-path="/2020/11/23/Hexo%E5%8D%9A%E5%AE%A2/%E5%9F%BA%E4%BA%8EHexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%EF%BC%9A%E6%9B%B4%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
       </div>
     
+  </div>
+
+
   
+  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>本文所有内容来自于<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44855907/article/details/105376826">这里</a>， 略有修改</p>
+</blockquote>
+<p>上篇博客讲述了实现把博客推到Github Page，接下来这篇博客就来讲一下更改和优化主题。<br>我使用的是volantis 主题（ Volantis是xaoxuu博主开发的主题），不是官方主题。其实这个主题对我来说难度挺大的，主要是因为主题 作者（我）的参考文档不够（太）详细~~ (菜)。 可我就是谗它好看，没办法。部署博客到远端Github用了一天，优化主题却整了整整三天（手动狗头，太难了）。<br>如何选主题：<br>强烈建议初学者选主题前先查阅一下这一个主题的使用人数多不多，这样出了问题比较好解决。帮助文档够不够详尽，这样可以少踩点坑。一开始还是使用中规中矩的官方主题，魔改的那些除非你比较有精力那就可以尝试。有了感觉之后再去自定义修改，尝试其他一下风格的主题，毕竟上手之后切换主题是分分钟钟的事。可以先看一下：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24422335">知乎的这篇文章</a></p>
+<h2 id="volantis主题更改"><a href="#volantis主题更改" class="headerlink" title="volantis主题更改"></a>volantis主题更改</h2><h3 id="1-下载与安装volantis主题"><a href="#1-下载与安装volantis主题" class="headerlink" title="1 下载与安装volantis主题"></a>1 下载与安装volantis主题</h3><p>本地环境：我博客文件路径是E:\hexo\blog</p>
+<h4 id="1-1-将主题下载到themes目录下"><a href="#1-1-将主题下载到themes目录下" class="headerlink" title="1.1 将主题下载到themes目录下"></a>1.1 将主题下载到themes目录下</h4><p>进入你本地放博客文件目录 进入到themes目录下<br>右键git bash here执行命令：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git clone https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo-theme-volantis themes&#x2F;volantis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>执行成功后，themes目录下有volantis文件夹</p>
+<p><img src="https://s3.ax1x.com/2020/11/23/DJGRjx.jpg" class="lazyload" data-srcset="https://s3.ax1x.com/2020/11/23/DJGRjx.jpg" srcset="data:image/png;base64,666"></p>
+<h4 id="1-2-修改站点配置文件"><a href="#1-2-修改站点配置文件" class="headerlink" title="1.2 修改站点配置文件"></a>1.2 修改站点配置文件</h4><p>注意是站点的_config.yml文件不是主题的_config.yml<br>用vscode或notepad++打开_config.yml文件找到themes字段 将默认的lanscape修改为你的主题volantis<br>其实之所以有两个配置文件是有原因的，你想啊。站点（也就是你的博客）的_config.yml用于配置你整个博客，如果你想换个主题，那么只要在站点的_config.yml修改theme就可了，不用大动干戈。想实现主题的一些其他功能如评论系统只要在主题的配置文件_config.ym修改就可以了，由于每个主题都有一个配置我呢见，换主题时也不会互相影响。</p>
+<h4 id="1-4-检查并安装依赖"><a href="#1-4-检查并安装依赖" class="headerlink" title="1.4 检查并安装依赖"></a>1.4 检查并安装依赖</h4><p>安装 Hexo 搜索的依赖包：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm i -S hexo-generator-search hexo-generator-json-content<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>安装 stylus 渲染器：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">npm i -S hexo-renderer-stylus<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>4）将hexo默认主题更换为volantis</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">hexo clean #清除之前部署
+hexo g #生成
+hexo s# 本地预览<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>执行完上面操作就可以到 本地4000端口进行博客预览，可以发现主题已变了。<br>准备工作做足了，下面正式进入主题设置。由于主题官网已经对主题的配置做了比较详尽的介绍，我这里就不赘诉了，主要讲一下我的一下理解，和操作的大概流程。<br>一开始我由于没有站点/主题/页面这些概念所以也是比较蒙蔽，无从下手。其实不用看太多的教程，把官方文档看明白意思了，基本的博客框架就搭起来了，后续高级功能再慢慢学习优秀博主的Github源码，最后再自定义。个人觉得这个写文档的人逻辑表述能力不太强、将东西老是乱串的，反正我这个小白级博主是自己摸索之后才逐渐明白官网这样一个教程设置的顺序的。配置文件也鲜有中文注释，英文居多，我觉得这可能是难倒大多数新手的一个原因，遇到英文，不懂就整句百度翻译。</p>
+<p>所以想首先对官网进行一下说明和解读。<br>官网顶端导航栏的几个按钮<br>【开始】：是我们volatis主题的下载与安装。</p>
+<p>【站点】：是对我们整个博客的一个设置，如链接标签页显示的图标、标题等，所以是在博客的_config.yml下配置的。详细配置可以看hexo官网的官方文档<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82">https://hexo.io/zh-cn/docs/中的配置。</a></p>
+<p>【主题】：是有关对我们当前选的这个主题volantis的一个修改配置。你想设置什么功能，如评论系统、搜索功能这些。可以根据自己的需要去配置，这是这篇博客的重点，但不会讲具体怎么操作，因为文档有教，而是讲一些注意事项和我踩到的一些坑。</p>
+<p>这里对volantis文件夹下的子文件夹和文件做一些简单的介绍</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">_config.yml: 为对整个主题的配置文件
+layout： 为页面、卡片（widget）、图标等源码和资源
+source： 为样式、第三方插件等源码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="一些实用功能"><a href="#一些实用功能" class="headerlink" title="一些实用功能"></a>一些实用功能</h2><h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p>gitalk：gitalk，需要依赖github，我试了一下没有成功，而且评论者还需要登录github才可以评论，不好用。因而我选择用valine，一步到位，可匿名评价 。配置详见：这篇博客</p>
+<h3 id="去掉封面的搜索框"><a href="#去掉封面的搜索框" class="headerlink" title="去掉封面的搜索框"></a>去掉封面的搜索框</h3><p>打开layout/_cover/index.ejs 找到如下所示代码，将其注释（如果你决定以后也不会使用这个封面的搜索框了 去掉也可以）</p>
+<pre class="line-numbers language-ejs" data-language="ejs"><code class="language-ejs"><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>search<span class="token punctuation">.</span>enable <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> </span><span class="token delimiter punctuation">%></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>m_search<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>searchform<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form u-search-form<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>input u-search-input<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%-</span><span class="token language-javascript"> theme<span class="token punctuation">.</span>cover <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">.</span>cover<span class="token punctuation">.</span>search </span><span class="token delimiter punctuation">%></span></span><span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>icon fas fa-search fa-fw<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token ejs language-ejs"><span class="token delimiter punctuation">&lt;%</span><span class="token language-javascript"> <span class="token punctuation">&#125;</span> </span><span class="token delimiter punctuation">%></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果：</p>
+<p><img src="https://s3.ax1x.com/2020/11/23/DJJErV.jpg" class="lazyload" data-srcset="https://s3.ax1x.com/2020/11/23/DJJErV.jpg" srcset="data:image/png;base64,666"></p>
+<h3 id="修改使手机端观看有外边距"><a href="#修改使手机端观看有外边距" class="headerlink" title="修改使手机端观看有外边距"></a>修改使手机端观看有外边距</h3><p>打开source/css/_layout/main.styl<br>找到 @media screen and (max-width:$device-tablet)这一行 做如下修改</p>
+<p><img src="https://s3.ax1x.com/2020/11/23/DJJwRA.jpg" class="lazyload" data-srcset="https://s3.ax1x.com/2020/11/23/DJJwRA.jpg" srcset="data:image/png;base64,666"></p>
+<h3 id="配置模板文件使用new命令-自动生成模板文件"><a href="#配置模板文件使用new命令-自动生成模板文件" class="headerlink" title="配置模板文件使用new命令 自动生成模板文件"></a>配置模板文件使用new命令 自动生成模板文件</h3><p>E:\hexo\blog\scaffolds<br>编辑post.md 没有则新建<br>加入如下代码</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token hr punctuation">---</span>
+title: &#123;&#123; title &#125;&#125; 
+date: &#123;&#123; date &#125;&#125; 
+comments: true # 是否开启评论
+mathjax: false # 是否开启数学公式渲染
+toc: true # 是否启用目录
+top: false # 是否置顶
+
+<span class="token title important"><span class="token punctuation">#</span>若使用urlname作为永久链接则添加该项</span>
+urlname:
+
+categories: 
+<span class="token list punctuation">-</span> [父类,子类]
+<span class="token list punctuation">-</span> 同级分类
+<span class="token title important">tags: [标签1,标签2]
+<span class="token punctuation">---</span></span>
+
+<span class="token comment">&lt;!-- more --></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p>1）明明加了标签却无法在文章头部显示出来<br>不是用如下hexo命令new出来的文章标签是无法无法正常显示，即使是复制黏贴了用上面命令生成的文章的fromt-matter，也是不能正常显示的，所以先用hexo命令新建文件，再用markdown编辑器打开编辑。</p>
+<p>hexo new ‘文章标题’<br>1</p>
+<p>2）引用本地图片无法显示<br>你引用自己的本地图片发布路径写的是本地的路径，服务器无法访问你的本地文件当然无法正常加载啦。解决方法是实用图床生成外链。见博客[]<br>如外链之后引用图片，博客浏览过大或过小，可以先调整好大小再上传，如我遇到的问题就是，没有去查看博客头像预定的大小是多少（可以看别的已经搭好的博主的头像的参数 使用F12审查元素）</p>
+<p>未完待续……</p>
+<p>参考文章：<br><a target="_blank" rel="noopener" href="https://wa2000.cn/post/202003171229/">Volantis主题DIY笔记</a><br><a target="_blank" rel="noopener" href="https://volantis.js.org/getting-started/">volantis官网</a></p>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://sun-j-y.github.io/2020/11/23/Hexo%E5%8D%9A%E5%AE%A2/%E5%9F%BA%E4%BA%8EHexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%EF%BC%9A%E6%9B%B4%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/>https://sun-j-y.github.io/2020/11/23/Hexo%E5%8D%9A%E5%AE%A2/%E5%9F%BA%E4%BA%8EHexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%EF%BC%9A%E6%9B%B4%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-23T13:51:44+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年11月23日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/volantis/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>volantis</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sun-j-y.github.io/2020/11/23/Hexo%E5%8D%9A%E5%AE%A2/%E5%9F%BA%E4%BA%8EHexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%EF%BC%9A%E6%9B%B4%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/&title=基于Hexo-Github搭建个人博客二：更改博客主题 - Sun's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sun-j-y.github.io/2020/11/23/Hexo%E5%8D%9A%E5%AE%A2/%E5%9F%BA%E4%BA%8EHexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%EF%BC%9A%E6%9B%B4%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/&title=基于Hexo-Github搭建个人博客二：更改博客主题 - Sun's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sun-j-y.github.io/2020/11/23/Hexo%E5%8D%9A%E5%AE%A2/%E5%9F%BA%E4%BA%8EHexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%BA%8C%EF%BC%9A%E6%9B%B4%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/&title=基于Hexo-Github搭建个人博客二：更改博客主题 - Sun's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2020/12/02/Linux/Vim/Vim/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Vim</p>
+          <p class='content'>vimvim快捷键(命令)命令模式
+i   切换到输入模式，以输入字符
+:(shift+;)       切换到底线命令模式，以在最底一行输入命令
+dd     删除当前光标所处的行
+x    ...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/11/06/Hexo%E5%8D%9A%E5%AE%A2/%E5%9F%BA%E4%BA%8EHexo-Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E4%B8%80%EF%BC%9A%E5%B0%86%E5%8D%9A%E5%AE%A2%E6%8E%A8%E5%88%B0Github-Page/'>
+          <p class='title'>基于Hexo Github搭建个人博客一：将博客推到Github Page<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言
+本文所有内容来自于Johnny, 略有修改
+
+什么是hexo打开Hexo你会发现醒目的一行字：“Hexo is a fast, simple &amp; powerful blog fra...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -494,6 +772,20 @@
     
 
 
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#volantis%E4%B8%BB%E9%A2%98%E6%9B%B4%E6%94%B9"><span class="toc-number">2.</span> <span class="toc-text">volantis主题更改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85volantis%E4%B8%BB%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">1 下载与安装volantis主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%B0%86%E4%B8%BB%E9%A2%98%E4%B8%8B%E8%BD%BD%E5%88%B0themes%E7%9B%AE%E5%BD%95%E4%B8%8B"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1 将主题下载到themes目录下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E4%BF%AE%E6%94%B9%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.2 修改站点配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E6%A3%80%E6%9F%A5%E5%B9%B6%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.4 检查并安装依赖</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%AE%9E%E7%94%A8%E5%8A%9F%E8%83%BD"><span class="toc-number">3.</span> <span class="toc-text">一些实用功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">3.1.</span> <span class="toc-text">评论系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%BB%E6%8E%89%E5%B0%81%E9%9D%A2%E7%9A%84%E6%90%9C%E7%B4%A2%E6%A1%86"><span class="toc-number">3.2.</span> <span class="toc-text">去掉封面的搜索框</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%BD%BF%E6%89%8B%E6%9C%BA%E7%AB%AF%E8%A7%82%E7%9C%8B%E6%9C%89%E5%A4%96%E8%BE%B9%E8%B7%9D"><span class="toc-number">3.3.</span> <span class="toc-text">修改使手机端观看有外边距</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6%E4%BD%BF%E7%94%A8new%E5%91%BD%E4%BB%A4-%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6"><span class="toc-number">3.4.</span> <span class="toc-text">配置模板文件使用new命令 自动生成模板文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A"><span class="toc-number">4.</span> <span class="toc-text">Q&amp;A</span></a></li></ol>
+    </div>
+  </section>
 
 
   
@@ -630,6 +922,7 @@
 </aside>
 
 
+
             
             
                 <!--此文件用来存放一些不方便取值的变量-->
@@ -637,8 +930,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="基于Hexo-Github搭建个人博客二：更改博客主题";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

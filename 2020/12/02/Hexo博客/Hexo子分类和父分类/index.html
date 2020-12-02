@@ -19,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>所有标签 - Sun&#39;s Blog</title>
+  <title>Hexo子分类和父分类 - Sun&#39;s Blog</title>
+  
+    <meta name="keywords" content="hexo">
   
 
   
@@ -327,7 +329,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper tag dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -395,23 +397,251 @@
         <div class='body-wrapper' id="pjax-container">
             
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="tag" class="post article white-box reveal shadow">
-          <h2>所有标签</h2>
-          <div class="all-tags">
-            
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CentOS/" rel="tag">CentOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/" rel="tag">Vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/volantis/" rel="tag">volantis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F%E8%AF%AD%E8%A8%80/" rel="tag">系统语言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%95%9C%E5%83%8F%E6%BA%90/" rel="tag">镜像源</a><span class="tag-list-count">2</span></li></ul>
-          </div>
-          <br>
+    
+    
+      <h1 class="title">
+        Hexo子分类和父分类
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Code Sun</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Hexo搭建博客</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月2日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="Hexo子分类和父分类" data-path="/2020/12/02/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E5%AD%90%E5%88%86%E7%B1%BB%E5%92%8C%E7%88%B6%E5%88%86%E7%B1%BB/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
       </div>
     
+  </div>
+
+
   
+  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>随着博客量的增加，更细致的分类变得更有必要</p>
+</blockquote>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ul>
+<li><p>格式</p>
+  <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">categories:
+- Diary
+- Life<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>  这种格式会使分类Life成为Diary的子分类，而不是并列分类</p>
+</li>
+<li><p>更复杂的格式</p>
+  <pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">categories:
+- [Diary, PlayStation]
+- [Diary, Games]
+- [Life]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>  此时这篇文章同时包括三个分类： PlayStation 和 Games 分别都是父分类 Diary 的子分类，同时 Life 是一个没有子分类的分类</p>
+</li>
+</ul>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://sun-j-y.github.io/2020/12/02/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E5%AD%90%E5%88%86%E7%B1%BB%E5%92%8C%E7%88%B6%E5%88%86%E7%B1%BB/>https://sun-j-y.github.io/2020/12/02/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E5%AD%90%E5%88%86%E7%B1%BB%E5%92%8C%E7%88%B6%E5%88%86%E7%B1%BB/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-02T19:01:29+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年12月2日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>hexo</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sun-j-y.github.io/2020/12/02/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E5%AD%90%E5%88%86%E7%B1%BB%E5%92%8C%E7%88%B6%E5%88%86%E7%B1%BB/&title=Hexo子分类和父分类 - Sun's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sun-j-y.github.io/2020/12/02/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E5%AD%90%E5%88%86%E7%B1%BB%E5%92%8C%E7%88%B6%E5%88%86%E7%B1%BB/&title=Hexo子分类和父分类 - Sun's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sun-j-y.github.io/2020/12/02/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E5%AD%90%E5%88%86%E7%B1%BB%E5%92%8C%E7%88%B6%E5%88%86%E7%B1%BB/&title=Hexo子分类和父分类 - Sun's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2020/12/02/Linux/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux更新源</p>
+          <p class='content'>为什么要换源
+大多数官方源的服务器都在国外so…
+
+设置更新源镜像Ubuntu配置文件位置： /etc/apt
+
+# 修改配置文件前建议先备份文件
+
+
+CentOSyum包管理器的配置文件位置 ...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/12/02/Linux/Linux%E5%85%A5%E9%97%A81%20%E5%AE%89%E8%A3%85linux/'>
+          <p class='title'>Linux入门1 安装Linux<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>linux概述什么是linux看百科吧     维基百科     百度百科 
+linux入门概述
+严格来说，linux只是一个操作系统内核通常所说的 linux系统 是指以它为内核的一系列操作系...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -494,6 +724,20 @@
     
 
 
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">方法</span></a></li></ol>
+    </div>
+  </section>
 
 
   
@@ -630,6 +874,7 @@
 </aside>
 
 
+
             
             
                 <!--此文件用来存放一些不方便取值的变量-->
@@ -637,8 +882,8 @@
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="Hexo子分类和父分类";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
