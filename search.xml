@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>Docker</title>
-      <link href="2020/12/03/Docker/Docker/"/>
-      <url>2020/12/03/Docker/Docker/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p>原作者:  小陈    微信: chenxu521600</p><p>纯手打, 有修改</p><h2 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker"></a>什么是Docker</h2><p><img src="Dovker.assets/image-20200903092232148.png" class="lazyload" data-srcset="Dovker.assets/image-20200903092232148.png" srcset="data:image/png;base64,666" alt="image-20200903092232148"></p><p>官网的介绍是” Docker is the world‘s leading software container platform “官方给docker的定位是一个应用容器平台.</p><h2 id="为什么是Docker"><a href="#为什么是Docker" class="headerlink" title="为什么是Docker"></a>为什么是Docker</h2><h2 id="Docker和虚拟机的区别"><a href="#Docker和虚拟机的区别" class="headerlink" title="Docker和虚拟机的区别"></a>Docker和虚拟机的区别</h2><p><img src="Docker.assets/image-20200903094505690.png" class="lazyload" data-srcset="Docker.assets/image-20200903094505690.png" srcset="data:image/png;base64,666" alt="image-20200903094505690"></p><h2 id="Docker的核心"><a href="#Docker的核心" class="headerlink" title="Docker的核心"></a>Docker的核心</h2><p><img src="Docker.assets/image-20200903151713477.png" class="lazyload" data-srcset="Docker.assets/image-20200903151713477.png" srcset="data:image/png;base64,666" alt="image-20200903151713477"></p><ul><li>镜像：一个镜像代表一个应用环境，它是一个只读的文件，如mysql镜像，tomcat镜像…</li><li>容器：镜像每次运行之后就是产生一个容器，就是正在运行的镜像，特点是可读可写</li><li>仓库：用来存放镜像的位置，蕾仕于maven仓库，也就是镜像下载和上传的位置</li><li>dockerfile：docker生成的镜像配置文件，用来书写自定义镜像的一些配置</li><li>tar：一个对镜像打包的文件，ihou还可以还原成镜像</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> Docker </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Docker </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Docker入门</title>
       <link href="2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/"/>
       <url>2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/</url>
@@ -110,7 +85,7 @@
     
     
     <entry>
-      <title>Docker搜索超时</title>
+      <title>Github历史版本回退</title>
       <link href="2020/12/02/Git&amp;GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/"/>
       <url>2020/12/02/Git&amp;GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/</url>
       
