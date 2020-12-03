@@ -21,7 +21,7 @@
   
   <title>Docker搜索超时 - Sun&#39;s Blog</title>
   
-    <meta name="keywords" content="镜像源,Docker">
+    <meta name="keywords" content="Docker,镜像源">
   
 
   
@@ -467,13 +467,12 @@
 
 
   
-  <h2 id="Docker搜索超时"><a href="#Docker搜索超时" class="headerlink" title="Docker搜索超时"></a>Docker搜索超时</h2><p>报错信息如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@zengmg &#x2F;]# docker search centos
-Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;search?q&#x3D;centos: read tcp 52.200.132.201:443: i&#x2F;o timeout<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+  <h2 id="Docker搜索超时"><a href="#Docker搜索超时" class="headerlink" title="Docker搜索超时"></a>Docker搜索超时</h2><p>执行<code>docker search centos</code>报错信息如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;search?q&#x3D;centos: read tcp 52.200.132.201:443: i&#x2F;o timeout<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>docker在中国已经有了仓库：<a target="_blank" rel="noopener" href="https://www.docker-cn.com/registry-mirror">https://www.docker-cn.com/registry-mirror</a></p>
 <p>根据上面网站提供的修改方法。</p>
-<p>进入/etc/docker目录下</p>
+<p>进入<code>/etc/docker</code>目录下</p>
 <p>查看有没有 daemon.json。这是docker默认的配置文件。</p>
 <p>如果没有新建，如果有，则修改。</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&#123;
@@ -481,7 +480,9 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;s
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>保存退出。</p>
-<p>重启docker服务：service docker restart</p>
+<p>重启docker服务：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">service docker restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>成功！</p>
 
   
@@ -517,7 +518,7 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;s
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-02T19:23:27+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-02T19:09:10+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月2日</p>
@@ -529,7 +530,7 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;s
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%95%9C%E5%83%8F%E6%BA%90/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>镜像源</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Docker/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Docker</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Docker/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Docker</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%95%9C%E5%83%8F%E6%BA%90/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>镜像源</p></a></div>
 
 
         
@@ -746,7 +747,7 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;s
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>14 篇</div>
+          <div>10 篇</div>
         </div>
       
 
@@ -768,7 +769,7 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;s
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>43.6k 字</div>
+          <div>13.4k 字</div>
         </div>
       
 
@@ -794,8 +795,8 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;s
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Wed Dec 02 2020 20:13:24 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2020-12-02 日</div>
+            <div id="last-update" style="display: none;">Thu Dec 03 2020 19:03:54 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update-show">2020-12-03 日</div>
           
         </div>
         
@@ -845,7 +846,7 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;s
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2020-12-02 日';
+            document.getElementById('last-update-show').innerHTML = '2020-12-03 日';
           }
         </script>
         

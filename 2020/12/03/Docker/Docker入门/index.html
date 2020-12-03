@@ -19,9 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>命令收集 - Sun&#39;s Blog</title>
+  <title>Docker入门 - Sun&#39;s Blog</title>
   
-    <meta name="keywords" content="Linux">
+    <meta name="keywords" content="Docker">
   
 
   
@@ -408,7 +408,7 @@
     
     
       <h1 class="title">
-        命令收集
+        Docker入门
       </h1>
       <div class='new-meta-box'>
         
@@ -428,7 +428,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/Linux/">Linux</a>
+      <a class="category-link" href="/categories/Docker/">Docker</a>
     </a>
   </div>
 
@@ -439,7 +439,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月2日</p>
+    <p>发布于：2020年12月3日</p>
   </a>
 </div>
 
@@ -450,7 +450,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="命令收集" data-path="/2020/12/02/Linux/%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/">
+      <div id="lc-pv" data-title="Docker入门" data-path="/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -467,441 +467,242 @@
 
 
   
-  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>大部分文档来自<a target="_blank" rel="noopener" href="https://man.linuxde.net/">https://man.linuxde.net/</a></p>
-<h2 id="命令收集"><a href="#命令收集" class="headerlink" title="命令收集"></a>命令收集</h2><p>linux使用命令   find / -name ***  查找文件的时候会遇到以下报错</p>
-<p>find: ‘/run/user/1000/gvfs’: Permission denied   </p>
-<p>明明用的是root用户，为什么权限不足呢？</p>
-<p>官方说这是一个bug——bug#615848. 原因是FUSE文件系统和权限不配的问题，全局搜索时碰到它就会退出报错。</p>
-<p>其实这个目录是空的，查不查都没关系。所以,以下解决方式比较简直暴</p>
-<p>umount /run/user/1000/gvfs</p>
-<p>rm -rf /run/user/1000/gvfs</p>
-<p>现在，你再使用命令   find / -name ***  查找东西是不是就爽多了。</p>
-<p><strong>一次删除所有目录的目标文件或文件夹：</strong></p>
-<p><strong>find / -name \</strong>*|xargs rm -rf//*<em>\</em>为你要删除的文件或文件夹**</p>
-<p><strong>相信这个命令在你要彻底卸载某个程序的时候会有帮助。</strong></p>
-<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>分类：文件和目录管理</p>
-<p>功能：用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。</p>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre class="line-numbers language-none"><code class="language-none">find(选项)(参数)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><pre class="line-numbers language-none"><code class="language-none">-name&lt;范本样式&gt;：指定字符串作为寻找文件或目录的范本样式；
-
--cmin&lt;分钟&gt;：查找在指定时间之时被更改过的文件或目录；
-
--ctime&lt;24小时数&gt;：查找在指定时间之时被更改的文件或目录，单位以24小时计算；
--daystart：从本日开始计算时间；
--depth：从指定目录下最深层的子目录开始查找；
--empty：寻找文件大小为0 Byte的文件，或目录下没有任何子目录或文件的空目录；
-
--exec&lt;执行指令&gt;：假设find指令的回传值为True，就执行该指令；
--false：将find指令的回传值皆设为False；
-
--fls&lt;列表文件&gt;：此参数的效果和指定“-ls”参数类似，但会把结果保存为指定的列表文件；
--follow：排除符号连接；
--fprint&lt;列表文件&gt;：此参数的效果和指定“-print”参数类似，但会把结果保存成指定的列表文件；
--fprint0&lt;列表文件&gt;：此参数的效果和指定“-print0”参数类似，但会把结果保存成指定的列表文件；
--fprintf&lt;列表文件&gt;&lt;输出格式&gt;：此参数的效果和指定“-printf”参数类似，但会把结果保存成指定的列表文件；
--fstype&lt;文件系统类型&gt;：只寻找该文件系统类型下的文件或目录；
--gid&lt;群组识别码&gt;：查找符合指定之群组识别码的文件或目录；
--group&lt;群组名称&gt;：查找符合指定之群组名称的文件或目录；
--help或——help：在线帮助；
--ilname&lt;范本样式&gt;：此参数的效果和指定“-lname”参数类似，但忽略字符大小写的差别；
--iname&lt;范本样式&gt;：此参数的效果和指定“-name”参数类似，但忽略字符大小写的差别；
--inum&lt;inode编号&gt;：查找符合指定的inode编号的文件或目录；
--ipath&lt;范本样式&gt;：此参数的效果和指定“-path”参数类似，但忽略字符大小写的差别；
--iregex&lt;范本样式&gt;：此参数的效果和指定“-regexe”参数类似，但忽略字符大小写的差别；
--links&lt;连接数目&gt;：查找符合指定的硬连接数目的文件或目录；
--iname&lt;范本样式&gt;：指定字符串作为寻找符号连接的范本样式；
--ls：假设find指令的回传值为Ture，就将文件或目录名称列出到标准输出；
--maxdepth&lt;目录层级&gt;：设置最大目录层级；
--mindepth&lt;目录层级&gt;：设置最小目录层级；
--mmin&lt;分钟&gt;：查找在指定时间曾被更改过的文件或目录，单位以分钟计算；
--mount：此参数的效果和指定“-xdev”相同；
--mtime&lt;24小时数&gt;：查找在指定时间曾被更改过的文件或目录，单位以24小时计算；
-
--newer&lt;参考文件或目录&gt;：查找其更改时间较指定文件或目录的更改时间更接近现在的文件或目录；
--nogroup：找出不属于本地主机群组识别码的文件或目录；
--noleaf：不去考虑目录至少需拥有两个硬连接存在；
--nouser：找出不属于本地主机用户识别码的文件或目录；
--ok&lt;执行指令&gt;：此参数的效果和指定“-exec”类似，但在执行指令之前会先询问用户，若回答“y”或“Y”，则放弃执行命令；
--path&lt;范本样式&gt;：指定字符串作为寻找目录的范本样式；
--perm&lt;权限数值&gt;：查找符合指定的权限数值的文件或目录；
--print：假设find指令的回传值为Ture，就将文件或目录名称列出到标准输出。格式为每列一个名称，每个名称前皆有“.&#x2F;”字符串；
--print0：假设find指令的回传值为Ture，就将文件或目录名称列出到标准输出。格式为全部的名称皆在同一行；
--printf&lt;输出格式&gt;：假设find指令的回传值为Ture，就将文件或目录名称列出到标准输出。格式可以自行指定；
--prune：不寻找字符串作为寻找文件或目录的范本样式;
--regex&lt;范本样式&gt;：指定字符串作为寻找文件或目录的范本样式；
--size&lt;文件大小&gt;：查找符合指定的文件大小的文件；
--true：将find指令的回传值皆设为True；
--type&lt;文件类型&gt;：只寻找符合指定的文件类型的文件；
--uid&lt;用户识别码&gt;：查找符合指定的用户识别码的文件或目录；
--used&lt;日数&gt;：查找文件或目录被更改之后在指定时间曾被存取过的文件或目录，单位以日计算；
--user&lt;拥有者名称&gt;：查找符和指定的拥有者名称的文件或目录；
--version或——version：显示版本信息；
--xdev：将范围局限在先行的文件系统中；
--xtype&lt;文件类型&gt;：此参数的效果和指定“-type”参数类似，差别在于它针对符号连接检查。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>起始目录：查找文件的起始目录。</p>
-<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><ul>
-<li>根据文件或者正则表达式进行匹配</li>
-</ul>
-<p>列出当前目录及子目录下所有文件和文件夹</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">find .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>在<code>/home</code>目录下查找以.txt结尾的文件名</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">find &#x2F;home -name &quot;*.txt&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>同上，但忽略大小写</p>
-<pre class="line-numbers language-none"><code class="language-none">find &#x2F;home -iname &quot;*.txt&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>当前目录及子目录下查找所有以.txt和.pdf结尾的文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . \( -name &quot;*.txt&quot; -o -name &quot;*.pdf&quot; \)
-
-或
-
-find . -name &quot;*.txt&quot; -o -name &quot;*.pdf&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>匹配文件路径或者文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find &#x2F;usr&#x2F; -path &quot;*local*&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>基于正则表达式匹配文件路径</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -regex &quot;.*\(\.txt\|\.pdf\)$&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>同上，但忽略大小写</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -iregex &quot;.*\(\.txt\|\.pdf\)$&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+  <h1 id="Docker概述"><a href="#Docker概述" class="headerlink" title="Docker概述"></a>Docker概述</h1><blockquote>
+<p>来源：维基百科，自由的百科全书</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" class="lazyload" data-srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/250px-Docker_%28container_engine%29_logo.svg.png" srcset="data:image/png;base64,666"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1">原作者</a></td>
+<td align="center">Solomon Hykes</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E4%BB%B6%E9%96%8B%E7%99%BC">开发者</a></td>
+<td align="center">Docker, Inc.</td>
+</tr>
+<tr>
+<td align="center">初始版本</td>
+<td align="center">2013年3月13日</td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BB%93%E5%BA%93_(%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6)">源代码库</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://github.com/docker/docker-ce">github.com/docker/docker-ce</a><a target="_blank" rel="noopener" href="https://www.wikidata.org/wiki/Q15206305#P1324"><img src=".static/Docker%E6%A6%82%E8%BF%B0-img/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" class="lazyload" data-srcset=".static/Docker%E6%A6%82%E8%BF%B0-img/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" srcset="data:image/png;base64,666" alt="编辑维基数据链接"></a></td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80">编程语言</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Go">Go</a></td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">操作系统</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux">Linux</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Windows">Windows</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/MacOS">macOS</a></td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%B5%B1%E5%B9%B3%E5%8F%B0">系统平台</a></td>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/X86-64">x86-64</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/ARM%E6%9E%B6%E6%A7%8B">ARM</a>、s390x、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Ppc64">ppc64le</a></td>
+</tr>
+<tr>
+<td align="center">类型</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">操作系统层虚拟化</a></td>
+</tr>
+<tr>
+<td align="center"><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E8%AE%B8%E5%8F%AF%E8%AF%81">许可协议</a></td>
+<td align="center"><strong>可执行档：</strong><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%8D%E8%B2%BB%E5%A2%9E%E5%80%BC">免费增值</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E5%8D%B3%E6%9C%8D%E5%8A%A1">软件即服务</a> <strong>源代码：</strong><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Apache%E8%AE%B8%E5%8F%AF%E8%AF%81">Apache许可证</a> 2.0</td>
+</tr>
+<tr>
+<td align="center">网站</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://www.docker.com/">www.docker.com</a></td>
+</tr>
+</tbody></table>
+<p><strong>Docker</strong> 是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%8E%9F%E5%A7%8B%E7%A2%BC">开放源代码</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%B9%B3%E8%87%BA">开放平台</a>，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件地速度。[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Docker#cite_note-1">1]</a></p>
+<p><strong>Docker容器</strong> 与虚拟机类似，但原理上，容器是将<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">操作系统层虚拟化</a>，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker也为容器提供更强的业界的隔离兼容。[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Docker#cite_note-2">2]</a></p>
+<p><strong>Docker</strong> 利用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux%E6%A0%B8%E5%BF%83">Linux核心</a>中的资源分离机制，例如<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cgroups">cgroups</a>，以及Linux核心<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Linux%E5%91%BD%E5%90%8D%E7%A9%BA%E9%96%93&action=edit&redlink=1">名字空间</a>（namespaces），来创建独立的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">容器</a>（containers）。这可以在单一Linux实体下运作，避免引导一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E6%A9%9F%E5%99%A8">虚拟机</a>造成的额外负担[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Docker#cite_note-3">3]</a>。Linux核心对名字空间的支持完全隔离了工作环境中应用程序的视野，包括行程树、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">网络</a>、用户ID与挂载文件系统，而核心的cgroup提供资源隔离，包括<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CPU">CPU</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E8%85%A6%E8%A8%98%E6%86%B6%E9%AB%94">存储器</a>、block I/O与网络。从0.9版本起，Dockers在使用抽象虚拟是经由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Libvirt">libvirt</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/LXC">LXC</a>与systemd - nspawn提供界面的基础上，开始包括libcontainer库做为以自己的方式开始直接使用由Linux核心提供的虚拟化的设施，</p>
+<p>依据行业分析公司“451研究”：“Dockers是有能力打包应用程序及其虚拟容器，可以在任何Linux服务器上运行的依赖性工具，这有助于实现灵活性和便携性，应用程序在任何地方都可以运行，无论是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%AC%E7%94%A8%E9%9B%B2">公用云</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A7%81%E6%9C%89%E9%9B%B2">私有云</a>、单机等。” [<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Docker#cite_note-4">4]</a>。</p>
+<h1 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h1><h2 id="通过安装脚本-推荐"><a href="#通过安装脚本-推荐" class="headerlink" title="通过安装脚本 - 推荐"></a>通过安装脚本 - 推荐</h2><ul>
+<li><p>CentOS</p>
+<p>  Docker 仅支持以下的 64 位 CentOS 版本：</p>
 <ul>
-<li>否定参数</li>
-</ul>
-<p>找出/home下不是以.txt结尾的文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find &#x2F;home ! -name &quot;*.txt&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li><p>CentOS 7</p>
+</li>
+<li><p>CentOS 8</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 使用官方安装脚本安装
+curl -fsSL https:&#x2F;&#x2F;get.docker.com | bash -s docker --mirror Aliyun
+# 使用国内 daocloud 一键安装命令
+curl -sSL https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker | sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ul>
-<li>根据文件类型进行搜索</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">find . -type 类型参数<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>类型参数列表：</p>
-<ul>
-<li><p><strong>f</strong> 普通文件</p>
-</li>
-<li><p><strong>l</strong> 符号连接</p>
-</li>
-<li><p><strong>d</strong> 目录</p>
-</li>
-<li><p><strong>c</strong> 字符设备</p>
-</li>
-<li><p><strong>b</strong> 块设备</p>
-</li>
-<li><p><strong>s</strong> 套接字</p>
-</li>
-<li><p><strong>p</strong> Fifo</p>
-</li>
-<li><p>基于目录深度搜索</p>
 </li>
 </ul>
-<p>向下最大深度限制为3</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -maxdepth 3 -type f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>搜索出深度距离当前目录至少2个子目录的所有文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -mindepth 2 -type f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li>根据文件时间戳进行搜索</li>
+</li>
 </ul>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f 时间戳<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h2><p>TODO: 待更新</p>
+<h2 id="启动Docker"><a href="#启动Docker" class="headerlink" title="启动Docker"></a>启动Docker</h2><blockquote>
+<p>如果使用dockers的</p>
+</blockquote>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h1 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h1><h2 id="辅助命令"><a href="#辅助命令" class="headerlink" title="辅助命令"></a>辅助命令</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker --version			# 版本信息
+	&#x3D; docker -v
+docker info					# 详细信息
+docker --help				# 帮助<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="images-镜像命令"><a href="#images-镜像命令" class="headerlink" title="images 镜像命令"></a>images 镜像命令</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 查看本机中所有镜像
+docker images				# 列出本地所有镜像
+	-a							# 列出所有镜像(包含中间映像层)
+	-q							# 只显示镜像id
+
+# 搜索镜像
+docker search [options] 镜像名	# 去dockerhub上查询镜像
+	-s 指定值						# 列出收场数不少于指定值的镜像
+	--no-trunc					  # 显示完整镜像信息
+	
+# 从仓库下载镜像
+docker pull 镜像名[:TAG|@DIGEST]	# 下载镜像
+
+# 删除镜像
+docker rmi 镜像名				# 删除镜像
+	-f							# 强制删除<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="Contrainer-容器命令"><a href="#Contrainer-容器命令" class="headerlink" title="Contrainer 容器命令"></a>Contrainer 容器命令</h2><h3 id="基本命令-容器外操作"><a href="#基本命令-容器外操作" class="headerlink" title="基本命令(容器外操作)"></a>基本命令(容器外操作)</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 运行容器
+docker run 镜像名					# 镜像名新建并启动容器
+	--name			# 别名 为容器起一个名字
+	-d				# 启动守护式容器(在后台启动容器)
+	-p				# 映射端口号:原始端口号
+	
+	例:
+		
+# 查看运行的容器
+docker ps						# 列出所有正在运行的容器
+	-a				# 正在运行的和历史运行过的容器
+	-q				# 静默模式, 只显示容器id
+
+# 停止|关闭|重启容器
+docker start 容器名或id				# 开启容器
+docker restart 容器名或id			# 重启容器
+docker stop 容器名或id				# 停止容器
+docker kill 容器名或id				# 关闭容器
+
+# 删除容器
+docker rm -f 容器名或id
+	
+	例	docker rm -f $(docker ps -aq)	# 删除所有容器
+
+# 查看容器内进程
+docker top 容器名或id				# 查看容器内进程
+
+# 产看容器内部细节
+docker inspect 容器id				# 产看容器内部细节
+
+# 查看容器的运行日志
+docker logs [options] 容器名或id	# 查看容器的运行日志
+	-t				# 加入时间戳
+	-f				# 跟随最新的日志打印<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="进阶命令-容器内操作"><a href="#进阶命令-容器内操作" class="headerlink" title="进阶命令(容器内操作)"></a>进阶命令(容器内操作)</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 进入容器内部
+docker exec [options] 容器id 容器内命令		# 进入容器内执行命令
+	-i				# 以交互模式运行容器,通常与-t一起使用
+	-t				# 分配一个伪终端
+
+# 容器内安装软件
+apt-get update
+apt-get install 安装包名称
+
+# 修改容器内文件
+
+# 退出容器
+exit		# 退出容器
+
+# 将容器打包为性的镜像
+docker commit -a&#x3D;&quot;作者&quot; -m&#x3D;&quot;描述信息&quot; 容器id 目标镜像名称:TAG
+
+# 从容器中复制文件到宿主机目录中 
+docker cp 容器id:容器内资源路径 宿主机目录路径		# 将容器内资源拷贝到宿主机上
+
+# 容器目录与宿主机目录同步 (数据卷 必须在运行容器时进行设置)
+docker run -it -v &#x2F;宿主机目录:&#x2F;容器目录:ro(只读) 镜像名
+	注: 宿主机目录必须是绝对目录,宿主机目录会覆盖容器目录内容
+	
+    运行 docker inspect 容器id 检查json串里有没有如下内容, 有则证明挂载成功
+    &quot;Mounts&quot;:&#123;
+    	&#123;
+    		&quot;Type&quot;:&quot;bind&quot;,
+    		&quot;source&quot;:&quot;宿主机目录&quot;,
+    		&quot;Destination&quot;:&quot;容器目录&quot;,
+    		&quot;Mode&quot;:&quot;&quot;,
+    		&quot;RW&quot;:true,
+    		&quot;Propagation&quot;:&quot;rprivate&quot;,
+    	&#125;
+    &#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="Docker-file"><a href="#Docker-file" class="headerlink" title="Docker file"></a>Docker file</h1><blockquote>
+<p>​    DockerFile可以认为是**Docker镜像的描述文件, 是由一系列的命令和参数构成的 ‘脚本’ **</p>
+<p>​    主要作用是<strong>用来构建docker镜像的构建文件</strong></p>
+</blockquote>
+<p><img src="https://s3.ax1x.com/2020/12/03/DoxWHH.png" class="lazyload" data-srcset="https://s3.ax1x.com/2020/12/03/DoxWHH.png" srcset="data:image/png;base64,666"></p>
+<h2 id="Dockerfile解析过程"><a href="#Dockerfile解析过程" class="headerlink" title="Dockerfile解析过程"></a>Dockerfile解析过程</h2><p><img src="https://s3.ax1x.com/2020/12/03/DozFrF.png" class="lazyload" data-srcset="https://s3.ax1x.com/2020/12/03/DozFrF.png" srcset="data:image/png;base64,666"></p>
+<h2 id="Dockerfile保留命令"><a href="#Dockerfile保留命令" class="headerlink" title="Dockerfile保留命令"></a>Dockerfile保留命令</h2><table>
+<thead>
+<tr>
+<th>保留字</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>FROM</strong></td>
+<td align="center">当前镜像是基于哪个镜像的, 第一个指令必须是FROM</td>
+</tr>
+<tr>
+<td><strong>RUN</strong></td>
+<td align="center"><strong>构建镜像时需要运行的命令</strong></td>
+</tr>
+<tr>
+<td><strong>MAINTAINER</strong></td>
+<td align="center">镜像维护者的姓名和邮箱地址 (官方不再推荐使用 废弃)</td>
+</tr>
+<tr>
+<td><strong>WORKDIR</strong></td>
+<td align="center">指定咋创建容器后, 终端默认登录进来的工作目录, 一个落脚点</td>
+</tr>
+<tr>
+<td><strong>ENV</strong></td>
+<td align="center">用来在构建容器过程中设置环境变量</td>
+</tr>
+<tr>
+<td><strong>ADD</strong></td>
+<td align="center">将宿主机目录下的文件拷贝进镜像  且ADD命令会自动处理URL和解压tar包</td>
+</tr>
+<tr>
+<td><strong>COPY</strong></td>
+<td align="center">类似ADD  拷贝文件和目录到镜像中<br/>将从构建上下文目录中&lt;原路径&gt;的文件/目录复制到新的一层的镜像内的&lt;目标路径&gt;位置</td>
+</tr>
+<tr>
+<td><strong>VOLUME</strong></td>
+<td align="center">容器数据卷  用于数据保存和持久化操作</td>
+</tr>
+<tr>
+<td><strong>CMD</strong></td>
+<td align="center">指定一个容器启动时要运行的命令<br/>Dockerfile中可以有多个CMD命令, 但只有最后一个生效, CMD会被docker run之后的参数替换</td>
+</tr>
+<tr>
+<td><strong>ENTRYPOINT</strong></td>
+<td align="center">指定一个容器启动时要运行的命令<br/>ENTRYPOINT的目的和CMD一样, 都是在指定容器启动程序及其参数</td>
+</tr>
+</tbody></table>
+<h3 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h3><blockquote>
+<p>​    基于哪个镜像构建新的镜像, 在构建时会从dockerhub拉取base镜像, 必须作为Dockerfile的第一个指令出现</p>
+</blockquote>
 
-<p>UNIX/Linux文件系统每个文件都有三种时间戳：</p>
-<ul>
-<li><strong>访问时间</strong>（-atime/天，-amin/分钟）：用户最近一次访问时间。</li>
-<li><strong>修改时间</strong>（-mtime/天，-mmin/分钟）：文件最后一次修改时间。</li>
-<li><strong>变化时间</strong>（-ctime/天，-cmin/分钟）：文件数据元（例如权限等）最后一次修改时间。</li>
-</ul>
-<p>搜索最近七天内被访问过的所有文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -atime -7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>搜索恰好在七天前被访问过的所有文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -atime 7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>搜索超过七天内被访问过的所有文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -atime +7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>搜索访问时间超过10分钟的所有文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -amin +10<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>找出比<a target="_blank" rel="noopener" href="http://man.linuxde.net/file">file</a>.log修改时间更长的所有文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -newer file.log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li>根据文件大小进行匹配</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -size 文件大小单元<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>文件大小单元：</p>
-<ul>
-<li><strong>b</strong> —— 块（512字节）</li>
-<li><strong>c</strong> —— 字节</li>
-<li><strong><a target="_blank" rel="noopener" href="http://man.linuxde.net/w">w</a></strong> —— 字（2字节）</li>
-<li><strong>k</strong> —— 千字节</li>
-<li><strong>M</strong> —— 兆字节</li>
-<li><strong>G</strong> —— 吉字节</li>
-</ul>
-<p>搜索大于10KB的文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -size +10k<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>搜索小于10KB的文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -size -10k<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>搜索等于10KB的文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -size 10k<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="删除匹配文件"><a href="#删除匹配文件" class="headerlink" title="删除匹配文件"></a>删除匹配文件</h4><p>删除当前目录下所有.txt文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -name &quot;*.txt&quot; -delete<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="根据文件权限-所有权进行匹配"><a href="#根据文件权限-所有权进行匹配" class="headerlink" title="根据文件权限/所有权进行匹配"></a>根据文件权限/所有权进行匹配</h4><p>当前目录下搜索出权限为777的文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -perm 777<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>找出当前目录下权限不是644的<a target="_blank" rel="noopener" href="http://man.linuxde.net/php">php</a>文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -name &quot;*.php&quot; ! -perm 644<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>找出当前目录用户tom拥有的所有文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -user tom<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>找出当前目录用户组sunk拥有的所有文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -group sunk<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="借助-exec选项与其他命令结合使用"><a href="#借助-exec选项与其他命令结合使用" class="headerlink" title="借助-exec选项与其他命令结合使用"></a>借助<code>-exec</code>选项与其他命令结合使用</h4><p>找出当前目录下所有root的文件，并把所有权更改为用户tom</p>
-<pre class="line-numbers language-none"><code class="language-none">find .-type f -user root -exec chown tom &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>上例中，**{}** 用于与**-exec**选项结合使用来匹配所有文件，然后会被替换为相应的文件名。</p>
-<p>找出自己家目录下所有的.txt文件并删除</p>
-<pre class="line-numbers language-none"><code class="language-none">find $HOME&#x2F;. -name &quot;*.txt&quot; -ok rm &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>上例中，**-ok<strong>和</strong>-exec**行为一样，不过它会给出提示，是否执行相应的操作。</p>
-<p>查找当前目录下所有.txt文件并把他们拼接起来写入到all.txt文件中</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -name &quot;*.txt&quot; -exec cat &#123;&#125; \;&gt; all.txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>将30天前的.log文件移动到old目录中</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -mtime +30 -name &quot;*.log&quot; -exec cp &#123;&#125; old \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>找出当前目录下所有.txt文件并以“File:文件名”的形式打印出来</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -type f -name &quot;*.txt&quot; -exec printf &quot;File: %s\n&quot; &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>因为单行命令中-exec参数中无法使用多个命令，以下方法可以实现在-exec之后接受多条命令</p>
-<pre class="line-numbers language-none"><code class="language-none">-exec .&#x2F;text.sh &#123;&#125; \;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="搜索但跳出指定的目录"><a href="#搜索但跳出指定的目录" class="headerlink" title="搜索但跳出指定的目录"></a>搜索但跳出指定的目录</h4><p>查找当前目录或者子目录下所有.txt文件，但是跳过子目录sk</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -path &quot;.&#x2F;sk&quot; -prune -o -name &quot;*.txt&quot; -print<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="find其他技巧收集"><a href="#find其他技巧收集" class="headerlink" title="find其他技巧收集"></a>find其他技巧收集</h4><p>要列出所有长度为零的文件</p>
-<pre class="line-numbers language-none"><code class="language-none">find . -empty<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-
-
-
-
-<h1 id="用户和工作组管理"><a href="#用户和工作组管理" class="headerlink" title="用户和工作组管理"></a>用户和工作组管理</h1><h2 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h2><p><a target="_blank" rel="noopener" href="https://man.linuxde.net/sub/%E7%94%A8%E6%88%B7%E5%92%8C%E5%B7%A5%E4%BD%9C%E7%BB%84%E7%AE%A1%E7%90%86">用户和工作组管理</a></p>
-<p><strong>useradd命令</strong>用于Linux中创建的新的系统用户。useradd可用来建立用户帐号。帐号建好之后，再用<a target="_blank" rel="noopener" href="http://man.linuxde.net/passwd">passwd</a>设定帐号的密码．而可用<a target="_blank" rel="noopener" href="http://man.linuxde.net/userdel">userdel</a>删除帐号。使用useradd指令所建立的帐号，实际上是保存在<code>/etc/passwd</code>文本文件中。</p>
-<p>在Slackware中，adduser指令是个script程序，利用交谈的方式取得输入的用户帐号资料，然后再交由真正建立帐号的useradd命令建立新用户，如此可方便管理员建立用户帐号。在Red Hat Linux中，<strong>adduser命令</strong>则是useradd命令的符号连接，两者实际上是同一个指令。</p>
-<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-none"><code class="language-none">useradd(选项)(参数)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="选项-1"><a href="#选项-1" class="headerlink" title="选项"></a>选项</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-c&lt;备注&gt;：加上备注文字。备注文字会保存在passwd的备注栏位中；
--d&lt;登入目录&gt;：指定用户登入时的启始目录；
--D：变更预设值；
--e&lt;有效期限&gt;：指定帐号的有效期限；
--f&lt;缓冲天数&gt;：指定在密码过期后多少天即关闭该帐号；
--g&lt;群组&gt;：指定用户所属的群组；
--G&lt;群组&gt;：指定用户所属的附加群组；
--m：自动建立用户的登入目录；
--M：不要自动建立用户的登入目录；
--n：取消建立以用户名称为名的群组；
--r：建立系统帐号；
--s&lt;shell&gt;：指定用户登入后所使用的shell；
--u&lt;uid&gt;：指定用户id。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><p>用户名：要创建的用户名。</p>
-<h3 id="实例-1"><a href="#实例-1" class="headerlink" title="实例"></a>实例</h3><p>新建用户加入组：</p>
-<pre class="line-numbers language-none"><code class="language-none">useradd –g sales jack –G company,employees    &#x2F;&#x2F;-g：加入主要组、-G：加入次要组<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>建立一个新用户账户，并设置ID：</p>
-<pre class="line-numbers language-none"><code class="language-none">useradd caojh -u 544<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>需要说明的是，设定ID值时尽量要大于500，以免冲突。因为Linux安装后会建立一些特殊用户，一般0到499之间的值留给bin、<a target="_blank" rel="noopener" href="http://man.linuxde.net/mail">mail</a>这样的系统账号。</p>
-<h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1><h2 id="service"><a href="#service" class="headerlink" title="service"></a>service</h2><p>对服务的操作</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">service [服务名] restart	# 重启服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h2><p>对服务的操作</p>
-<p>适用系统：CentOS</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">systemctl status [服务名]  # 查看服务状态
-systemctl start [服务名]	# 启动服务
-systemctl stop [服务名]	# 停止服务
-systemctl restart [服务名]	# 重启服务
-systemctl enable [服务名]	# 设置服务开机启动<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
-<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="images"><a href="#images" class="headerlink" title="images"></a>images</h2><p>查看镜像</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker images<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>REPOSITORY：镜像名称</p>
-<p>TAG：镜像标签</p>
-<p>IMAGE ID：镜像ID</p>
-<p>ACREATED：镜像的创建日期（不是获取该镜像的日期）</p>
-<p>SIZE：镜像大小</p>
-<p>这些镜像都储存在Docker宿主机的/var/lib/docker目录下</p>
-<h2 id="search"><a href="#search" class="headerlink" title="search"></a>search</h2><p>搜索镜像</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker search [镜像名称]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>INDEX：仓库源</p>
-<p>NAME：仓库名称</p>
-<p>DESCRIPTION：镜像描述</p>
-<p>STARS：用户评价，反映一个镜像的受欢迎程度</p>
-<p>OFFICIAL：是否官方</p>
-<p>AUTOMATED：自动构建，表示该镜像是由Docker Hub自动构建流程创建的</p>
-<h2 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h2><p>拉取镜像：从中央仓库下载镜像到本地</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker pull [镜像名称]
-
-例如:
-	要下载centos7镜像
-	docker pull centos:7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h1 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h1><h2 id="df"><a href="#df" class="headerlink" title="df"></a>df</h2><p><strong>df命令</strong>用于显示磁盘分区上的可使用的磁盘空间。默认显示单位为KB。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
-<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-none"><code class="language-none">df [选项] [参数]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="选项-2"><a href="#选项-2" class="headerlink" title="选项"></a>选项</h3><pre class="line-numbers language-none"><code class="language-none">-a或--all：包含全部的文件系统；
---block-size&#x3D;&lt;区块大小&gt;：以指定的区块大小来显示区块数目；
--h或--human-readable：以可读性较高的方式来显示信息；
--H或--si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
--i或--inodes：显示inode的信息；
--k或--kilobytes：指定区块大小为1024字节；
--l或--local：仅显示本地端的文件系统；
--m或--megabytes：指定区块大小为1048576字节；
---no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
--P或--portability：使用POSIX的输出格式；
---sync：在取得磁盘使用信息前，先执行sync指令；
--t&lt;文件系统类型&gt;或--type&#x3D;&lt;文件系统类型&gt;：仅显示指定文件系统类型的磁盘信息；
--T或--print-type：显示文件系统的类型；
--x&lt;文件系统类型&gt;或--exclude-type&#x3D;&lt;文件系统类型&gt;：不要显示指定文件系统类型的磁盘信息；
---help：显示帮助；
---version：显示版本信息。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="参数-2"><a href="#参数-2" class="headerlink" title="参数"></a>参数</h3><p>文件：指定文件系统上的文件。</p>
-<h3 id="实例-2"><a href="#实例-2" class="headerlink" title="实例"></a>实例</h3><p>查看系统磁盘设备，默认是KB为单位：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@LinServ-1 ~]# df
-文件系统               1K-块        已用     可用 已用% 挂载点
-&#x2F;dev&#x2F;sda2            146294492  28244432 110498708  21% &#x2F;
-&#x2F;dev&#x2F;sda1              1019208     62360    904240   7% &#x2F;boot
-tmpfs                  1032204         0   1032204   0% &#x2F;dev&#x2F;shm
-&#x2F;dev&#x2F;sdb1            2884284108 218826068 2518944764   8% &#x2F;data1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>使用<code>-h</code>选项以KB以上的单位来显示，可读性高：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@LinServ-1 ~]# df -h
-文件系统              容量  已用 可用 已用% 挂载点
-&#x2F;dev&#x2F;sda2             140G   27G  106G  21% &#x2F;
-&#x2F;dev&#x2F;sda1             996M   61M  884M   7% &#x2F;boot
-tmpfs                1009M     0 1009M   0% &#x2F;dev&#x2F;shm
-&#x2F;dev&#x2F;sdb1             2.7T  209G  2.4T   8% &#x2F;data1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>查看全部文件系统：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@LinServ-1 ~]# df -a
-文件系统               1K-块        已用     可用 已用% 挂载点
-&#x2F;dev&#x2F;sda2            146294492  28244432 110498708  21% &#x2F;
-proc                         0         0         0   -  &#x2F;proc
-sysfs                        0         0         0   -  &#x2F;sys
-devpts                       0         0         0   -  &#x2F;dev&#x2F;pts
-&#x2F;dev&#x2F;sda1              1019208     62360    904240   7% &#x2F;boot
-tmpfs                  1032204         0   1032204   0% &#x2F;dev&#x2F;shm
-&#x2F;dev&#x2F;sdb1            2884284108 218826068 2518944764   8% &#x2F;data1
-none                         0         0         0   -  &#x2F;proc&#x2F;sys&#x2F;fs&#x2F;binfmt_misc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="du"><a href="#du" class="headerlink" title="du"></a>du</h2><p><strong>du命令</strong>也是查看使用空间的，但是与<a target="_blank" rel="noopener" href="http://man.linuxde.net/df">df</a>命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看，还是和df命令有一些区别的。</p>
-<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">du [选项] [文件]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="选项-3"><a href="#选项-3" class="headerlink" title="选项"></a>选项</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">-a或-all 显示目录中个别文件的大小。
--b或-bytes 显示目录或文件大小时，以byte为单位。
--c或--total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
--k或--kilobytes 以KB(1024bytes)为单位输出。
--m或--megabytes 以MB为单位输出。
--s或--summarize 仅显示总计，只列出最后加总的值。
--h或--human-readable 以K，M，G为单位，提高信息的可读性。
--x或--one-file-xystem 以一开始处理时的文件系统为准，若遇上其它不同的文件系统目录则略过。
--L&lt;符号链接&gt;或--dereference&lt;符号链接&gt; 显示选项中所指定符号链接的源文件大小。
--S或--separate-dirs 显示个别目录的大小时，并不含其子目录的大小。
--X&lt;文件&gt;或--exclude-from&#x3D;&lt;文件&gt; 在&lt;文件&gt;指定目录或文件。
---exclude&#x3D;&lt;目录或文件&gt; 略过指定的目录或文件。
--D或--dereference-args 显示指定符号链接的源文件大小。
--H或--si 与-h参数相同，但是K，M，G是以1000为换算单位。
--l或--count-links 重复计算硬件链接的文件。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="实例-3"><a href="#实例-3" class="headerlink" title="实例"></a>实例</h3><p>显示目录或者文件所占空间：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@localhost test]# du
-608 .&#x2F;test6
-308 .&#x2F;test4
-4 .&#x2F;scf&#x2F;lib
-4 .&#x2F;scf&#x2F;service&#x2F;deploy&#x2F;product
-4 .&#x2F;scf&#x2F;service&#x2F;deploy&#x2F;info
-12 .&#x2F;scf&#x2F;service&#x2F;deploy
-16 .&#x2F;scf&#x2F;service
-4 .&#x2F;scf&#x2F;doc
-4 .&#x2F;scf&#x2F;bin
-32 .&#x2F;scf
-8 .&#x2F;test3
-1288 .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>只显示当前目录下面的子目录的目录大小和当前目录的总的大小，最下面的1288为当前目录的总大小</p>
-<p>显示指定文件所占空间：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@localhost test]# du log2012.log
-300 log2012.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>查看指定目录的所占空间：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@localhost test]# du scf
-4 scf&#x2F;lib
-4 scf&#x2F;service&#x2F;deploy&#x2F;product
-4 scf&#x2F;service&#x2F;deploy&#x2F;info
-12 scf&#x2F;service&#x2F;deploy
-16 scf&#x2F;service
-4 scf&#x2F;doc
-4 scf&#x2F;bin
-32 scf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>显示多个文件所占空间：</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@localhost test]# du log30.tar.gz log31.tar.gz
-4 log30.tar.gz
-4 log31.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>只显示总和的大小:</p>
-<pre class="line-numbers language-none"><code class="language-none">[root@localhost test]# du -s
-1288 .
-
-[root@localhost test]# du -s scf
-32 scf
-
-[root@localhost test]# cd ..
-[root@localhost soft]# du -s test
-1288 test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1>
   
   
     
@@ -918,7 +719,7 @@ none                         0         0         0   -  &#x2F;proc&#x2F;sys&#x2F
               
             
               
-                <p>本文永久链接是：<a href=https://sun-j-y.github.io/2020/12/02/Linux/%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/>https://sun-j-y.github.io/2020/12/02/Linux/%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/</a></p>
+                <p>本文永久链接是：<a href=https://sun-j-y.github.io/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/>https://sun-j-y.github.io/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/</a></p>
               
             
           </blockquote>
@@ -935,10 +736,10 @@ none                         0         0         0   -  &#x2F;proc&#x2F;sys&#x2F
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-02T19:13:28+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-03T16:58:56+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月2日</p>
+    <p>更新于：2020年12月3日</p>
   </a>
 </div>
 
@@ -947,7 +748,7 @@ none                         0         0         0   -  &#x2F;proc&#x2F;sys&#x2F
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Docker/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Docker</p></a></div>
 
 
         
@@ -960,7 +761,7 @@ none                         0         0         0   -  &#x2F;proc&#x2F;sys&#x2F
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sun-j-y.github.io/2020/12/02/Linux/%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/&title=命令收集 - Sun's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sun-j-y.github.io/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/&title=Docker入门 - Sun's Blog&summary="
           
           >
           
@@ -972,7 +773,7 @@ none                         0         0         0   -  &#x2F;proc&#x2F;sys&#x2F
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sun-j-y.github.io/2020/12/02/Linux/%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/&title=命令收集 - Sun's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sun-j-y.github.io/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/&title=Docker入门 - Sun's Blog&summary="
           
           >
           
@@ -984,7 +785,7 @@ none                         0         0         0   -  &#x2F;proc&#x2F;sys&#x2F
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sun-j-y.github.io/2020/12/02/Linux/%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/&title=命令收集 - Sun's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sun-j-y.github.io/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/&title=Docker入门 - Sun's Blog&summary="
           
           >
           
@@ -1014,26 +815,18 @@ none                         0         0         0   -  &#x2F;proc&#x2F;sys&#x2F
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/02/Git&GitHub/git%E5%85%A5%E9%97%A8/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Git入门</p>
-          <p class='content'>前言
-本片笔记基于B站up主狂神说java编写
-
-先了解下什么是版本控制
-版本控制版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，...</p>
+        <a class='prev' href='/2020/12/03/Docker/Docker/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Docker</p>
+          <p class='content'>Docker原作者:  小陈    微信: chenxu521600
+纯手打, 有修改
+什么是Docker
+官网的介绍是” Docker is the world‘s leading softw...</p>
         </a>
       
       
-        <a class='next' href='/2020/12/02/Linux/Linux/'>
-          <p class='title'>Linux<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>Linux常用命令文件/目录
-cd    切换目录
-
-语法: 
-
-find        查找文件或目录
-
-语法    find   path   -option   [   -print ] ...</p>
+        <a class='next' href='/2020/12/02/Git&GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/'>
+          <p class='title'>Docker搜索超时<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>问题描述最近几天的GitHub提交出了些问题，导致之前提交的更新丢失，考虑回退到之前的版本。在GitHub的Web页面上并没有找到回退的解决方案（如果大家知道的话，感谢告知），于是决定通过本地的...</p>
         </a>
       
     </div>
@@ -1150,7 +943,7 @@ find        查找文件或目录
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86"><span class="toc-number">2.</span> <span class="toc-text">命令收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">常用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-number">3.1.</span> <span class="toc-text">find</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">3.1.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E9%A1%B9"><span class="toc-number">3.1.2.</span> <span class="toc-text">选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.3.</span> <span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">3.1.4.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%8C%B9%E9%85%8D%E6%96%87%E4%BB%B6"><span class="toc-number">3.1.5.</span> <span class="toc-text">删除匹配文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90-%E6%89%80%E6%9C%89%E6%9D%83%E8%BF%9B%E8%A1%8C%E5%8C%B9%E9%85%8D"><span class="toc-number">3.1.6.</span> <span class="toc-text">根据文件权限&#x2F;所有权进行匹配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%80%9F%E5%8A%A9-exec%E9%80%89%E9%A1%B9%E4%B8%8E%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8"><span class="toc-number">3.1.7.</span> <span class="toc-text">借助-exec选项与其他命令结合使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E4%BD%86%E8%B7%B3%E5%87%BA%E6%8C%87%E5%AE%9A%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="toc-number">3.1.8.</span> <span class="toc-text">搜索但跳出指定的目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find%E5%85%B6%E4%BB%96%E6%8A%80%E5%B7%A7%E6%94%B6%E9%9B%86"><span class="toc-number">3.1.9.</span> <span class="toc-text">find其他技巧收集</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useradd"><span class="toc-number">4.</span> <span class="toc-text">useradd</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-1"><span class="toc-number">4.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E9%A1%B9-1"><span class="toc-number">4.2.</span> <span class="toc-text">选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-1"><span class="toc-number">4.3.</span> <span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="toc-number">4.4.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#service"><span class="toc-number">5.</span> <span class="toc-text">service</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#systemctl"><span class="toc-number">6.</span> <span class="toc-text">systemctl</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#images"><span class="toc-number">7.</span> <span class="toc-text">images</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#search"><span class="toc-number">8.</span> <span class="toc-text">search</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pull"><span class="toc-number">9.</span> <span class="toc-text">pull</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#df"><span class="toc-number">10.</span> <span class="toc-text">df</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-2"><span class="toc-number">10.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E9%A1%B9-2"><span class="toc-number">10.2.</span> <span class="toc-text">选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0-2"><span class="toc-number">10.3.</span> <span class="toc-text">参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="toc-number">10.4.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#du"><span class="toc-number">11.</span> <span class="toc-text">du</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-3"><span class="toc-number">11.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E9%A1%B9-3"><span class="toc-number">11.2.</span> <span class="toc-text">选项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B-3"><span class="toc-number">11.3.</span> <span class="toc-text">实例</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-%E6%8E%A8%E8%8D%90"><span class="toc-number">1.</span> <span class="toc-text">通过安装脚本 - 推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">手动安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8Docker"><span class="toc-number">3.</span> <span class="toc-text">启动Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%85%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">辅助命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#images-%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text">images 镜像命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contrainer-%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text">Contrainer 容器命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4-%E5%AE%B9%E5%99%A8%E5%A4%96%E6%93%8D%E4%BD%9C"><span class="toc-number">6.1.</span> <span class="toc-text">基本命令(容器外操作)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E5%91%BD%E4%BB%A4-%E5%AE%B9%E5%99%A8%E5%86%85%E6%93%8D%E4%BD%9C"><span class="toc-number">6.2.</span> <span class="toc-text">进阶命令(容器内操作)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="toc-number">7.</span> <span class="toc-text">Dockerfile解析过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile%E4%BF%9D%E7%95%99%E5%91%BD%E4%BB%A4"><span class="toc-number">8.</span> <span class="toc-text">Dockerfile保留命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FROM"><span class="toc-number">8.1.</span> <span class="toc-text">FROM</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -1175,7 +968,7 @@ find        查找文件或目录
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>14 篇</div>
+          <div>10 篇</div>
         </div>
       
 
@@ -1197,7 +990,7 @@ find        查找文件或目录
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>43.6k 字</div>
+          <div>13.4k 字</div>
         </div>
       
 
@@ -1223,8 +1016,8 @@ find        查找文件或目录
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Wed Dec 02 2020 20:13:24 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2020-12-02 日</div>
+            <div id="last-update" style="display: none;">Thu Dec 03 2020 19:03:54 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update-show">2020-12-03 日</div>
           
         </div>
         
@@ -1274,7 +1067,7 @@ find        查找文件或目录
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2020-12-02 日';
+            document.getElementById('last-update-show').innerHTML = '2020-12-03 日';
           }
         </script>
         
@@ -1298,7 +1091,7 @@ find        查找文件或目录
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="命令收集";
+  pdata.postTitle="Docker入门";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
