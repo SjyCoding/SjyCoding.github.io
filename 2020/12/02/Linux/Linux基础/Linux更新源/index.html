@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020 - Sun&#39;s Blog</title>
+  <title>Linux更新源 - Sun&#39;s Blog</title>
+  
+    <meta name="keywords" content="Linux,镜像源">
   
 
   
@@ -58,7 +58,7 @@
 <body>
 
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -329,7 +329,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div id='cover-backstretch'></div>
           
@@ -398,648 +398,298 @@
             
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
   
-  
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title" >
-      <a href="/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/">
-        Docker入门
-      </a>
-    </h2>
-  
-  <div class='md'>
     
-      
-        Docker概述
-来源：维基百科，自由的百科全书
-
-
-
-
-
-
-
-
-
-原作者
-Solomon Hykes
-
-
-开发者
-Docker, Inc.
-
-
-初始版本
-2013年3月13日
-
-
-源代码库
-github.com/docker/docker-ce
-
-
-编程语言
-Go
-
-
-操作系统
-Linux、Windows、macOS
-
-
-系统平台
-x86-64、ARM、s390x、ppc64le
-
-
-类型...
-      
     
+      <h1 class="title">
+        Linux更新源
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Code Sun</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
           
-          <a class='avatar' href='/'><img src=''></a>
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年12月2日</p>
+  </a>
+</div>
+
+          
         
-        <time>2020-12-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Docker/">Docker</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="Linux更新源" data-path="/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <h2 id="为什么要换源"><a href="#为什么要换源" class="headerlink" title="为什么要换源"></a>为什么要换源</h2><blockquote>
+<p>大多数官方源的服务器都在国外<br>so…</p>
+</blockquote>
+<h2 id="设置更新源镜像"><a href="#设置更新源镜像" class="headerlink" title="设置更新源镜像"></a>设置更新源镜像</h2><h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>配置文件位置：<code> /etc/apt</code></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">
+# 修改配置文件前建议先备份文件
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h3><p>yum包管理器的配置文件位置 <code>/etc/yum.repos.d/CentOS-Base.repo</code></p>
+<h4 id="通过安装脚本"><a href="#通过安装脚本" class="headerlink" title="通过安装脚本"></a>通过安装脚本</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd &#x2F;etc&#x2F;yum.repos.d&#x2F;
+# 修改配置文件前建议先备份文件
+cp CentOS-Base.repo CentOS-Base.repo.bar
+# 下载163镜像源配置文件
+wget http:&#x2F;&#x2F;mirrors.163.com&#x2F;.help&#x2F;CentOS7-Base-163.repo
+
+# 重新生成缓存
+yum clean all
+yum makecache<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="各大系统常见更新源"><a href="#各大系统常见更新源" class="headerlink" title="各大系统常见更新源"></a>各大系统常见更新源</h2><h3 id="Ubuntu-18-04"><a href="#Ubuntu-18-04" class="headerlink" title="Ubuntu 18.04"></a>Ubuntu 18.04</h3><h4 id="阿里源"><a href="#阿里源" class="headerlink" title="阿里源"></a>阿里源</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="中科大源"><a href="#中科大源" class="headerlink" title="中科大源"></a>中科大源</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">deb https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
+deb https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="163源"><a href="#163源" class="headerlink" title="163源"></a>163源</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">deb http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb-src http:&#x2F;&#x2F;mirrors.163.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="清华源"><a href="#清华源" class="headerlink" title="清华源"></a>清华源</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">deb https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic main restricted universe multiverse
+deb https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiverse
+deb https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse
+deb https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiverse
+deb https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse
+deb-src https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+<h3 id="CentOS-7"><a href="#CentOS-7" class="headerlink" title="CentOS 7"></a>CentOS 7</h3><p>并没有…123</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://sun-j-y.github.io/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/>https://sun-j-y.github.io/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-02T19:09:10+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年12月2日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Linux/Linux%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%B7%A5%E5%85%B7/">
-        Linux的一些小工具
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        screenfetch
-Ubuntu
-  apt install screenfetch
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%95%9C%E5%83%8F%E6%BA%90/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>镜像源</p></a></div>
 
-CentOS
-  # 先下载：
-wget -O screenfetch-dev https:&#x2F;&#x2F;git.io&#x2F;vaHfR
-# 然后丢到&#x2F;usr&#x2F;bin或类似的目录，如果在PATH就比较方便：
-sudo mv .&#x2F;screenfetch-dev...
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sun-j-y.github.io/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/&title=Linux更新源 - Sun's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sun-j-y.github.io/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/&title=Linux更新源 - Sun's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sun-j-y.github.io/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/&title=Linux更新源 - Sun's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/%E5%B7%A5%E5%85%B7/">工具</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Linux/Linux%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%B7%A5%E5%85%B7/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Linux/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">
-        服务器性能测试
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-性能测试，仅供参考/娱乐原文连接
-
-综合性能测试输入下列命令，执行teddysun博主的脚本：
-wget -qO- bench.sh | bash
 
 
-UnixBench跑分虽然UnixBench跑分测试并不能完全代表真实性能，但还是可以提供一定的参考。执行以下命令：
-wget https:&#x2F;&#x2F;soft.laozuo.org&#x2F;scripts&#x2F;Unix...
+        
       
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2020/12/02/Linux/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/'>
-            阅读全文
-          </a>
-        </div>
+        <a class='prev' href='/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A81%20%E5%AE%89%E8%A3%85linux/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux入门1 安装Linux</p>
+          <p class='content'>linux概述什么是linux看百科吧     维基百科     百度百科 
+linux入门概述
+严格来说，linux只是一个操作系统内核通常所说的 linux系统 是指以它为内核的一系列操作系...</p>
+        </a>
+      
+      
+        <a class='next' href='/2020/12/02/Linux/Vim/Vim/'>
+          <p class='title'>Vim<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>vim快捷键(命令)命令模式
+i   切换到输入模式，以输入字符
+:(shift+;)       切换到底线命令模式，以在最底一行输入命令
+dd     删除当前光标所处的行
+x       ...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Windows/%E5%BE%AE%E8%BD%AF%E6%8B%BC%E9%9F%B3%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/">
-        用微软拼音快速输入自定义格式的时间和日期
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        教你如何用微软拼音输入法的用户自定义短语快速输入自定义格式的时间和日期。
-用微软拼音输入 rq 或者 sj，我们可以在第五个候选词分别得到 2017年9月18日 和 22点05分。但是，其实我想输入的是：2017-09-18 和 2017-09-18 22:05:51 +0800。在设置里面折腾一番没找到之后，原本以为只好自己输入了，没想到后面还是找到了方法。
-
-我不会告诉你我要一个这样的日...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Windows/">Windows</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Windows/%E5%BE%AE%E8%BD%AF%E6%8B%BC%E9%9F%B3%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Git&GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/">
-        Github历史版本回退
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        问题描述最近几天的GitHub提交出了些问题，导致之前提交的更新丢失，考虑回退到之前的版本。在GitHub的Web页面上并没有找到回退的解决方案（如果大家知道的话，感谢告知），于是决定通过本地的 Git Bash来操作。
-
-查找 commit id：浏览GitHub上的提交历史记录，找到要回退的版本，复制commit id。
-  类似这种
-  
+  </article>
 
 
 
-恢复历史版本：
-
-git reset -...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Git/">Git</a><span class="sep"></span><a class="category-link" href="/categories/Git/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">常见问题</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Git&GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Linux/%E9%97%AE%E9%A2%98/Docker%E6%90%9C%E7%B4%A2%E8%B6%85%E6%97%B6/">
-        Docker搜索超时
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Docker搜索超时执行docker search centos报错信息如下：
-Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;search?q&#x3D;centos: read tcp 52.200.132.201:443: i&#x2F;o timeout
-
-docker在中国...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Docker/">Docker</a><span class="sep"></span><a class="category-link" href="/categories/Linux/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">常见问题</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Linux/%E9%97%AE%E9%A2%98/Docker%E6%90%9C%E7%B4%A2%E8%B6%85%E6%97%B6/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Linux/%E9%97%AE%E9%A2%98/%E5%B0%86linux%E7%9A%84%E7%94%A8%E6%88%B7%E4%B8%BB%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E7%A7%B0%E6%94%B9%E6%88%90%E8%8B%B1%E6%96%87%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95/">
-        将linux的HOME目录下的文件夹名字改回英文的简单办法
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        将linux的HOME目录下的文件夹名字改回英文的简单办法为了使用起来方便，装了Ubuntu中文版，自然在home文件里用户目录的“桌面”、“图片”、“视频”、“音乐”……都是中文的。很多时候都喜欢在桌面上放一些要操作的文件，linux里命令行操作又多，难免会用命令行操作桌面上的东西，那么就要 “cd 桌面”，打“桌面”的时候要输入法切换，麻烦……
-所以就想办法把用户目录下的路径改成英文，而...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">常见问题</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Linux/%E9%97%AE%E9%A2%98/%E5%B0%86linux%E7%9A%84%E7%94%A8%E6%88%B7%E4%B8%BB%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E7%A7%B0%E6%94%B9%E6%88%90%E8%8B%B1%E6%96%87%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Git&GitHub/git%E5%85%A5%E9%97%A8/">
-        Git入门
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        前言
-本片笔记基于B站up主狂神说java编写
-
-先了解下什么是版本控制
-版本控制版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。
-
-实现跨区域多人协同开发
-追踪和记载一个或者多个文件的历史记录
-组织和保护你的源代码和文档
-统计工作量
-并行开发、提高开发效率
-跟踪记录整...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Git/">Git</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Git&GitHub/git%E5%85%A5%E9%97%A8/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Linux/%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/">
-        命令收集
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        前言大部分文档来自https://man.linuxde.net/
-命令收集linux使用命令   find / -name ***  查找文件的时候会遇到以下报错
-find: ‘/run/user/1000/gvfs’: Permission denied   
-明明用的是root用户，为什么权限不足呢？
-官方说这是一个bug——bug#615848. 原因是FUSE文件系统和权限不配的问...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Linux/%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Linux/Linux/">
-        Linux
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Linux常用命令文件/目录
-cd    切换目录
-
-语法: 
-
-find        查找文件或目录
-
-语法    find   path   -option   [   -print ]   [ -exec   -ok   command ]   {} \
-例子find . -name “*.c”
 
 
-网络更新包信息，确保APT能使用https方式工作，并且CA证书已安装了
-sudo ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Linux/Linux/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
-
-
-	
 </div>
 <aside class='l_side'>
   
@@ -1120,103 +770,23 @@ sudo ...
   
     
     
-  
 
-  <section class="widget category shadow desktop mobile">
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Docker/" href="/categories/Docker/"
-            id="categoriesDocker"
-            ><div class='name'>Docker</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Git/" href="/categories/Git/"
-            id="categoriesGit"
-            ><div class='name'>Git</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Git/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" href="/categories/Git/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"
-            id="categoriesGitE5B8B8E8A781E997AEE9A298"
-            ><div class='name'>常见问题</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" href="/categories/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"
-            id="categoriesHexoE690ADE5BBBAE58D9AE5AEA2"
-            ><div class='name'>Hexo搭建博客</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Linux/Docker/" href="/categories/Linux/Docker/"
-            id="categoriesLinuxDocker"
-            ><div class='name'>Docker</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/"
-            id="categoriesLinuxLinuxE59FBAE7A180"
-            ><div class='name'>Linux基础</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Linux/%E5%B7%A5%E5%85%B7/" href="/categories/Linux/%E5%B7%A5%E5%85%B7/"
-            id="categoriesLinuxE5B7A5E585B7"
-            ><div class='name'>工具</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Linux/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" href="/categories/Linux/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"
-            id="categoriesLinuxE5B8B8E8A781E997AEE9A298"
-            ><div class='name'>常见问题</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/Linux/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" href="/categories/Linux/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/"
-            id="categoriesLinuxE680A7E883BDE6B58BE8AF95"
-            ><div class='name'>性能测试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Windows/" href="/categories/Windows/"
-            id="categoriesWindows"
-            ><div class='name'>Windows</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8D%A2%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">为什么要换源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%9B%B4%E6%96%B0%E6%BA%90%E9%95%9C%E5%83%8F"><span class="toc-number">2.</span> <span class="toc-text">设置更新源镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ubuntu"><span class="toc-number">2.1.</span> <span class="toc-text">Ubuntu</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS"><span class="toc-number">2.2.</span> <span class="toc-text">CentOS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC"><span class="toc-number">2.2.1.</span> <span class="toc-text">通过安装脚本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%A4%A7%E7%B3%BB%E7%BB%9F%E5%B8%B8%E8%A7%81%E6%9B%B4%E6%96%B0%E6%BA%90"><span class="toc-number">3.</span> <span class="toc-text">各大系统常见更新源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ubuntu-18-04"><span class="toc-number">3.1.</span> <span class="toc-text">Ubuntu 18.04</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BF%E9%87%8C%E6%BA%90"><span class="toc-number">3.1.1.</span> <span class="toc-text">阿里源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E7%A7%91%E5%A4%A7%E6%BA%90"><span class="toc-number">3.1.2.</span> <span class="toc-text">中科大源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#163%E6%BA%90"><span class="toc-number">3.1.3.</span> <span class="toc-text">163源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E5%8D%8E%E6%BA%90"><span class="toc-number">3.1.4.</span> <span class="toc-text">清华源</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CentOS-7"><span class="toc-number">3.2.</span> <span class="toc-text">CentOS 7</span></a></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/CentOS/" style="font-size: 14px; color: #999">CentOS</a> <a href="/tags/Docker/" style="font-size: 17.33px; color: #828282">Docker</a> <a href="/tags/Git/" style="font-size: 17.33px; color: #828282">Git</a> <a href="/tags/GitHub/" style="font-size: 17.33px; color: #828282">GitHub</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Linux%E5%9F%BA%E7%A1%80/" style="font-size: 17.33px; color: #828282">Linux基础</a> <a href="/tags/Vim/" style="font-size: 14px; color: #999">Vim</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/hexo/" style="font-size: 20.67px; color: #6c6c6c">hexo</a> <a href="/tags/volantis/" style="font-size: 17.33px; color: #828282">volantis</a> <a href="/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 14px; color: #999">微软输入法</a> <a href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" style="font-size: 14px; color: #999">性能测试</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">系统语言</a> <a href="/tags/%E9%95%9C%E5%83%8F%E6%BA%90/" style="font-size: 17.33px; color: #828282">镜像源</a>
-    </div>
-  </section>
-
-
-  
 
   
 
@@ -1352,6 +922,7 @@ sudo ...
 </aside>
 
 
+
             
             
                 <!--此文件用来存放一些不方便取值的变量-->
@@ -1359,14 +930,14 @@ sudo ...
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="Linux更新源";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

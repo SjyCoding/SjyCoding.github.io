@@ -467,7 +467,7 @@
 
 
   
-  <h1 id="Docker概述"><a href="#Docker概述" class="headerlink" title="Docker概述"></a>Docker概述</h1><blockquote>
+  <h2 id="Docker概述"><a href="#Docker概述" class="headerlink" title="Docker概述"></a>Docker概述</h2><blockquote>
 <p>来源：维基百科，自由的百科全书</p>
 </blockquote>
 <table>
@@ -522,7 +522,7 @@
 <p><strong>Docker容器</strong> 与虚拟机类似，但原理上，容器是将<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">操作系统层虚拟化</a>，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker也为容器提供更强的业界的隔离兼容。[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Docker#cite_note-2">2]</a></p>
 <p><strong>Docker</strong> 利用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux%E6%A0%B8%E5%BF%83">Linux核心</a>中的资源分离机制，例如<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cgroups">cgroups</a>，以及Linux核心<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Linux%E5%91%BD%E5%90%8D%E7%A9%BA%E9%96%93&action=edit&redlink=1">名字空间</a>（namespaces），来创建独立的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">容器</a>（containers）。这可以在单一Linux实体下运作，避免引导一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E6%A9%9F%E5%99%A8">虚拟机</a>造成的额外负担[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Docker#cite_note-3">3]</a>。Linux核心对名字空间的支持完全隔离了工作环境中应用程序的视野，包括行程树、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">网络</a>、用户ID与挂载文件系统，而核心的cgroup提供资源隔离，包括<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CPU">CPU</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E8%85%A6%E8%A8%98%E6%86%B6%E9%AB%94">存储器</a>、block I/O与网络。从0.9版本起，Dockers在使用抽象虚拟是经由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Libvirt">libvirt</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/LXC">LXC</a>与systemd - nspawn提供界面的基础上，开始包括libcontainer库做为以自己的方式开始直接使用由Linux核心提供的虚拟化的设施，</p>
 <p>依据行业分析公司“451研究”：“Dockers是有能力打包应用程序及其虚拟容器，可以在任何Linux服务器上运行的依赖性工具，这有助于实现灵活性和便携性，应用程序在任何地方都可以运行，无论是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%AC%E7%94%A8%E9%9B%B2">公用云</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A7%81%E6%9C%89%E9%9B%B2">私有云</a>、单机等。” [<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Docker#cite_note-4">4]</a>。</p>
-<h1 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h1><h2 id="通过安装脚本-推荐"><a href="#通过安装脚本-推荐" class="headerlink" title="通过安装脚本 - 推荐"></a>通过安装脚本 - 推荐</h2><ul>
+<h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><h3 id="通过安装脚本-推荐"><a href="#通过安装脚本-推荐" class="headerlink" title="通过安装脚本 - 推荐"></a>通过安装脚本 - 推荐</h3><ul>
 <li><p>CentOS</p>
 <p>  Docker 仅支持以下的 64 位 CentOS 版本：</p>
 <ul>
@@ -539,22 +539,22 @@ curl -sSL https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker | sh<span aria-hidden="t
 </ul>
 </li>
 </ul>
-<h2 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h2><p>TODO: 待更新</p>
-<h2 id="启动Docker"><a href="#启动Docker" class="headerlink" title="启动Docker"></a>启动Docker</h2><blockquote>
+<h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><p>TODO: 待更新</p>
+<h3 id="启动Docker"><a href="#启动Docker" class="headerlink" title="启动Docker"></a>启动Docker</h3><blockquote>
 <p>如果使用dockers的</p>
 </blockquote>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
-<h1 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h1><h2 id="辅助命令"><a href="#辅助命令" class="headerlink" title="辅助命令"></a>辅助命令</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker --version			# 版本信息
+<h2 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h2><h3 id="辅助命令"><a href="#辅助命令" class="headerlink" title="辅助命令"></a>辅助命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker --version			# 版本信息
 	&#x3D; docker -v
 docker info					# 详细信息
 docker --help				# 帮助<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<h2 id="images-镜像命令"><a href="#images-镜像命令" class="headerlink" title="images 镜像命令"></a>images 镜像命令</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 查看本机中所有镜像
+<h3 id="images-镜像命令"><a href="#images-镜像命令" class="headerlink" title="images 镜像命令"></a>images 镜像命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 查看本机中所有镜像
 docker images				# 列出本地所有镜像
 	-a							# 列出所有镜像(包含中间映像层)
 	-q							# 只显示镜像id
@@ -573,7 +573,7 @@ docker rmi 镜像名				# 删除镜像
 
 
 
-<h2 id="Contrainer-容器命令"><a href="#Contrainer-容器命令" class="headerlink" title="Contrainer 容器命令"></a>Contrainer 容器命令</h2><h3 id="基本命令-容器外操作"><a href="#基本命令-容器外操作" class="headerlink" title="基本命令(容器外操作)"></a>基本命令(容器外操作)</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 运行容器
+<h3 id="Contrainer-容器命令"><a href="#Contrainer-容器命令" class="headerlink" title="Contrainer 容器命令"></a>Contrainer 容器命令</h3><h4 id="基本命令-容器外操作"><a href="#基本命令-容器外操作" class="headerlink" title="基本命令(容器外操作)"></a>基本命令(容器外操作)</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 运行容器
 docker run 镜像名					# 镜像名新建并启动容器
 	--name			# 别名 为容器起一个名字
 	-d				# 启动守护式容器(在后台启动容器)
@@ -608,7 +608,7 @@ docker logs [options] 容器名或id	# 查看容器的运行日志
 	-t				# 加入时间戳
 	-f				# 跟随最新的日志打印<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="进阶命令-容器内操作"><a href="#进阶命令-容器内操作" class="headerlink" title="进阶命令(容器内操作)"></a>进阶命令(容器内操作)</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 进入容器内部
+<h4 id="进阶命令-容器内操作"><a href="#进阶命令-容器内操作" class="headerlink" title="进阶命令(容器内操作)"></a>进阶命令(容器内操作)</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 进入容器内部
 docker exec [options] 容器id 容器内命令		# 进入容器内执行命令
 	-i				# 以交互模式运行容器,通常与-t一起使用
 	-t				# 分配一个伪终端
@@ -645,13 +645,13 @@ docker run -it -v &#x2F;宿主机目录:&#x2F;容器目录:ro(只读) 镜像名
     &#125;
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="Docker-file"><a href="#Docker-file" class="headerlink" title="Docker file"></a>Docker file</h1><blockquote>
+<h2 id="Docker-file"><a href="#Docker-file" class="headerlink" title="Docker file"></a>Docker file</h2><blockquote>
 <p>​    DockerFile可以认为是**Docker镜像的描述文件, 是由一系列的命令和参数构成的 ‘脚本’ **</p>
 <p>​    主要作用是<strong>用来构建docker镜像的构建文件</strong></p>
 </blockquote>
 <p><img src="https://s3.ax1x.com/2020/12/03/DoxWHH.png" class="lazyload" data-srcset="https://s3.ax1x.com/2020/12/03/DoxWHH.png" srcset="data:image/png;base64,666"></p>
-<h2 id="Dockerfile解析过程"><a href="#Dockerfile解析过程" class="headerlink" title="Dockerfile解析过程"></a>Dockerfile解析过程</h2><p><img src="https://s3.ax1x.com/2020/12/03/DozFrF.png" class="lazyload" data-srcset="https://s3.ax1x.com/2020/12/03/DozFrF.png" srcset="data:image/png;base64,666"></p>
-<h2 id="Dockerfile保留命令"><a href="#Dockerfile保留命令" class="headerlink" title="Dockerfile保留命令"></a>Dockerfile保留命令</h2><table>
+<h3 id="Dockerfile解析过程"><a href="#Dockerfile解析过程" class="headerlink" title="Dockerfile解析过程"></a>Dockerfile解析过程</h3><p><img src="https://s3.ax1x.com/2020/12/03/DozFrF.png" class="lazyload" data-srcset="https://s3.ax1x.com/2020/12/03/DozFrF.png" srcset="data:image/png;base64,666"></p>
+<h3 id="Dockerfile保留命令"><a href="#Dockerfile保留命令" class="headerlink" title="Dockerfile保留命令"></a>Dockerfile保留命令</h3><table>
 <thead>
 <tr>
 <th>保留字</th>
@@ -699,7 +699,7 @@ docker run -it -v &#x2F;宿主机目录:&#x2F;容器目录:ro(只读) 镜像名
 <td align="center">指定一个容器启动时要运行的命令<br/>ENTRYPOINT的目的和CMD一样, 都是在指定容器启动程序及其参数</td>
 </tr>
 </tbody></table>
-<h3 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h3><blockquote>
+<h4 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h4><blockquote>
 <p>​    基于哪个镜像构建新的镜像, 在构建时会从dockerhub拉取base镜像, 必须作为Dockerfile的第一个指令出现</p>
 </blockquote>
 
@@ -736,7 +736,7 @@ docker run -it -v &#x2F;宿主机目录:&#x2F;容器目录:ro(只读) 镜像名
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-03T16:58:56+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-03T20:02:01+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月3日</p>
@@ -941,7 +941,7 @@ wget -O screenfetch-dev https:&#x2F...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-%E6%8E%A8%E8%8D%90"><span class="toc-number">1.</span> <span class="toc-text">通过安装脚本 - 推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">手动安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8Docker"><span class="toc-number">3.</span> <span class="toc-text">启动Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%85%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">辅助命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#images-%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text">images 镜像命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contrainer-%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text">Contrainer 容器命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4-%E5%AE%B9%E5%99%A8%E5%A4%96%E6%93%8D%E4%BD%9C"><span class="toc-number">6.1.</span> <span class="toc-text">基本命令(容器外操作)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E5%91%BD%E4%BB%A4-%E5%AE%B9%E5%99%A8%E5%86%85%E6%93%8D%E4%BD%9C"><span class="toc-number">6.2.</span> <span class="toc-text">进阶命令(容器内操作)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="toc-number">7.</span> <span class="toc-text">Dockerfile解析过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile%E4%BF%9D%E7%95%99%E5%91%BD%E4%BB%A4"><span class="toc-number">8.</span> <span class="toc-text">Dockerfile保留命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FROM"><span class="toc-number">8.1.</span> <span class="toc-text">FROM</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">Docker概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Docker"><span class="toc-number">2.</span> <span class="toc-text">安装Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-%E6%8E%A8%E8%8D%90"><span class="toc-number">2.1.</span> <span class="toc-text">通过安装脚本 - 推荐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.</span> <span class="toc-text">手动安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8Docker"><span class="toc-number">2.3.</span> <span class="toc-text">启动Docker</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">Docker常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%85%E5%8A%A9%E5%91%BD%E4%BB%A4"><span class="toc-number">3.1.</span> <span class="toc-text">辅助命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#images-%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4"><span class="toc-number">3.2.</span> <span class="toc-text">images 镜像命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Contrainer-%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">3.3.</span> <span class="toc-text">Contrainer 容器命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4-%E5%AE%B9%E5%99%A8%E5%A4%96%E6%93%8D%E4%BD%9C"><span class="toc-number">3.3.1.</span> <span class="toc-text">基本命令(容器外操作)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E5%91%BD%E4%BB%A4-%E5%AE%B9%E5%99%A8%E5%86%85%E6%93%8D%E4%BD%9C"><span class="toc-number">3.3.2.</span> <span class="toc-text">进阶命令(容器内操作)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker-file"><span class="toc-number">4.</span> <span class="toc-text">Docker file</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dockerfile%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="toc-number">4.1.</span> <span class="toc-text">Dockerfile解析过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dockerfile%E4%BF%9D%E7%95%99%E5%91%BD%E4%BB%A4"><span class="toc-number">4.2.</span> <span class="toc-text">Dockerfile保留命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#FROM"><span class="toc-number">4.2.1.</span> <span class="toc-text">FROM</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
@@ -966,7 +966,7 @@ wget -O screenfetch-dev https:&#x2F...</p>
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>16 篇</div>
+          <div>17 篇</div>
         </div>
       
 
@@ -988,7 +988,7 @@ wget -O screenfetch-dev https:&#x2F...</p>
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>46.4k 字</div>
+          <div>46.9k 字</div>
         </div>
       
 
@@ -1014,7 +1014,7 @@ wget -O screenfetch-dev https:&#x2F...</p>
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Dec 03 2020 19:33:36 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Thu Dec 03 2020 20:06:16 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-03 日</div>
           
         </div>

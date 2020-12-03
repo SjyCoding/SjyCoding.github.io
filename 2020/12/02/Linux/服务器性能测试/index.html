@@ -470,11 +470,11 @@
   <blockquote>
 <p>性能测试，仅供参考/娱乐<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/143894333">原文连接</a></p>
 </blockquote>
-<h1 id="综合性能测试"><a href="#综合性能测试" class="headerlink" title="综合性能测试"></a>综合性能测试</h1><p>输入下列命令，执行teddysun博主的脚本：</p>
+<h2 id="综合性能测试"><a href="#综合性能测试" class="headerlink" title="综合性能测试"></a>综合性能测试</h2><p>输入下列命令，执行teddysun博主的脚本：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget -qO- bench.sh | bash<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><img src="https://s3.ax1x.com/2020/12/03/DT8Hzt.jpg" class="lazyload" data-srcset="https://s3.ax1x.com/2020/12/03/DT8Hzt.jpg" srcset="data:image/png;base64,666"></p>
-<h1 id="UnixBench跑分"><a href="#UnixBench跑分" class="headerlink" title="UnixBench跑分"></a>UnixBench跑分</h1><p>虽然UnixBench跑分测试并不能完全代表真实性能，但还是可以提供一定的参考。执行以下命令：</p>
+<h2 id="UnixBench跑分"><a href="#UnixBench跑分" class="headerlink" title="UnixBench跑分"></a>UnixBench跑分</h2><p>虽然UnixBench跑分测试并不能完全代表真实性能，但还是可以提供一定的参考。执行以下命令：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget https:&#x2F;&#x2F;soft.laozuo.org&#x2F;scripts&#x2F;UnixBench5.1.3.tgz
 tar -zxvf UnixBench5.1.3.tgz
 cd UnixBench
@@ -482,7 +482,7 @@ make
 .&#x2F;Run<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://i.loli.net/2020/12/03/qriyN4cIFVeozu8.jpg" class="lazyload" data-srcset="https://i.loli.net/2020/12/03/qriyN4cIFVeozu8.jpg" srcset="data:image/png;base64,666" alt="Snipaste_2020-12-03_13-41-12.jpg"></p>
-<h2 id="错误修复"><a href="#错误修复" class="headerlink" title="错误修复"></a>错误修复</h2><ul>
+<h3 id="错误修复"><a href="#错误修复" class="headerlink" title="错误修复"></a>错误修复</h3><ul>
 <li><p>-bash: ./Run: /usr/bin/perl: bad interpreter: No such file or directory</p>
 <p>  修复方法:</p>
   <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 以root权限执行以下命令
@@ -491,7 +491,7 @@ wget -O &#x2F;usr&#x2F;bin&#x2F;prel https:&#x2F;&#x2F;github.com&#x2F;flathub&#
 <p>  修复成功</p>
 </li>
 </ul>
-<h1 id="Speedtest带宽测试"><a href="#Speedtest带宽测试" class="headerlink" title="Speedtest带宽测试"></a>Speedtest带宽测试</h1><p>执行以下命令测速主机的上传和下载的带宽：</p>
+<h2 id="Speedtest带宽测试"><a href="#Speedtest带宽测试" class="headerlink" title="Speedtest带宽测试"></a>Speedtest带宽测试</h2><p>执行以下命令测速主机的上传和下载的带宽：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget https:&#x2F;&#x2F;raw.github.com&#x2F;sivel&#x2F;speedtest-cli&#x2F;master&#x2F;speedtest.py
 python speedtest.py --share<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -499,13 +499,13 @@ python speedtest.py --share<span aria-hidden="true" class="line-numbers-rows"><s
 
 
 
-<h1 id="PING测试"><a href="#PING测试" class="headerlink" title="PING测试"></a>PING测试</h1><p>使用<a href="http://ipip.net在线工具对主机的PING响应时间进行测试（北京时间晚上11点左右），结果如下：">http://ipip.net在线工具对主机的PING响应时间进行测试（北京时间晚上11点左右），结果如下：</a></p>
+<h2 id="PING测试"><a href="#PING测试" class="headerlink" title="PING测试"></a>PING测试</h2><p>使用<a href="http://ipip.net在线工具对主机的PING响应时间进行测试（北京时间晚上11点左右），结果如下：">http://ipip.net在线工具对主机的PING响应时间进行测试（北京时间晚上11点左右），结果如下：</a></p>
 <p>使用mping脚本一键测试阿里轻量应用服务器实例到国内电信、联通、移动线路的回程Ping：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">wget https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;helloxz&#x2F;mping&#x2F;master&#x2F;mping.sh
 bash mping.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>其中电信和联调的延迟较高，移动的延迟较低。</p>
-<h1 id="路由测试"><a href="#路由测试" class="headerlink" title="路由测试"></a>路由测试</h1><ol start="5">
+<h2 id="路由测试"><a href="#路由测试" class="headerlink" title="路由测试"></a>路由测试</h2><ol start="5">
 <li>路由测试<br>去程路由测试<br>使用BestTrace工具，本地电脑使用广东电信网络，在北京时间晚上十点多测试到VPS主机的去程路由。</li>
 </ol>
 <p>需要绕日本NTT，有点惨。</p>
@@ -555,7 +555,7 @@ bash mping.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-03T19:00:35+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-03T19:57:30+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月3日</p>
@@ -646,9 +646,10 @@ wget -O screenfetch-dev https:&#x2F...</p>
         </a>
       
       
-        <a class='next' href='/2020/12/02/Git&GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/'>
-          <p class='title'>Github历史版本回退<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>问题描述最近几天的GitHub提交出了些问题，导致之前提交的更新丢失，考虑回退到之前的版本。在GitHub的Web页面上并没有找到回退的解决方案（如果大家知道的话，感谢告知），于是决定通过本地的...</p>
+        <a class='next' href='/2020/12/02/Windows/%E5%BE%AE%E8%BD%AF%E6%8B%BC%E9%9F%B3%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/'>
+          <p class='title'>用微软拼音快速输入自定义格式的时间和日期<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>教你如何用微软拼音输入法的用户自定义短语快速输入自定义格式的时间和日期。
+用微软拼音输入 rq 或者 sj，我们可以在第五个候选词分别得到 2017年9月18日 和 22点05分。但是，其实我想...</p>
         </a>
       
     </div>
@@ -765,7 +766,7 @@ wget -O screenfetch-dev https:&#x2F...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E4%BF%AE%E5%A4%8D"><span class="toc-number">1.</span> <span class="toc-text">错误修复</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text">综合性能测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UnixBench%E8%B7%91%E5%88%86"><span class="toc-number">2.</span> <span class="toc-text">UnixBench跑分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E4%BF%AE%E5%A4%8D"><span class="toc-number">2.1.</span> <span class="toc-text">错误修复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Speedtest%E5%B8%A6%E5%AE%BD%E6%B5%8B%E8%AF%95"><span class="toc-number">3.</span> <span class="toc-text">Speedtest带宽测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PING%E6%B5%8B%E8%AF%95"><span class="toc-number">4.</span> <span class="toc-text">PING测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E6%B5%8B%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">路由测试</span></a></li></ol>
     </div>
   </section>
 
@@ -790,7 +791,7 @@ wget -O screenfetch-dev https:&#x2F...</p>
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>16 篇</div>
+          <div>17 篇</div>
         </div>
       
 
@@ -812,7 +813,7 @@ wget -O screenfetch-dev https:&#x2F...</p>
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>46.4k 字</div>
+          <div>46.9k 字</div>
         </div>
       
 
@@ -838,7 +839,7 @@ wget -O screenfetch-dev https:&#x2F...</p>
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Dec 03 2020 19:33:36 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Thu Dec 03 2020 20:06:16 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-03 日</div>
           
         </div>
