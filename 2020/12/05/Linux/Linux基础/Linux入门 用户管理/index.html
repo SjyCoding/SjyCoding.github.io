@@ -477,7 +477,8 @@
 <li>用户口令的管理。</li>
 <li>用户组的管理。</li>
 </ul>
-<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><h3 id="用户账号的管理"><a href="#用户账号的管理" class="headerlink" title="用户账号的管理"></a>用户账号的管理</h3><p>用户账号的管理工作主要涉及到用户账号的添加、修改和删除。</p>
+<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p><strong>用户的增加、删除和修改实际上就是对/etc/passwd文件的更新。</strong></p>
+<h3 id="用户账号的管理"><a href="#用户账号的管理" class="headerlink" title="用户账号的管理"></a>用户账号的管理</h3><p>用户账号的管理工作主要涉及到用户账号的添加、修改和删除。</p>
 <p>添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。</p>
 <h3 id="添加账号-useradd"><a href="#添加账号-useradd" class="headerlink" title="添加账号 useradd"></a>添加账号 useradd</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">useradd 选项 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -575,35 +576,35 @@ Re-enter new password:*******<span aria-hidden="true" class="line-numbers-rows">
 
 <p>以上两种方式都会造成该用户无法登录系统</p>
 <h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><p>每个用户都有一个用户组，系统可以对一个用户组中的所有用户进行集中管理。不同Linux 系统对用户组的规定有所不同，如Linux下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建。</p>
-<p>用户组的管理涉及用户组的添加、删除和修改。组的增加、删除和修改实际上就是对/etc/group文件的更新。</p>
+<p>用户组的管理涉及用户组的添加、删除和修改。<strong>组的增加、删除和修改实际上就是对/etc/group文件的更新。</strong></p>
 <h3 id="增加一个新的用户组-groupadd"><a href="#增加一个新的用户组-groupadd" class="headerlink" title="增加一个新的用户组 groupadd"></a>增加一个新的用户组 groupadd</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupadd 选项 用户组<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>可以使用的选项有：</p>
 <ul>
-<li>-g GID 指定新用户组的组标识号（GID）。</li>
-<li>-o 一般与-g选项同时使用，表示新用户组的GID可以与系统已有用户组的GID相同。</li>
+<li>-g：GID 指定新用户组的组标识号（GID）。</li>
+<li>-o：一般与-g选项同时使用，表示新用户组的GID可以与系统已有用户组的GID相同。</li>
 </ul>
-<p>实例1：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># groupadd group1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>例1：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupadd testgroup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>此命令向系统中增加了一个新组group1，新组的组标识号是在当前已有的最大组标识号的基础上加1。</p>
-<p>实例2：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># groupadd -g 101 group2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>此命令向系统中增加了一个新组tsetgroup，新组的组标识号是在当前已有的最大组标识号的基础上加1。</p>
+<p>例2：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupadd -g 101 testgroup2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>此命令向系统中增加了一个新组group2，同时指定新组的组标识号是101。</p>
-<h3 id="删除一个已有的用户组-groupdel"><a href="#删除一个已有的用户组-groupdel" class="headerlink" title="删除一个已有的用户组 groupdel"></a>删除一个已有的用户组 groupdel</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupdel 用户组<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>此命令向系统中增加了一个新组testgroup2，同时指定创建的用户组的组标识号是101。</p>
+<h3 id="删除一个已有的用户组-groupdel"><a href="#删除一个已有的用户组-groupdel" class="headerlink" title="删除一个已有的用户组 groupdel"></a>删除一个已有的用户组 groupdel</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupdel 用户组名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># groupdel group1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupdel testgroup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>此命令从系统中删除组group1。</p>
+<p>此命令会从系统中删除用户组组testgroup。</p>
 <h3 id="修改用户组的属性-groupmod"><a href="#修改用户组的属性-groupmod" class="headerlink" title="修改用户组的属性 groupmod"></a>修改用户组的属性 groupmod</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupmod 选项 用户组<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>常用的选项有：</p>
 <ul>
-<li>-g GID 为用户组指定新的组标识号。</li>
-<li>-o 与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。</li>
-<li>-n新用户组 将用户组的名字改为新名字</li>
+<li>-g：GID 为用户组指定新的组标识号。</li>
+<li>-o：与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。</li>
+<li>-n：新用户组 将用户组的名字改为新名字</li>
 </ul>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 此命令将组group2的组标识号修改为102。
 groupmod -g 102 group2
@@ -615,9 +616,9 @@ groupmod –g 10000 -n group3 group2<span aria-hidden="true" class="line-numbers
 
 <h3 id="切换组"><a href="#切换组" class="headerlink" title="切换组"></a>切换组</h3><p>如果一个用户同时属于多个用户组，那么用户可以在用户组之间切换，以便具有其他用户组的权限。</p>
 <p>用户可以在登录后，使用命令newgrp切换到其他用户组，这个命令的参数就是目的用户组。例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ newgrp root<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">newgrp [组名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>这条命令将当前用户切换到root用户组，前提条件是root用户组确实是该用户的主组或附加组。</p>
+<p>这条命令将当前用户切换到指定用户组，前提条件是指定用户组确实是该用户的主组或附加组。</p>
 <blockquote>
 <p>/etc/passwd</p>
 </blockquote>
@@ -747,7 +748,7 @@ nobody NFS使用<span aria-hidden="true" class="line-numbers-rows"><span></span>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-05T14:59:14+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-05T15:52:52+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月5日</p>
@@ -1003,7 +1004,7 @@ g...</p>
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>20 篇</div>
+          <div>21 篇</div>
         </div>
       
 
@@ -1025,7 +1026,7 @@ g...</p>
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>32.2k 字</div>
+          <div>34.6k 字</div>
         </div>
       
 
@@ -1051,7 +1052,7 @@ g...</p>
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Dec 05 2020 15:23:56 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Sat Dec 05 2020 15:58:39 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-05 日</div>
           
         </div>

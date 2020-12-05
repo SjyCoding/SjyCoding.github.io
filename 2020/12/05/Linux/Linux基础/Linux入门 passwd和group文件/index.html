@@ -19,9 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Vim - Sun&#39;s Blog</title>
+  <title>Linux入门 Passwd和group文件 - Sun&#39;s Blog</title>
   
-    <meta name="keywords" content="Linux,Vim">
+    <meta name="keywords" content="Linux,Linux基础">
   
 
   
@@ -408,7 +408,7 @@
     
     
       <h1 class="title">
-        Vim
+        Linux入门 Passwd和group文件
       </h1>
       <div class='new-meta-box'>
         
@@ -428,7 +428,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/%E5%B7%A5%E5%85%B7/">工具</a>
+      <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a>
     </a>
   </div>
 
@@ -439,7 +439,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月2日</p>
+    <p>发布于：2020年12月5日</p>
   </a>
 </div>
 
@@ -450,7 +450,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="Vim" data-path="/2020/12/02/Linux/Vim/Vim/">
+      <div id="lc-pv" data-title="Linux入门 Passwd和group文件" data-path="/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20passwd%E5%92%8Cgroup%E6%96%87%E4%BB%B6/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -467,418 +467,114 @@
 
 
   
-  <h2 id="vim快捷键-命令"><a href="#vim快捷键-命令" class="headerlink" title="vim快捷键(命令)"></a>vim快捷键(命令)</h2><h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><ul>
-<li><strong>i</strong>   切换到输入模式，以输入字符</li>
-<li><strong>:(shift+;)</strong>       切换到底线命令模式，以在最底一行输入命令</li>
-<li><strong>dd</strong>     删除当前光标所处的行</li>
-<li><strong>x</strong>        删除当前光标所在处的字符</li>
-</ul>
-<h3 id="插入模式-输入模式"><a href="#插入模式-输入模式" class="headerlink" title="插入模式(输入模式)"></a>插入模式(输入模式)</h3><ul>
-<li><strong>字符按键以及Shift组合</strong>     输入字符</li>
-<li><strong>ENTER</strong>     回车键，换行</li>
-<li><strong>BACK SPACE</strong>     退格键，删除光标前一个字符</li>
-<li><strong>DEL</strong>     删除键，删除光标后一个字符</li>
-<li><strong>方向键</strong>     在文本中移动光标</li>
-<li><strong>HOME</strong>/<strong>END</strong>      移动光标到行首/行尾</li>
-<li><strong>Page Up</strong>/<strong>Page Down</strong>    上/下翻页</li>
-<li><strong>Insert</strong>     切换光标为输入/替换模式，光标将变成竖线/下划线</li>
-<li><strong>ESC</strong>     退出输入模式，切换到命令模式</li>
-</ul>
-<h3 id="底线命令模式"><a href="#底线命令模式" class="headerlink" title="底线命令模式"></a>底线命令模式</h3><p>命令后加   <strong>!</strong>   强制执行</p>
+  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>完成用户管理的工作有许多种方法，但是每一种方法实际上都是对有关的系统文件进行修改。</p>
+<p>与用户和用户组相关的信息都存放在一些系统文件中，这些文件包括<code>/etc/passwd</code>，<code> /etc/shadow</code>，<code>/etc/group</code>等。</p>
+<p>下面将分别介绍这些文件的内容。</p>
+<h2 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h2><p><strong>/etc/passwd文件是用户管理工作涉及的最重要的一个文件。</strong></p>
+<p>Linux系统中的每个用户都在/etc/passwd文件中有一个对应的记录行，它记录了这个用户的一些基本属性。</p>
+<p>这个文件对所有用户都是可读的。它的内容类似下面的例子：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@bogon ~]# cat &#x2F;etc&#x2F;passwd
+root:x:0:0:root:&#x2F;root:&#x2F;bin&#x2F;bash
+bin:x:1:1:bin:&#x2F;bin:&#x2F;sbin&#x2F;nologin
+daemon:x:2:2:daemon:&#x2F;sbin:&#x2F;sbin&#x2F;nologin
+adm:x:3:4:adm:&#x2F;var&#x2F;adm:&#x2F;sbin&#x2F;nologin
+lp:x:4:7:lp:&#x2F;var&#x2F;spool&#x2F;lpd:&#x2F;sbin&#x2F;nologin
+sync:x:5:0:sync:&#x2F;sbin:&#x2F;bin&#x2F;sync
+shutdown:x:6:0:shutdown:&#x2F;sbin:&#x2F;sbin&#x2F;shutdown
+halt:x:7:0:halt:&#x2F;sbin:&#x2F;sbin&#x2F;halt
+mail:x:8:12:mail:&#x2F;var&#x2F;spool&#x2F;mail:&#x2F;sbin&#x2F;nologin
+operator:x:11:0:operator:&#x2F;root:&#x2F;sbin&#x2F;nologin
+games:x:12:100:games:&#x2F;usr&#x2F;games:&#x2F;sbin&#x2F;nologin
+ftp:x:14:50:FTP User:&#x2F;var&#x2F;ftp:&#x2F;sbin&#x2F;nologin
+nobody:x:99:99:Nobody:&#x2F;:&#x2F;sbin&#x2F;nologin
+systemd-network:x:192:192:systemd Network Management:&#x2F;:&#x2F;sbin&#x2F;nologin
+dbus:x:81:81:System message bus:&#x2F;:&#x2F;sbin&#x2F;nologin
+polkitd:x:999:998:User for polkitd:&#x2F;:&#x2F;sbin&#x2F;nologin
+sshd:x:74:74:Privilege-separated SSH:&#x2F;var&#x2F;empty&#x2F;sshd:&#x2F;sbin&#x2F;nologin
+postfix:x:89:89::&#x2F;var&#x2F;spool&#x2F;postfix:&#x2F;sbin&#x2F;nologin
+chrony:x:998:996::&#x2F;var&#x2F;lib&#x2F;chrony:&#x2F;sbin&#x2F;nologin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>从上面的例子我们可以看到，/etc/passwd中一行记录对应着一个用户，每行记录又被冒号(:)分隔为7个字段，其格式和具体含义如下：</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <ul>
-<li><strong>version</strong>       查看版本信息 , 配置</li>
-<li><strong>w</strong>      保存</li>
-<li><strong>q</strong>       退出</li>
-<li><strong>wq</strong>    保存并退出</li>
+<li>“用户名”是代表用户账号的字符串。</li>
 </ul>
-<h3 id="vi-vim键盘图"><a href="#vi-vim键盘图" class="headerlink" title="vi/vim键盘图"></a>vi/vim键盘图</h3><p><img src="static%5Cimgs%5Cvim%5Cvi-vim-cheat-sheet-sch.gif" class="lazyload" data-srcset="static%5Cimgs%5Cvim%5Cvi-vim-cheat-sheet-sch.gif" srcset="data:image/png;base64,666" alt="img"></p>
-<h2 id="vim配置"><a href="#vim配置" class="headerlink" title="vim配置"></a>vim配置</h2><p>vim配置文件  ~/.vimrc</p>
-<p>注释格式为 :  “ 注释内容</p>
-<h3 id="vimrc可用参数"><a href="#vimrc可用参数" class="headerlink" title="vimrc可用参数:"></a>vimrc可用参数:</h3><h4 id="显示相关"><a href="#显示相关" class="headerlink" title="显示相关"></a>显示相关</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&quot;set shortmess&#x3D;atI   &quot; 启动的时候不显示那个援助乌干达儿童的提示  
-&quot;winpos 5 5          &quot; 设定窗口位置  
-&quot;set lines&#x3D;40 columns&#x3D;155    &quot; 设定窗口大小  
-&quot;set nu              &quot; 显示行号  
-set go&#x3D;             &quot; 不要图形按钮  
-&quot;color asmanian2     &quot; 设置背景主题  
-set guifont&#x3D;Courier_New:h10:cANSI   &quot; 设置字体  
-&quot;syntax on           &quot; 语法高亮  
-autocmd InsertLeave * se nocul  &quot; 用浅色高亮当前行  
-autocmd InsertEnter * se cul    &quot; 用浅色高亮当前行
-&quot;set ruler           &quot; 显示标尺  
-set showcmd         &quot; 输入的命令显示出来，看的清楚些  
-&quot;set cmdheight&#x3D;1     &quot; 命令行（在状态行下）的高度，设置为1  
-&quot;set whichwrap+&#x3D;&lt;,&gt;,h,l   &quot; 允许backspace和光标键跨越行边界(不建议)  
-&quot;set scrolloff&#x3D;3     &quot; 光标移动到buffer的顶部和底部时保持3行距离  
-set novisualbell    &quot; 不要闪烁(不明白)  
-
-set statusline&#x3D;%F%m%r%h%w\ [FORMAT&#x3D;%&#123;&amp;ff&#125;]\ [TYPE&#x3D;%Y]\ [POS&#x3D;%l,%v][%p%%]\ %&#123;strftime(\&quot;%d&#x2F;%m&#x2F;%y\ -\ %H:%M\&quot;)&#125;   &quot;状态行显示的内容
-
-set laststatus&#x3D;1    &quot; 启动显示状态行(1),总是显示状态行(2)  
-set foldenable      &quot; 允许折叠  
-set foldmethod&#x3D;manual   &quot; 手动折叠  
-&quot;set background&#x3D;dark &quot;背景使用黑色 
-set nocompatible  &quot;去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限  
-&quot; 显示中文帮助
-if version &gt;&#x3D; 603
-set helplang&#x3D;cn
-set encoding&#x3D;utf-8
-endif
-&quot; 设置配色方案
-&quot;colorscheme murphy
-&quot;字体 
-&quot;if (has(&quot;gui_running&quot;)) 
-&quot;   set guifont&#x3D;Bitstream\ Vera\ Sans\ Mono\ 10 
-&quot;endif 
-
-set fencs&#x3D;utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
-set termencoding&#x3D;utf-8
-set encoding&#x3D;utf-8
-set fileencodings&#x3D;ucs-bom,utf-8,cp936
-set fileencoding&#x3D;utf-8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="新文件标题"><a href="#新文件标题" class="headerlink" title="新文件标题"></a>新文件标题</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&quot;新建.c,.h,.sh,.java文件，自动插入文件头 
-autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec &quot;:call SetTitle()&quot; 
-
-&quot;&quot;定义函数SetTitle，自动插入文件头 
-func SetTitle() 
-
-&quot;如果文件类型为.sh文件 
-if &amp;filetype &#x3D;&#x3D; &#39;sh&#39; 
-call setline(1,&quot;\#########################################################################&quot;) 
-call append(line(&quot;.&quot;), &quot;\# File Name: &quot;.expand(&quot;%&quot;)) 
-call append(line(&quot;.&quot;)+1, &quot;\# Author: ma6174&quot;) 
-call append(line(&quot;.&quot;)+2, &quot;\# mail: ma6174@163.com&quot;) 
-call append(line(&quot;.&quot;)+3, &quot;\# Created Time: &quot;.strftime(&quot;%c&quot;)) 
-call append(line(&quot;.&quot;)+4, &quot;\#########################################################################&quot;) 
-call append(line(&quot;.&quot;)+5, &quot;\#!&#x2F;bin&#x2F;bash&quot;) 
-call append(line(&quot;.&quot;)+6, &quot;&quot;) 
-else 
-call setline(1, &quot;&#x2F;*************************************************************************&quot;) 
-call append(line(&quot;.&quot;), &quot;    &gt; File Name: &quot;.expand(&quot;%&quot;)) 
-call append(line(&quot;.&quot;)+1, &quot;    &gt; Author: ma6174&quot;) 
-call append(line(&quot;.&quot;)+2, &quot;    &gt; Mail: ma6174@163.com &quot;) 
-call append(line(&quot;.&quot;)+3, &quot;    &gt; Created Time: &quot;.strftime(&quot;%c&quot;)) 
-call append(line(&quot;.&quot;)+4, &quot; ***********************************************************************&#x2F;&quot;) 
-call append(line(&quot;.&quot;)+5, &quot;&quot;)
-endif
-
-if &amp;filetype &#x3D;&#x3D; &#39;cpp&#39;
-call append(line(&quot;.&quot;)+6, &quot;#include&lt;iostream&gt;&quot;)
-call append(line(&quot;.&quot;)+7, &quot;using namespace std;&quot;)
-call append(line(&quot;.&quot;)+8, &quot;&quot;)
-endif
-
-if &amp;filetype &#x3D;&#x3D; &#39;c&#39;
-call append(line(&quot;.&quot;)+6, &quot;#include&lt;stdio.h&gt;&quot;)
-call append(line(&quot;.&quot;)+7, &quot;&quot;)
-endif
-
-&quot;新建文件后，自动定位到文件末尾
-autocmd BufNewFile * normal G
-endfunc <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="键盘命令"><a href="#键盘命令" class="headerlink" title="键盘命令"></a>键盘命令</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">nmap &lt;leader&gt;w :w!&lt;cr&gt;
-nmap &lt;leader&gt;f :find&lt;cr&gt;
-
-&quot; 映射全选+复制 ctrl+a
-map &lt;C-A&gt; ggVGY
-
-map! &lt;C-A&gt; &lt;Esc&gt;ggVGY
-
-map &lt;F12&gt; gg&#x3D;G
-
-&quot; 选中状态下 Ctrl+c 复制
-
-vmap &lt;C-c&gt; &quot;+y
-
-&quot; 去空行  
-
-nnoremap &lt;F2&gt; :g&#x2F;^\s*$&#x2F;d&lt;CR&gt; 
-
-&quot; 比较文件  
-
-nnoremap &lt;C-F2&gt; :vert diffsplit 
-
-&quot; 新建标签  
-
-map &lt;M-F2&gt; :tabnew&lt;CR&gt;  
-
-&quot;列出当前目录文件  
-
-map &lt;F3&gt; :tabnew .&lt;CR&gt;  
-
-&quot;打开树状文件目录  
-
-map &lt;C-F3&gt; \be  
-
-&quot;C，C++ 按F5编译运行
-
-map &lt;F5&gt; :call CompileRunGcc()&lt;CR&gt;
-
-func! CompileRunGcc()
-exec &quot;w&quot;
-if &amp;filetype &#x3D;&#x3D; &#39;c&#39;
-exec &quot;!g++ % -o %&lt;&quot;
-exec &quot;! .&#x2F;%&lt;&quot;
-elseif &amp;filetype &#x3D;&#x3D; &#39;cpp&#39;
-exec &quot;!g++ % -o %&lt;&quot;
-exec &quot;! .&#x2F;%&lt;&quot;
-elseif &amp;filetype &#x3D;&#x3D; &#39;java&#39; 
-exec &quot;!javac %&quot; 
-exec &quot;!java %&lt;&quot;
-elseif &amp;filetype &#x3D;&#x3D; &#39;sh&#39;
-:!.&#x2F;%
-endif
-endfunc
-&quot;C,C++的调试
-map &lt;F8&gt; :call Rungdb()&lt;CR&gt;
-func! Rungdb()
-exec &quot;w&quot;
-exec &quot;!g++ % -g -o %&lt;&quot;
-exec &quot;!gdb .&#x2F;%&lt;&quot;
-endfunc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="实用设置"><a href="#实用设置" class="headerlink" title="实用设置"></a>实用设置</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&quot; 设置当文件被改动时自动载入
-set autoread
-&quot; quickfix模式
-autocmd FileType c,cpp map &lt;buffer&gt; &lt;leader&gt;&lt;space&gt; :w&lt;cr&gt;:make&lt;cr&gt;
-&quot;代码补全 
-set completeopt&#x3D;preview,menu 
-&quot;允许插件  
-filetype plugin on
-&quot;共享剪贴板  
-set clipboard+&#x3D;unnamed 
-&quot;从不备份  
-set nobackup
-&quot;make 运行
-:set makeprg&#x3D;g++\ -Wall\ \ %
-&quot;自动保存
-set autowrite
-set ruler                   &quot; 打开状态栏标尺
-set cursorline              &quot; 突出显示当前行
-set magic                   &quot; 设置魔术
-set guioptions-&#x3D;T           &quot; 隐藏工具栏
-set guioptions-&#x3D;m           &quot; 隐藏菜单栏
-&quot;set statusline&#x3D;\ %&lt;%F[%1*%M%*%n%R%H]%&#x3D;\ %y\ %0(%&#123;&amp;fileformat&#125;\ %&#123;&amp;encoding&#125;\ %c:%l&#x2F;%L%)\
-
-&quot; 设置在状态行显示的信息
-
-set foldcolumn&#x3D;0
-
-set foldmethod&#x3D;indent 
-
-set foldlevel&#x3D;3 
-
-set foldenable              &quot; 开始折叠
-
-&quot; 不要使用vi的键盘模式，而是vim自己的
-
-set nocompatible
-
-&quot; 语法高亮
-
-set syntax&#x3D;on
-
-&quot; 去掉输入错误的提示声音
-
-set noeb
-
-&quot; 在处理未保存或只读文件的时候，弹出确认
-
-set confirm
-
-&quot; 自动缩进
-
-set autoindent
-
-set cindent
-
-&quot; Tab键的宽度
-
-set tabstop&#x3D;4
-
-&quot; 统一缩进为4
-
-set softtabstop&#x3D;4
-
-set shiftwidth&#x3D;4
-
-&quot; 不要用空格代替制表符
-
-set noexpandtab
-
-&quot; 在行和段开始处使用制表符
-
-set smarttab
-
-&quot; 显示行号
-
-set number
-
-&quot; 历史记录数
-
-set history&#x3D;1000
-
-&quot;禁止生成临时文件
-
-set nobackup
-
-set noswapfile
-
-&quot;搜索忽略大小写
-
-set ignorecase
-
-&quot;搜索逐字符高亮
-
-set hlsearch
-
-set incsearch
-
-&quot;行内替换
-
-set gdefault
-
-&quot;编码设置
-
-set enc&#x3D;utf-8
-
-set fencs&#x3D;utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
-
-&quot;语言设置
-
-set langmenu&#x3D;zh_CN.UTF-8
-
-set helplang&#x3D;cn
-
-&quot; 我的状态行显示的内容（包括文件类型和解码）
-
-&quot;set statusline&#x3D;%F%m%r%h%w\ [FORMAT&#x3D;%&#123;&amp;ff&#125;]\ [TYPE&#x3D;%Y]\ [POS&#x3D;%l,%v][%p%%]\ %&#123;strftime(\&quot;%d&#x2F;%m&#x2F;%y\ -\ %H:%M\&quot;)&#125;
-
-&quot;set statusline&#x3D;[%F]%y%r%m%*%&#x3D;[Line:%l&#x2F;%L,Column:%c][%p%%]
-
-&quot; 总是显示状态行
-
-set laststatus&#x3D;2
-
-&quot; 命令行（在状态行下）的高度，默认为1，这里是2
-
-set cmdheight&#x3D;2
-
-&quot; 侦测文件类型
-
-filetype on
-
-&quot; 载入文件类型插件
-
-filetype plugin on
-
-&quot; 为特定文件类型载入相关缩进文件
-
-filetype indent on
-
-&quot; 保存全局变量
-
-set viminfo+&#x3D;!
-
-&quot; 带有如下符号的单词不要被换行分割
-
-set iskeyword+&#x3D;_,$,@,%,#,-
-
-&quot; 字符间插入的像素行数目
-
-set linespace&#x3D;0
-
-&quot; 增强模式中的命令行自动完成操作
-
-set wildmenu
-
-&quot; 使回格键（backspace）正常处理indent, eol, start等
-
-set backspace&#x3D;2
-
-&quot; 允许backspace和光标键跨越行边界
-
-set whichwrap+&#x3D;&lt;,&gt;,h,l
-
-&quot; 可以在buffer的任何地方使用鼠标（类似office中在工作区双击鼠标定位）
-
-set mouse&#x3D;a
-
-set selection&#x3D;exclusive
-
-set selectmode&#x3D;mouse,key
-
-&quot; 通过使用: commands命令，告诉我们文件的哪一行被改变过
-
-set report&#x3D;0
-
-&quot; 在被分割的窗口间显示空白，便于阅读
-set fillchars&#x3D;vert:\ ,stl:\ ,stlnc:\
-&quot; 高亮显示匹配的括号
-set showmatch
-&quot; 匹配括号高亮的时间（单位是十分之一秒）
-set matchtime&#x3D;1
-&quot; 光标移动到buffer的顶部和底部时保持3行距离
-set scrolloff&#x3D;3
-&quot; 为C程序提供自动缩进
-set smartindent
-&quot; 高亮显示普通txt文件（需要txt.vim脚本）
-au BufRead,BufNewFile *  setfiletype txt
-&quot;自动补全
-:inoremap ( ()&lt;ESC&gt;i
-:inoremap ) &lt;c-r&gt;&#x3D;ClosePair(&#39;)&#39;)&lt;CR&gt;
-:inoremap &#123; &#123;&lt;CR&gt;&#125;&lt;ESC&gt;O
-:inoremap &#125; &lt;c-r&gt;&#x3D;ClosePair(&#39;&#125;&#39;)&lt;CR&gt;
-:inoremap [ []&lt;ESC&gt;i
-:inoremap ] &lt;c-r&gt;&#x3D;ClosePair(&#39;]&#39;)&lt;CR&gt;
-:inoremap &quot; &quot;&quot;&lt;ESC&gt;i
-:inoremap &#39; &#39;&#39;&lt;ESC&gt;i
-function! ClosePair(char)
-if getline(&#39;.&#39;)[col(&#39;.&#39;) - 1] &#x3D;&#x3D; a:char
-return &quot;\&lt;Right&gt;&quot;
-else
-return a:char
-endif
-endfunction
-filetype plugin indent on 
-&quot;打开文件类型检测, 加了这句才可以用智能补全
-set completeopt&#x3D;longest,menu<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="CTags的设定"><a href="#CTags的设定" class="headerlink" title="CTags的设定"></a>CTags的设定</h4><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">let Tlist_Sort_Type &#x3D; &quot;name&quot;    &quot; 按照名称排序  
-let Tlist_Use_Right_Window &#x3D; 1  &quot; 在右侧显示窗口  
-let Tlist_Compart_Format &#x3D; 1    &quot; 压缩方式  
-let Tlist_Exist_OnlyWindow &#x3D; 1  &quot; 如果只有一个buffer，kill窗口也kill掉buffer  
-let Tlist_File_Fold_Auto_Close &#x3D; 0  &quot; 不要关闭其他文件的tags  
-let Tlist_Enable_Fold_Column &#x3D; 0    &quot; 不要显示折叠树  
-autocmd FileType java set tags+&#x3D;D:\tools\java\tags  
-&quot;autocmd FileType h,cpp,cc,c set tags+&#x3D;D:\tools\cpp\tags  
-&quot;let Tlist_Show_One_File&#x3D;1            &quot;不同时显示多个文件的tag，只显示当前文件的
-&quot;设置tags  
-set tags&#x3D;tags  
-&quot;set autochdir 
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-&quot;其他东东
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
-&quot;默认打开Taglist 
-let Tlist_Auto_Open&#x3D;1 
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; 
-&quot; Tag list (ctags) 
-&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; 
-let Tlist_Ctags_Cmd &#x3D; &#39;&#x2F;usr&#x2F;bin&#x2F;ctags&#39; 
-let Tlist_Show_One_File &#x3D; 1 &quot;不同时显示多个文件的tag，只显示当前文件的 
-let Tlist_Exit_OnlyWindow &#x3D; 1 &quot;如果taglist窗口是最后一个窗口，则退出vim 
-let Tlist_Use_Right_Window &#x3D; 1 &quot;在右侧窗口中显示taglist窗口
-&quot; minibufexpl插件的一般设置
-let g:miniBufExplMapWindowNavVim &#x3D; 1
-let g:miniBufExplMapWindowNavArrows &#x3D; 1
-let g:miniBufExplMapCTabSwitchBufs &#x3D; 1
-let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-
-
+<p>通常长度不超过8个字符，并且由大小写字母和/或数字组成。登录名中不能有冒号(:)，因为冒号在这里是分隔符。</p>
+<p>为了兼容起见，登录名中最好不要包含点字符(.)，并且不使用连字符(-)和加号(+)打头。</p>
+<ul>
+<li>“口令”一些系统中，存放着加密后的用户口令字。</li>
+</ul>
+<p>虽然这个字段存放的只是用户口令的加密串，不是明文，但是由于/etc/passwd文件对所有用户都可读，所以这仍是一个安全隐患。因此，现在许多Linux 系统（如SVR4）都使用了shadow技术，把真正的加密后的用户口令字存放到/etc/shadow文件中，而在/etc/passwd文件的口令字段中只存放一个特殊的字符，例如“x”或者“*”。</p>
+<ul>
+<li>“用户标识号”是一个整数，系统内部用它来标识用户。</li>
+</ul>
+<p>一般情况下它与用户名是一一对应的。如果几个用户名对应的用户标识号是一样的，系统内部将把它们视为同一个用户，但是它们可以有不同的口令、不同的主目录以及不同的登录Shell等。</p>
+<p>通常用户标识号的取值范围是0～65 535。0是超级用户root的标识号，1～99由系统保留，作为管理账号，普通用户的标识号从100开始。在Linux系统中，这个界限是500。</p>
+<ul>
+<li>“组标识号”字段记录的是用户所属的用户组。</li>
+</ul>
+<p>它对应着/etc/group文件中的一条记录。</p>
+<p>5)“注释性描述”字段记录着用户的一些个人情况。</p>
+<p>例如用户的真实姓名、电话、地址等，这个字段并没有什么实际的用途。在不同的Linux 系统中，这个字段的格式并没有统一。在许多Linux系统中，这个字段存放的是一段任意的注释性描述文字，用作finger命令的输出。</p>
+<p>6)“主目录”，也就是用户的起始工作目录。</p>
+<p>它是用户在登录到系统之后所处的目录。在大多数系统中，各用户的主目录都被组织在同一个特定的目录下，而用户主目录的名称就是该用户的登录名。各用户对自己的主目录有读、写、执行（搜索）权限，其他用户对此目录的访问权限则根据具体情况设置。</p>
+<p>7)用户登录后，要启动一个进程，负责将用户的操作传给内核，这个进程是用户登录到系统后运行的命令解释器或某个特定的程序，即Shell。</p>
+<p>Shell是用户与Linux系统之间的接口。Linux的Shell有许多种，每种都有不同的特点。常用的有sh(Bourne Shell), csh(C Shell), ksh(Korn Shell), tcsh(TENEX/TOPS-20 type C Shell), bash(Bourne Again Shell)等。</p>
+<p>系统管理员可以根据系统情况和用户习惯为用户指定某个Shell。如果不指定Shell，那么系统使用sh为默认的登录Shell，即这个字段的值为/bin/sh。</p>
+<p>用户的登录Shell也可以指定为某个特定的程序（此程序不是一个命令解释器）。</p>
+<p>利用这一特点，我们可以限制用户只能运行指定的应用程序，在该应用程序运行结束后，用户就自动退出了系统。有些Linux 系统要求只有那些在系统中登记了的程序才能出现在这个字段中。</p>
+<p>8)系统中有一类用户称为伪用户（pseudo users）。</p>
+<p>这些用户在/etc/passwd文件中也占有一条记录，但是不能登录，因为它们的登录Shell为空。它们的存在主要是方便系统管理，满足相应的系统进程对文件属主的要求。</p>
+<p>常见的伪用户如下所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">伪 用 户 含 义
+bin 拥有可执行的用户命令文件
+sys 拥有系统文件
+adm 拥有帐户文件
+uucp UUCP使用
+lp lp或lpd子系统使用
+nobody NFS使用<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>/etc/shadow</p>
+</blockquote>
+<p><strong>1、除了上面列出的伪用户外，还有许多标准的伪用户，例如：audit, cron, mail, usenet等，它们也都各自为相关的进程和文件所需要。</strong></p>
+<p>由于/etc/passwd文件是所有用户都可读的，如果用户的密码太简单或规律比较明显的话，一台普通的计算机就能够很容易地将它破解，因此对安全性要求较高的Linux系统都把加密后的口令字分离出来，单独存放在一个文件中，这个文件是/etc/shadow文件。有超级用户才拥有该文件读权限，这就保证了用户密码的安全性。</p>
+<p><strong>2、/etc/shadow中的记录行与/etc/passwd中的一一对应，它由pwconv命令根据/etc/passwd中的数据自动产生</strong></p>
+<p>它的文件格式与/etc/passwd类似，由若干个字段组成，字段之间用”:”隔开。这些字段是：</p>
+<pre class="line-numbers language-none"><code class="language-none">登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标志<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol>
+<li>“登录名”是与/etc/passwd文件中的登录名相一致的用户账号</li>
+<li>“口令”字段存放的是加密后的用户口令字，长度为13个字符。如果为空，则对应用户没有口令，登录时不需要口令；如果含有不属于集合 { ./0-9A-Za-z }中的字符，则对应的用户不能登录。</li>
+<li>“最后一次修改时间”表示的是从某个时刻起，到用户最后一次修改口令时的天数。时间起点对不同的系统可能不一样。例如在SCO Linux 中，这个时间起点是1970年1月1日。</li>
+<li>“最小时间间隔”指的是两次修改口令之间所需的最小天数。</li>
+<li>“最大时间间隔”指的是口令保持有效的最大天数。</li>
+<li>“警告时间”字段表示的是从系统开始警告用户到用户密码正式失效之间的天数。</li>
+<li>“不活动时间”表示的是用户没有登录活动但账号仍能保持有效的最大天数。</li>
+<li>“失效时间”字段给出的是一个绝对的天数，如果使用了这个字段，那么就给出相应账号的生存期。期满后，该账号就不再是一个合法的账号，也就不能再用来登录了。</li>
+</ol>
+<blockquote>
+<p>/etc/group</p>
+</blockquote>
+<p>用户组的所有信息都存放在/etc/group文件中。</p>
+<p>将用户分组是Linux 系统中对用户进行管理及控制访问权限的一种手段。</p>
+<p>每个用户都属于某个用户组；一个组中可以有多个用户，一个用户也可以属于不同的组。</p>
+<p>当一个用户同时是多个组中的成员时，在/etc/passwd文件中记录的是用户所属的主组，也就是登录时所属的默认组，而其他组称为附加组。</p>
+<p>用户要访问属于附加组的文件时，必须首先使用newgrp命令使自己成为所要访问的组中的成员。</p>
+<p>用户组的所有信息都存放在/etc/group文件中。此文件的格式也类似于/etc/passwd文件，由冒号(:)隔开若干个字段，这些字段有：</p>
+<pre class="line-numbers language-none"><code class="language-none">组名:口令:组标识号:组内用户列表<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol>
+<li><p>“组名”是用户组的名称，由字母或数字构成。与/etc/passwd中的登录名一样，组名不应重复。</p>
+</li>
+<li><p>“口令”字段存放的是用户组加密后的口令字。一般Linux 系统的用户组都没有口令，即这个字段一般为空，或者是*。</p>
+</li>
+<li><p>“组标识号”与用户标识号类似，也是一个整数，被系统内部用来标识组。</p>
+</li>
+<li><p>“组内用户列表”是属于这个组的所有用户的列表/b]，不同用户之间用逗号(,)分隔。这个用户组可能是用户的主组，也可能是附加组</p>
+</li>
+</ol>
 
   
   
@@ -896,7 +592,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
               
             
               
-                <p>本文永久链接是：<a href=https://sun-j-y.github.io/2020/12/02/Linux/Vim/Vim/>https://sun-j-y.github.io/2020/12/02/Linux/Vim/Vim/</a></p>
+                <p>本文永久链接是：<a href=https://sun-j-y.github.io/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20passwd%E5%92%8Cgroup%E6%96%87%E4%BB%B6/>https://sun-j-y.github.io/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20passwd%E5%92%8Cgroup%E6%96%87%E4%BB%B6/</a></p>
               
             
           </blockquote>
@@ -913,10 +609,10 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-03T20:24:03+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-05T15:50:03+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月3日</p>
+    <p>更新于：2020年12月5日</p>
   </a>
 </div>
 
@@ -925,7 +621,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Vim/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Vim</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux基础</p></a></div>
 
 
         
@@ -938,7 +634,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sun-j-y.github.io/2020/12/02/Linux/Vim/Vim/&title=Vim - Sun's Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://sun-j-y.github.io/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20passwd%E5%92%8Cgroup%E6%96%87%E4%BB%B6/&title=Linux入门 Passwd和group文件 - Sun's Blog&summary="
           
           >
           
@@ -950,7 +646,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sun-j-y.github.io/2020/12/02/Linux/Vim/Vim/&title=Vim - Sun's Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://sun-j-y.github.io/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20passwd%E5%92%8Cgroup%E6%96%87%E4%BB%B6/&title=Linux入门 Passwd和group文件 - Sun's Blog&summary="
           
           >
           
@@ -962,7 +658,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sun-j-y.github.io/2020/12/02/Linux/Vim/Vim/&title=Vim - Sun's Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://sun-j-y.github.io/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20passwd%E5%92%8Cgroup%E6%96%87%E4%BB%B6/&title=Linux入门 Passwd和group文件 - Sun's Blog&summary="
           
           >
           
@@ -992,20 +688,19 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E7%A1%AC%E9%93%BE%E6%8E%A5/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux软连接和硬链接</p>
-          <p class='content'>Linux 链接分两种，一种被称为硬链接（Hard Link），另一种被称为符号链接（Symbolic Link）。
-情况下，ln 命令产生硬链接。
-硬连接硬连接指通过索引节点来进行连接。在 L...</p>
+        <a class='prev' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux常用工具的安装</p>
+          <p class='content'>jdk安装（rpm安装）1、rpm下载地址http://www.oracle.com/technetwork/java/javase/downloads/index.html
+2、如果有安装op...</p>
         </a>
       
       
-        <a class='next' href='/2020/11/23/Hexo%E5%8D%9A%E5%AE%A2/Hexo+Github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A22%20%E6%9B%B4%E6%94%B9%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/'>
-          <p class='title'>Hexo+Github搭建个人博客2 更改博客主题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>前言
-本文所有内容来自于这里， 略有修改
-
-上篇博客讲述了实现把博客推到Github Page，接下来这篇博客就来讲一下更改和优化主题。我使用的是volantis 主题（ Volantis是xa...</p>
+        <a class='next' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/'>
+          <p class='title'>Linux入门 系统管理<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>主机相关hostname 主机名称# hostname查看主机名称
+[root@VM-8-16-centos ~]# hostname
+VM-8-16-centos
+# hostname修改主机...</p>
         </a>
       
     </div>
@@ -1122,7 +817,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim%E5%BF%AB%E6%8D%B7%E9%94%AE-%E5%91%BD%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">vim快捷键(命令)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">命令模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F-%E8%BE%93%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">插入模式(输入模式)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%95%E7%BA%BF%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">底线命令模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vi-vim%E9%94%AE%E7%9B%98%E5%9B%BE"><span class="toc-number">1.4.</span> <span class="toc-text">vi&#x2F;vim键盘图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">vim配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vimrc%E5%8F%AF%E7%94%A8%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.</span> <span class="toc-text">vimrc可用参数:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E7%9B%B8%E5%85%B3"><span class="toc-number">2.1.1.</span> <span class="toc-text">显示相关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E6%96%87%E4%BB%B6%E6%A0%87%E9%A2%98"><span class="toc-number">2.1.2.</span> <span class="toc-text">新文件标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%94%AE%E7%9B%98%E5%91%BD%E4%BB%A4"><span class="toc-number">2.1.3.</span> <span class="toc-text">键盘命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E8%AE%BE%E7%BD%AE"><span class="toc-number">2.1.4.</span> <span class="toc-text">实用设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CTags%E7%9A%84%E8%AE%BE%E5%AE%9A"><span class="toc-number">2.1.5.</span> <span class="toc-text">CTags的设定</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#etc-passwd"><span class="toc-number">2.</span> <span class="toc-text">&#x2F;etc&#x2F;passwd</span></a></li></ol>
     </div>
   </section>
 
@@ -1147,7 +842,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>20 篇</div>
+          <div>21 篇</div>
         </div>
       
 
@@ -1169,7 +864,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>32.2k 字</div>
+          <div>34.6k 字</div>
         </div>
       
 
@@ -1195,7 +890,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Dec 05 2020 15:23:57 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Sat Dec 05 2020 15:58:39 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-05 日</div>
           
         </div>
@@ -1270,7 +965,7 @@ let g:miniBufExplModSelTarget &#x3D; 1<span aria-hidden="true" class="line-numbe
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="Vim";
+  pdata.postTitle="Linux入门 Passwd和group文件";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
