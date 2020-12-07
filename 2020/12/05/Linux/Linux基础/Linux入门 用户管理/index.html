@@ -21,7 +21,7 @@
   
   <title>Linux入门 用户管理 - Sun&#39;s Blog</title>
   
-    <meta name="keywords" content="Linux,Linux基础,用户管理">
+    <meta name="keywords" content="Linux,用户管理,Linux入门">
   
 
   
@@ -467,7 +467,10 @@
 
 
   
-  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
+  <blockquote>
+<p>扩展：<a href="https://sun-j-y.github.io/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20passwd%E5%92%8Cgroup%E6%96%87%E4%BB%B6/">用户管理相关文件</a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
 <p>用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。</p>
 <p>每个用户账号都拥有一个唯一的用户名和各自的口令（密码）。</p>
 <p>用户在登录时键入正确的用户名和口令后，就能够进入系统和自己的主目录。</p>
@@ -480,7 +483,7 @@
 <h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><p><strong>用户的增加、删除和修改实际上就是对/etc/passwd文件的更新。</strong></p>
 <h3 id="用户账号的管理"><a href="#用户账号的管理" class="headerlink" title="用户账号的管理"></a>用户账号的管理</h3><p>用户账号的管理工作主要涉及到用户账号的添加、修改和删除。</p>
 <p>添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。</p>
-<h3 id="添加账号-useradd"><a href="#添加账号-useradd" class="headerlink" title="添加账号 useradd"></a>添加账号 useradd</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">useradd 选项 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="添加账号-useradd"><a href="#添加账号-useradd" class="headerlink" title="添加账号 useradd"></a>添加账号 useradd</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">useradd</span> 选项 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>参数说明：</p>
 <ul>
@@ -502,39 +505,39 @@
 </li>
 </ul>
 <p>测试：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 创建一个用户kuangshen，其中-m选项用来为用户kuangshen创建一个主目录 &#x2F;home&#x2F;kuangshen
-[root@bogon ~]# useradd -m kuangshen
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 创建一个用户kuangshen，其中-m选项用来为用户kuangshen创建一个主目录 /home/kuangshen</span>
+<span class="token punctuation">[</span>root@bogon ~<span class="token punctuation">]</span><span class="token comment"># useradd -m kuangshen</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>增加用户账号就是在/etc/passwd文件中为新用户增加一条记录，同时更新其他系统文件如/etc/shadow, /etc/group等。</p>
 <h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><p>如果一个用户的账号不再使用，可以从系统中删除。</p>
 <p>删除用户账号就是要将/etc/passwd等系统文件中的该用户记录删除，必要时还删除用户的主目录。</p>
 <p>删除一个已有的用户账号使用userdel命令，其格式如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">userdel 选项 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">userdel</span> 选项 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项：</p>
 <ul>
 <li>-r：删除用户主目录</li>
 </ul>
 <p>常用的选项是 <strong>-r</strong>，它的作用是把用户的主目录一起删除。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 删除刚才创建的用户kuangshen
-[root@bogon home]# userdel -r kuangshen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 删除刚才创建的用户kuangshen</span>
+<span class="token punctuation">[</span>root@bogon home<span class="token punctuation">]</span><span class="token comment"># userdel -r kuangshen</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>此命令删除用户kuangshen在系统文件中（主要是/etc/passwd, /etc/shadow, /etc/group等）的记录，同时删除用户的主目录。</p>
 <h3 id="修改帐号"><a href="#修改帐号" class="headerlink" title="修改帐号"></a>修改帐号</h3><p>修改用户账号就是根据实际情况更改用户的有关属性，如用户号、主目录、用户组、登录Shell等。</p>
 <p>修改已有用户的信息使用usermod命令，其格式如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">usermod 选项 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">usermod</span> 选项 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
 <p>常用的选项包括-c, -d, -m, -g, -G, -s, -u以及-o等，这些选项的意义与useradd命令中的选项一样，可以为用户指定新的资源值。</p>
 <p>例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">usermod -s &#x2F;bin&#x2F;ksh -d &#x2F;home&#x2F;z –g developer kuang<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">usermod</span> -s /bin/ksh -d /home/z –g developer kuang<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>此命令将用户kuang的登录Shell修改为ksh，主目录改为/home/z，用户组改为developer。</p>
 <h3 id="Linux下如何切换用户"><a href="#Linux下如何切换用户" class="headerlink" title="Linux下如何切换用户"></a>Linux下如何切换用户</h3><p>命令</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 切换到指定用户, 用户名为空则默认切换root用户
-su 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 切换到指定用户, 用户名为空则默认切换root用户</span>
+<span class="token function">su</span> 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>从普通用户切换到root用户，还可以使用命令：sudo su</p>
 <p>3.在终端输入exit或logout或使用快捷方式ctrl+d，可以退回到原来用户，其实ctrl+d也是执行的exit命令</p>
@@ -545,7 +548,7 @@ su 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <p>指定和修改用户口令的Shell命令是passwd。</p>
 <p>超级用户可以为自己和其他用户指定口令，普通用户只能用它修改自己的口令。</p>
 <p>命令的格式为：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd 选项 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">passwd</span> 选项 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>可使用的选项：</p>
 <ul>
@@ -556,28 +559,28 @@ su 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 </ul>
 <p>如果默认用户名，则修改当前用户的口令。<br>需要注意的是在Linux终端输入密码是默认不显示的</p>
 <p>例如，假设当前用户是kuang，则下面的命令修改该用户自己的口令：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd 
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">passwd</span> 
 Old password:******
 New password:*******
 Re-enter new password:*******<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>如果是超级用户，可以用下列形式指定任何用户的口令：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd kuang
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">passwd</span> kuang
 New password:*******
 Re-enter new password:*******<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>普通用户修改自己的口令时，passwd命令会先询问原口令，验证后再要求用户输入两遍新口令，如果两次输入的口令一致，则将这个口令指定给用户；而超级用户为用户指定口令时，就不需要知道原口令。</p>
 <p>为了系统安全起见，用户应该选择比较复杂的口令，例如最好使用8位长的口令，口令中包含有大写、小写字母和数字，并且应该与姓名、生日等不相同。</p>
 <h4 id="锁定账户"><a href="#锁定账户" class="headerlink" title="锁定账户"></a>锁定账户</h4><p>为用户指定空口令时，即删除用户密码：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd -d 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">passwd</span> -d 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>使用<code>passwd -l</code>锁定用户：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">passwd -l 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">passwd</span> -l 用户名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>以上两种方式都会造成该用户无法登录系统</p>
 <h2 id="用户组管理"><a href="#用户组管理" class="headerlink" title="用户组管理"></a>用户组管理</h2><p>每个用户都有一个用户组，系统可以对一个用户组中的所有用户进行集中管理。不同Linux 系统对用户组的规定有所不同，如Linux下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建。</p>
 <p>用户组的管理涉及用户组的添加、删除和修改。<strong>组的增加、删除和修改实际上就是对/etc/group文件的更新。</strong></p>
-<h3 id="增加一个新的用户组-groupadd"><a href="#增加一个新的用户组-groupadd" class="headerlink" title="增加一个新的用户组 groupadd"></a>增加一个新的用户组 groupadd</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupadd 选项 用户组<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="增加一个新的用户组-groupadd"><a href="#增加一个新的用户组-groupadd" class="headerlink" title="增加一个新的用户组 groupadd"></a>增加一个新的用户组 groupadd</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">groupadd</span> 选项 用户组<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>可以使用的选项有：</p>
 <ul>
@@ -585,20 +588,20 @@ Re-enter new password:*******<span aria-hidden="true" class="line-numbers-rows">
 <li>-o：一般与-g选项同时使用，表示新用户组的GID可以与系统已有用户组的GID相同。</li>
 </ul>
 <p>例1：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupadd testgroup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">groupadd</span> testgroup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>此命令向系统中增加了一个新组tsetgroup，新组的组标识号是在当前已有的最大组标识号的基础上加1。</p>
 <p>例2：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupadd -g 101 testgroup2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">groupadd</span> -g <span class="token number">101</span> testgroup2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>此命令向系统中增加了一个新组testgroup2，同时指定创建的用户组的组标识号是101。</p>
-<h3 id="删除一个已有的用户组-groupdel"><a href="#删除一个已有的用户组-groupdel" class="headerlink" title="删除一个已有的用户组 groupdel"></a>删除一个已有的用户组 groupdel</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupdel 用户组名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="删除一个已有的用户组-groupdel"><a href="#删除一个已有的用户组-groupdel" class="headerlink" title="删除一个已有的用户组 groupdel"></a>删除一个已有的用户组 groupdel</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">groupdel</span> 用户组名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupdel testgroup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">groupdel</span> testgroup<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>此命令会从系统中删除用户组组testgroup。</p>
-<h3 id="修改用户组的属性-groupmod"><a href="#修改用户组的属性-groupmod" class="headerlink" title="修改用户组的属性 groupmod"></a>修改用户组的属性 groupmod</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">groupmod 选项 用户组<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="修改用户组的属性-groupmod"><a href="#修改用户组的属性-groupmod" class="headerlink" title="修改用户组的属性 groupmod"></a>修改用户组的属性 groupmod</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">groupmod</span> 选项 用户组<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>常用的选项有：</p>
 <ul>
@@ -606,17 +609,17 @@ Re-enter new password:*******<span aria-hidden="true" class="line-numbers-rows">
 <li>-o：与-g选项同时使用，用户组的新GID可以与系统已有用户组的GID相同。</li>
 <li>-n：新用户组 将用户组的名字改为新名字</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 此命令将组group2的组标识号修改为102。
-groupmod -g 102 group2
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 此命令将组group2的组标识号修改为102。</span>
+<span class="token function">groupmod</span> -g <span class="token number">102</span> group2
 
-# 将组group2的标识号改为10000，组名修改为group3。
-groupmod –g 10000 -n group3 group2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 将组group2的标识号改为10000，组名修改为group3。</span>
+<span class="token function">groupmod</span> –g <span class="token number">10000</span> -n group3 group2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <h3 id="切换组"><a href="#切换组" class="headerlink" title="切换组"></a>切换组</h3><p>如果一个用户同时属于多个用户组，那么用户可以在用户组之间切换，以便具有其他用户组的权限。</p>
 <p>用户可以在登录后，使用命令newgrp切换到其他用户组，这个命令的参数就是目的用户组。例如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">newgrp [组名]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">newgrp <span class="token punctuation">[</span>组名<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>这条命令将当前用户切换到指定用户组，前提条件是指定用户组确实是该用户的主组或附加组。</p>
 <blockquote>
@@ -628,18 +631,18 @@ groupmod –g 10000 -n group3 group2<span aria-hidden="true" class="line-numbers
 <p><strong>/etc/passwd文件是用户管理工作涉及的最重要的一个文件。</strong></p>
 <p>Linux系统中的每个用户都在/etc/passwd文件中有一个对应的记录行，它记录了这个用户的一些基本属性。</p>
 <p>这个文件对所有用户都是可读的。它的内容类似下面的例子：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">＃ cat &#x2F;etc&#x2F;passwd
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">＃ <span class="token function">cat</span> /etc/passwd
 
-root:x:0:0:Superuser:&#x2F;:
-daemon:x:1:1:System daemons:&#x2F;etc:
-bin:x:2:2:Owner of system commands:&#x2F;bin:
-sys:x:3:3:Owner of system files:&#x2F;usr&#x2F;sys:
-adm:x:4:4:System accounting:&#x2F;usr&#x2F;adm:
-uucp:x:5:5:UUCP administrator:&#x2F;usr&#x2F;lib&#x2F;uucp:
-auth:x:7:21:Authentication administrator:&#x2F;tcb&#x2F;files&#x2F;auth:
-cron:x:9:16:Cron daemon:&#x2F;usr&#x2F;spool&#x2F;cron:
-listen:x:37:4:Network daemon:&#x2F;usr&#x2F;net&#x2F;nls:
-lp:x:71:18:Printer administrator:&#x2F;usr&#x2F;spool&#x2F;lp:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+root:x:0:0:Superuser:/:
+daemon:x:1:1:System daemons:/etc:
+bin:x:2:2:Owner of system commands:/bin:
+sys:x:3:3:Owner of system files:/usr/sys:
+adm:x:4:4:System accounting:/usr/adm:
+uucp:x:5:5:UUCP administrator:/usr/lib/uucp:
+auth:x:7:21:Authentication administrator:/tcb/files/auth:
+cron:x:9:16:Cron daemon:/usr/spool/cron:
+listen:x:37:4:Network daemon:/usr/net/nls:
+lp:x:71:18:Printer administrator:/usr/spool/lp:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>从上面的例子我们可以看到，/etc/passwd中一行记录对应着一个用户，每行记录又被冒号(:)分隔为7个字段，其格式和具体含义如下：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -748,10 +751,10 @@ nobody NFS使用<span aria-hidden="true" class="line-numbers-rows"><span></span>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-05T15:52:52+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-07T20:11:31+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月5日</p>
+    <p>更新于：2020年12月7日</p>
   </a>
 </div>
 
@@ -760,7 +763,7 @@ nobody NFS使用<span aria-hidden="true" class="line-numbers-rows"><span></span>
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux基础</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>用户管理</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>用户管理</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux%E5%85%A5%E9%97%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux入门</p></a></div>
 
 
         
@@ -827,7 +830,7 @@ nobody NFS使用<span aria-hidden="true" class="line-numbers-rows"><span></span>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/'>
+        <a class='prev' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%9F%BA%E7%A1%80%20%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux入门 系统管理</p>
           <p class='content'>主机相关hostname 主机名称# hostname查看主机名称
 [root@VM-8-16-centos ~]# hostname
@@ -1004,7 +1007,7 @@ g...</p>
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>21 篇</div>
+          <div>33 篇</div>
         </div>
       
 
@@ -1026,7 +1029,7 @@ g...</p>
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>34.6k 字</div>
+          <div>44.5k 字</div>
         </div>
       
 
@@ -1052,7 +1055,7 @@ g...</p>
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 07 2020 19:22:53 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 07 2020 20:58:14 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-07 日</div>
           
         </div>

@@ -468,20 +468,20 @@
 
   
   <h2 id="Docker搜索超时"><a href="#Docker搜索超时" class="headerlink" title="Docker搜索超时"></a>Docker搜索超时</h2><p>执行<code>docker search centos</code>报错信息如下：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Error response from daemon: Get https:&#x2F;&#x2F;index.docker.io&#x2F;v1&#x2F;search?q&#x3D;centos: read tcp 52.200.132.201:443: i&#x2F;o timeout<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Error response from daemon: Get https://index.docker.io/v1/search?q<span class="token operator">=</span>centos: <span class="token builtin class-name">read</span> tcp <span class="token number">52.200</span>.132.201:443: i/o <span class="token function">timeout</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>docker在中国已经有了仓库：<a target="_blank" rel="noopener" href="https://www.docker-cn.com/registry-mirror">https://www.docker-cn.com/registry-mirror</a></p>
 <p>根据上面网站提供的修改方法。</p>
 <p>进入<code>/etc/docker</code>目录下</p>
 <p>查看有没有 daemon.json。这是docker默认的配置文件。</p>
 <p>如果没有新建，如果有，则修改。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">&#123;
-  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;registry.docker-cn.com&quot;]
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">&#123;</span>
+  <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"https://registry.docker-cn.com"</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>保存退出。</p>
 <p>重启docker服务：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">service docker restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">service</span> docker restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>成功！</p>
 
@@ -597,13 +597,9 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/02/Linux/Vim/Vim%E7%BC%96%E8%BE%91%E5%99%A8/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Vim编辑器</p>
-          <p class='content'>Vim编辑器
-什么是Vim编辑器
-
-Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。
-简单的来说， vi 是老式的字处理器，不...</p>
+        <a class='prev' href='/2020/12/02/Linux/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/%E5%B0%86linux%E7%9A%84%E7%94%A8%E6%88%B7%E4%B8%BB%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E7%A7%B0%E6%94%B9%E6%88%90%E8%8B%B1%E6%96%87%E7%9A%84%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>将linux的HOME目录下的文件夹名字改回英文的简单办法</p>
+          <p class='content'>将linux的HOME目录下的文件夹名字改回英文的简单办法为了使用起来方便，装了Ubuntu中文版，自然在home文件里用户目录的“桌面”、“图片”、“视频”、“音乐”……都是中文的。很多时候都...</p>
         </a>
       
       
@@ -751,7 +747,7 @@ Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错�
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>21 篇</div>
+          <div>33 篇</div>
         </div>
       
 
@@ -773,7 +769,7 @@ Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错�
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>34.6k 字</div>
+          <div>44.5k 字</div>
         </div>
       
 
@@ -799,7 +795,7 @@ Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错�
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 07 2020 19:22:53 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 07 2020 20:58:14 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-07 日</div>
           
         </div>

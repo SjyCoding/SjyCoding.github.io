@@ -470,13 +470,13 @@
   <h2 id="将linux的HOME目录下的文件夹名字改回英文的简单办法"><a href="#将linux的HOME目录下的文件夹名字改回英文的简单办法" class="headerlink" title="将linux的HOME目录下的文件夹名字改回英文的简单办法"></a>将linux的HOME目录下的文件夹名字改回英文的简单办法</h2><p>为了使用起来方便，装了Ubuntu中文版，自然在home文件里用户目录的“桌面”、“图片”、“视频”、“音乐”……都是中文的。很多时候都喜欢在桌面上放一些要操作的文件，linux里命令行操作又多，难免会用命令行操作桌面上的东西，那么就要 “cd 桌面”，打“桌面”的时候要输入法切换，麻烦……</p>
 <p>所以就想办法把用户目录下的路径改成英文，而其他的中文不变， 方法如下：</p>
 <p>　　打开终端，在终端中输入命令:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">export LANG&#x3D;en_US	# 更改语言为英文
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span>en_US	<span class="token comment"># 更改语言为英文</span>
 
-xdg-user-dirs-gtk-update	# 更新<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+xdg-user-dirs-gtk-update	<span class="token comment"># 更新</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>跳出对话框询问是否将目录转化为英文路径,同意并关闭.</p>
 <p>　　在终端中输入命令:</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">export LANG&#x3D;zh_CN	# 更改语言为中文<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span>zh_CN	<span class="token comment"># 更改语言为中文</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>​        重启系统。或者再次运行　<code>xdg-user-dirs-gtk-update</code></p>
 <p>系统会提示是否把转化好的目录改回中文，选择不再提示,并取消修改.主目录的中文转英文就完成了.</p>
@@ -599,7 +599,7 @@ xdg-user-dirs-gtk-update	# 更新<span aria-hidden="true" class="line-numbers-ro
         <a class='prev' href='/2020/12/02/Linux/%E9%97%AE%E9%A2%98/Docker%E6%90%9C%E7%B4%A2%E8%B6%85%E6%97%B6/'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Docker搜索超时</p>
           <p class='content'>Docker搜索超时执行docker search centos报错信息如下：
-Error response from daemon: Get https:&#x2F;&#x2F;index.d...</p>
+Error response from daemon: Get https://index.docker.io/v...</p>
         </a>
       
       
@@ -751,7 +751,7 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.d...</p>
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>21 篇</div>
+          <div>33 篇</div>
         </div>
       
 
@@ -773,7 +773,7 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.d...</p>
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>34.6k 字</div>
+          <div>44.5k 字</div>
         </div>
       
 
@@ -799,7 +799,7 @@ Error response from daemon: Get https:&#x2F;&#x2F;index.d...</p>
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 07 2020 19:22:53 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 07 2020 20:58:14 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-07 日</div>
           
         </div>

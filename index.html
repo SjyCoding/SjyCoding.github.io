@@ -472,9 +472,439 @@
         
           
         
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/12/07/MySQL/MySQL%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F%E5%92%8C%E8%81%94%E5%90%88%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F/">
+        MySQL中添加唯一约束和联合唯一约束
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        在MySQL数据库中，经常会碰到由于业务需要添加唯一键约束，唯一键约束，可以在一个列上添加约束，也可以在多个列上添加唯一约束。
+一、单列唯一约束在一列上添加唯一约束，主要是让该列在表中只能有唯一的一行，例如注册邮箱时的邮箱名、手机号等信息，相关操作如下：
+-- 1.建表时加上唯一性约束：
+
+CREATE TABLE `t_user` (
+    `Id` int(11) NOT NULL A...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src=''></a>
+        
+        <time>2020-12-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/MySQL/">MySQL</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/12/07/MySQL/MySQL%E4%B8%AD%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F%E5%92%8C%E8%81%94%E5%90%88%E5%94%AF%E4%B8%80%E7%BA%A6%E6%9D%9F/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/12/07/MySQL/MySQL%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%BB%93%E6%9E%84/">
+        MySQL修改表结构
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        使用ALTER TABLE修改表结构
+1) 修改表名称ALTER TABLE &lt;表名&gt; RENAME &lt;新表名&gt;
+mysql&gt; ALTER TABLE game_account RENAME account:
+
+
+2) 修改表的存储引擎mysql&gt; ALTER TABLE account ENGINE=MyISAM;
+
+3) 添加字段ALTER TABLE...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src=''></a>
+        
+        <time>2020-12-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/MySQL/">MySQL</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/12/07/MySQL/MySQL%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%BB%93%E6%9E%84/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/12/07/MySQL/MySQL%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E4%B8%8E%E6%8E%88%E6%9D%83/">
+        MySQL创建用户与授权
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        MySQL创建用户与授权一. 创建用户**命令: **
+CREATE USER 'username'@'host' IDENTIFIED BY 'password';
+
+**说明: **
+
+username：你将创建的用户名
+host：指定该用户在哪个主机上可以登陆，如果是本地用户可用localhost，如果想让该用户可以从任意远程主机登陆，可以使用通配符%
+password：该用户的登陆密...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src=''></a>
+        
+        <time>2020-12-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/MySQL/">MySQL</a><span class="sep"></span><a class="category-link" href="/categories/MySQL/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">用户管理</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/12/07/MySQL/MySQL%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E4%B8%8E%E6%8E%88%E6%9D%83/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/12/07/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+        Linux常用命令
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        
+本篇内容是对[Linux入门系列]中未涉及到的部分常用命令的补充
+
+网络相关wgetwget命令用来从指定的URL下载文件。wget非常稳定，它在带宽很窄的情况下和不稳定网络中有很强的适应性，如果是由于网络的原因下载失败，wget会不断的尝试，直到整个文件下载完毕。如果是服务器打断下载过程，它会再次联到服务器上从停止的地方继续下载。这对从那些限定了链接时间的服务器上下载大文件非常有用。
+语...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src=''></a>
+        
+        <time>2020-12-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/12/07/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/">
+        Linux入门 进程管理
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        进程管理什么是进程
+在Linux中，每个程序都有一个进程，每一个进程都有一个id号
+每一个进程都会有一个父进程
+进程可以有两种存在方式（前台/后台）
+一般的话，服务都是在后台运行，基本的程序都是在前台运行
+
+常用命令ps 查看正在运行的进程语法：
+ps [-...]
+
+选项：
+
+-a：向是所有正在运行的进程
+-u：以用户分组
+-x：显示后台运行进程的参数
+
+例:
+# ps -aux 查看所有...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src=''></a>
+        
+        <time>2020-12-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/">
+        Linux入门 磁盘管理
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        磁盘管理
+概述
+
+Linux磁盘管理好坏直接关系到整个系统的性能问题。
+Linux磁盘管理常用命令为 df、du。
+
+df ：列出文件系统的整体磁盘使用量
+du：检查磁盘空间使用量
+
+df 列出文件系统整体的磁盘使用量df命令参数功能：检查文件系统的磁盘空间占用情况。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。
+语法：
+df [-ahikHTm] [目录或文件名]
+
+...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src=''></a>
+        
+        <time>2020-12-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/">
+        Linux更新源
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        为什么要换源
+大多数官方源的服务器都在国外so…
+
+设置更新源镜像Ubuntu配置文件位置： /etc/apt
+
+# 修改配置文件前建议先备份文件
+
+
+CentOSyum包管理器的配置文件位置 /etc/yum.repos.d/CentOS-Base.repo
+通过安装脚本cd /etc/yum.repos.d/
+# 修改配置文件前建议先备份文件
+cp CentOS-Base.repo Ce...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src=''></a>
+        
+        <time>2020-12-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -495,9 +925,10 @@
       
         vim配置vim配置文件  ~/.vimrc
 注释格式为 ：” 注释内容
-vimrc可用参数:显示相关&quot;set shortmess&#x3D;atI   &quot; 启动的时候不显示那个援助乌干达儿童的提示  
-&quot;winpos 5 5          &quot; 设定窗口位置  
-&quot;set lines&#x3D;40 columns&#x3D;155   ...
+vimrc可用参数:显示相关"set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示  
+"winpos 5 5          " 设定窗口位置  
+"set lines=40 columns=155    " 设定窗口大小  
+"set nu              " 显示行号 ...
       
     
   </div>
@@ -591,19 +1022,26 @@ Java(TM) SE Runtime E...
   
     
     <h2 class="article-title" >
-      <a href="/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20passwd%E5%92%8Cgroup%E6%96%87%E4%BB%B6/">
-        Linux入门 Passwd和group文件
+      <a href="/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AE%89%E8%A3%85/">
+        Linux常用软件的安装
       </a>
     </h2>
   
   <div class='md'>
     
       
-        前言完成用户管理的工作有许多种方法，但是每一种方法实际上都是对有关的系统文件进行修改。
-与用户和用户组相关的信息都存放在一些系统文件中，这些文件包括/etc/passwd， /etc/shadow，/etc/group等。
-下面将分别介绍这些文件的内容。
-/etc/passwd/etc/passwd文件是用户管理工作涉及的最重要的一个文件。
-Linux系统中的每个用户都在/etc/passw...
+        
+安装软件一般有3种方式
+
+rpm包安装（下载适用于当前操作系统的安装包，通过相应的包管理工具安装）
+yum在线安装
+解压缩安装
+
+
+JDK安装检查是否安装有openjdk，如果有则卸载：TODO 待更新
+[root@localhost ~]# java -version
+java version "1.8.0_271"
+Java(TM) SE Runtime Environment (bu...
       
     
   </div>
@@ -622,433 +1060,7 @@ Linux系统中的每个用户都在/etc/passw...
       </div>
       
         <div>
-          <a class='readmore' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20passwd%E5%92%8Cgroup%E6%96%87%E4%BB%B6/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/">
-        Linux入门 系统管理
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        主机相关hostname 主机名称# hostname查看主机名称
-[root@VM-8-16-centos ~]# hostname
-VM-8-16-centos
-# hostname修改主机名称
-[root@VM-8-16-centos ~]# hostname sforits
-# 修改过后，需要重新连接或重启才能看到效果
-
-
-
-TODO
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">
-        Linux入门 用户管理
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        前言Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。
-用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。
-每个用户账号都拥有一个唯一的用户名和各自的口令（密码）。
-用户在登录时键入正确的用户名和口令后，就...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/">Linux基础</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/">
-        Docker入门
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Docker概述
-来源：维基百科，自由的百科全书
-
-
-
-
-
-
-
-
-
-原作者
-Solomon Hykes
-
-
-开发者
-Docker, Inc.
-
-
-初始版本
-2013年3月13日
-
-
-源代码库
-github.com/docker/docker-ce
-
-
-编程语言
-Go
-
-
-操作系统
-Linux、Windows、macOS
-
-
-系统平台
-x86-64、ARM、s390x、ppc64le
-
-
-类型...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Docker/">Docker</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/03/Docker/Docker%E5%85%A5%E9%97%A8/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Linux/Linux%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%B7%A5%E5%85%B7/">
-        Linux的一些小工具
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        screenfetch效果图：
-
-
-Ubuntu
-  apt install screenfetch
-
-CentOS
-  # 先下载：
-wget -O screenfetch-dev https:&#x2F;&#x2F;git.io&#x2F;vaHfR
-# 然后丢到&#x2F;usr&#x2F;bin或类似的目录，如果在PATH就比较方便：
-sudo mv .&#x2F;screenfet...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/%E5%B7%A5%E5%85%B7/">工具</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Linux/Linux%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%B7%A5%E5%85%B7/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Linux/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">
-        服务器性能测试
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-性能测试，仅供参考/娱乐原文连接
-
-综合性能测试输入下列命令，执行teddysun博主的脚本：
-wget -qO- bench.sh | bash
-
-
-UnixBench跑分虽然UnixBench跑分测试并不能完全代表真实性能，但还是可以提供一定的参考。执行以下命令：
-wget https:&#x2F;&#x2F;soft.laozuo.org&#x2F;scripts&#x2F;Unix...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">性能测试</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Linux/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Windows/%E5%BE%AE%E8%BD%AF%E6%8B%BC%E9%9F%B3%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/">
-        用微软拼音快速输入自定义格式的时间和日期
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        教你如何用微软拼音输入法的用户自定义短语快速输入自定义格式的时间和日期。
-用微软拼音输入 rq 或者 sj，我们可以在第五个候选词分别得到 2017年9月18日 和 22点05分。但是，其实我想输入的是：2017-09-18 和 2017-09-18 22:05:51 +0800。在设置里面折腾一番没找到之后，原本以为只好自己输入了，没想到后面还是找到了方法。
-
-我不会告诉你我要一个这样的日...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Windows/">Windows</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Windows/%E5%BE%AE%E8%BD%AF%E6%8B%BC%E9%9F%B3%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/02/Git&GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/">
-        Github历史版本回退
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        问题描述最近几天的GitHub提交出了些问题，导致之前提交的更新丢失，考虑回退到之前的版本。在GitHub的Web页面上并没有找到回退的解决方案（如果大家知道的话，感谢告知），于是决定通过本地的 Git Bash来操作。
-
-查找 commit id：浏览GitHub上的提交历史记录，找到要回退的版本，复制commit id。
-  类似这种
-  
-
-
-
-恢复历史版本：
-
-git reset -...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src=''></a>
-        
-        <time>2020-12-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Git/">Git</a><span class="sep"></span><a class="category-link" href="/categories/Git/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">常见问题</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/02/Git&GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/'>
+          <a class='readmore' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AE%89%E8%A3%85/'>
             阅读全文
           </a>
         </div>
@@ -1069,7 +1081,7 @@ git reset -...
       <div class="prev-next">
         
         <p class="current">
-          1 / 3
+          1 / 4
         </p>
         
           <a class="next" rel="next" href="/page/2/">
@@ -1175,7 +1187,7 @@ git reset -...
 
 
     <div class='content'>
-      <a href="/tags/CentOS/" style="font-size: 14px; color: #999">CentOS</a> <a href="/tags/Docker/" style="font-size: 16.5px; color: #888">Docker</a> <a href="/tags/Git/" style="font-size: 16.5px; color: #888">Git</a> <a href="/tags/GitHub/" style="font-size: 16.5px; color: #888">GitHub</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Linux%E5%9F%BA%E7%A1%80/" style="font-size: 21.5px; color: #666">Linux基础</a> <a href="/tags/Vim/" style="font-size: 16.5px; color: #888">Vim</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/hexo/" style="font-size: 19px; color: #777">hexo</a> <a href="/tags/volantis/" style="font-size: 16.5px; color: #888">volantis</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 14px; color: #999">工具</a> <a href="/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 14px; color: #999">微软输入法</a> <a href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" style="font-size: 14px; color: #999">性能测试</a> <a href="/tags/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" style="font-size: 16.5px; color: #888">用户管理</a> <a href="/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" style="font-size: 14px; color: #999">磁盘管理</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/" style="font-size: 14px; color: #999">系统管理</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%AF%AD%E8%A8%80/" style="font-size: 14px; color: #999">系统语言</a> <a href="/tags/%E9%95%9C%E5%83%8F%E6%BA%90/" style="font-size: 16.5px; color: #888">镜像源</a>
+      <a href="/tags/CentOS/" style="font-size: 14px; color: #999">CentOS</a> <a href="/tags/Docker/" style="font-size: 18px; color: #7e7e7e">Docker</a> <a href="/tags/Git/" style="font-size: 16px; color: #8b8b8b">Git</a> <a href="/tags/GitHub/" style="font-size: 16px; color: #8b8b8b">GitHub</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Linux%E5%85%A5%E9%97%A8/" style="font-size: 20px; color: #707070">Linux入门</a> <a href="/tags/Linux%E5%9F%BA%E7%A1%80/" style="font-size: 22px; color: #636363">Linux基础</a> <a href="/tags/MySQL/" style="font-size: 18px; color: #7e7e7e">MySQL</a> <a href="/tags/MySQL%E5%85%A5%E9%97%A8/" style="font-size: 16px; color: #8b8b8b">MySQL入门</a> <a href="/tags/Vim/" style="font-size: 16px; color: #8b8b8b">Vim</a> <a href="/tags/Windows/" style="font-size: 14px; color: #999">Windows</a> <a href="/tags/hexo/" style="font-size: 18px; color: #7e7e7e">hexo</a> <a href="/tags/volantis/" style="font-size: 16px; color: #8b8b8b">volantis</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 16px; color: #8b8b8b">工具</a> <a href="/tags/%E5%BE%AE%E8%BD%AF%E8%BE%93%E5%85%A5%E6%B3%95/" style="font-size: 14px; color: #999">微软输入法</a> <a href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" style="font-size: 14px; color: #999">性能测试</a> <a href="/tags/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/" style="font-size: 14px; color: #999">文件管理</a> <a href="/tags/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" style="font-size: 18px; color: #7e7e7e">用户管理</a> <a href="/tags/%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86/" style="font-size: 14px; color: #999">目录管理</a> <a href="/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" style="font-size: 16px; color: #8b8b8b">磁盘管理</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86/" style="font-size: 16px; color: #8b8b8b">系统管理</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%AF%AD%E8%A8%80/" style="font-size: 16px; color: #8b8b8b">系统语言</a> <a href="/tags/%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" style="font-size: 14px; color: #999">进程管理</a> <a href="/tags/%E9%95%9C%E5%83%8F%E6%BA%90/" style="font-size: 18px; color: #7e7e7e">镜像源</a>
     </div>
   </section>
 
@@ -1222,17 +1234,17 @@ git reset -...
           <li><a class="flat-box"
             title="/categories/Linux/" href="/categories/Linux/"
             id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(14)</div></a></li>
+            ><div class='name'>Linux</div><div class='badge'>(23)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/Linux/Docker/" href="/categories/Linux/Docker/"
             id="categoriesLinuxDocker"
-            ><div class='name'>Docker</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>Docker</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/" href="/categories/Linux/Linux%E5%9F%BA%E7%A1%80/"
             id="categoriesLinuxLinuxE59FBAE7A180"
-            ><div class='name'>Linux基础</div><div class='badge'>(9)</div></a></li>
+            ><div class='name'>Linux基础</div><div class='badge'>(16)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/Linux/Vim/" href="/categories/Linux/Vim/"
@@ -1247,12 +1259,22 @@ git reset -...
           <li><a class="flat-box child"
             title="/categories/Linux/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" href="/categories/Linux/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"
             id="categoriesLinuxE5B8B8E8A781E997AEE9A298"
-            ><div class='name'>常见问题</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>常见问题</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/Linux/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" href="/categories/Linux/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/"
             id="categoriesLinuxE680A7E883BDE6B58BE8AF95"
             ><div class='name'>性能测试</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/MySQL/" href="/categories/MySQL/"
+            id="categoriesMySQL"
+            ><div class='name'>MySQL</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/MySQL/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" href="/categories/MySQL/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/"
+            id="categoriesMySQLE794A8E688B7E7AEA1E79086"
+            ><div class='name'>用户管理</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Windows/" href="/categories/Windows/"
@@ -1286,7 +1308,7 @@ git reset -...
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>21 篇</div>
+          <div>33 篇</div>
         </div>
       
 
@@ -1308,7 +1330,7 @@ git reset -...
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>34.6k 字</div>
+          <div>44.5k 字</div>
         </div>
       
 
@@ -1334,7 +1356,7 @@ git reset -...
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 07 2020 19:22:53 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 07 2020 20:58:15 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-07 日</div>
           
         </div>

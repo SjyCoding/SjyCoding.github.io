@@ -473,26 +473,26 @@
 <h2 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h2><p><strong>/etc/passwd文件是用户管理工作涉及的最重要的一个文件。</strong></p>
 <p>Linux系统中的每个用户都在/etc/passwd文件中有一个对应的记录行，它记录了这个用户的一些基本属性。</p>
 <p>这个文件对所有用户都是可读的。它的内容类似下面的例子：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@bogon ~]# cat &#x2F;etc&#x2F;passwd
-root:x:0:0:root:&#x2F;root:&#x2F;bin&#x2F;bash
-bin:x:1:1:bin:&#x2F;bin:&#x2F;sbin&#x2F;nologin
-daemon:x:2:2:daemon:&#x2F;sbin:&#x2F;sbin&#x2F;nologin
-adm:x:3:4:adm:&#x2F;var&#x2F;adm:&#x2F;sbin&#x2F;nologin
-lp:x:4:7:lp:&#x2F;var&#x2F;spool&#x2F;lpd:&#x2F;sbin&#x2F;nologin
-sync:x:5:0:sync:&#x2F;sbin:&#x2F;bin&#x2F;sync
-shutdown:x:6:0:shutdown:&#x2F;sbin:&#x2F;sbin&#x2F;shutdown
-halt:x:7:0:halt:&#x2F;sbin:&#x2F;sbin&#x2F;halt
-mail:x:8:12:mail:&#x2F;var&#x2F;spool&#x2F;mail:&#x2F;sbin&#x2F;nologin
-operator:x:11:0:operator:&#x2F;root:&#x2F;sbin&#x2F;nologin
-games:x:12:100:games:&#x2F;usr&#x2F;games:&#x2F;sbin&#x2F;nologin
-ftp:x:14:50:FTP User:&#x2F;var&#x2F;ftp:&#x2F;sbin&#x2F;nologin
-nobody:x:99:99:Nobody:&#x2F;:&#x2F;sbin&#x2F;nologin
-systemd-network:x:192:192:systemd Network Management:&#x2F;:&#x2F;sbin&#x2F;nologin
-dbus:x:81:81:System message bus:&#x2F;:&#x2F;sbin&#x2F;nologin
-polkitd:x:999:998:User for polkitd:&#x2F;:&#x2F;sbin&#x2F;nologin
-sshd:x:74:74:Privilege-separated SSH:&#x2F;var&#x2F;empty&#x2F;sshd:&#x2F;sbin&#x2F;nologin
-postfix:x:89:89::&#x2F;var&#x2F;spool&#x2F;postfix:&#x2F;sbin&#x2F;nologin
-chrony:x:998:996::&#x2F;var&#x2F;lib&#x2F;chrony:&#x2F;sbin&#x2F;nologin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@bogon ~<span class="token punctuation">]</span><span class="token comment"># cat /etc/passwd</span>
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User <span class="token keyword">for</span> polkitd:/:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:996::/var/lib/chrony:/sbin/nologin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>从上面的例子我们可以看到，/etc/passwd中一行记录对应着一个用户，每行记录又被冒号(:)分隔为7个字段，其格式和具体含义如下：</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -688,10 +688,17 @@ nobody NFS使用<span aria-hidden="true" class="line-numbers-rows"><span></span>
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%9A%84%E5%AE%89%E8%A3%85/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux常用工具的安装</p>
-          <p class='content'>jdk安装（rpm安装）1、rpm下载地址http://www.oracle.com/technetwork/java/javase/downloads/index.html
-2、如果有安装op...</p>
+        <a class='prev' href='/2020/12/05/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AE%89%E8%A3%85/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux常用软件的安装</p>
+          <p class='content'>
+安装软件一般有3种方式
+
+rpm包安装（下载适用于当前操作系统的安装包，通过相应的包管理工具安装）
+yum在线安装
+解压缩安装
+
+
+JDK安装检查是否安装有openjdk，如果有则卸载：TOD...</p>
         </a>
       
       
@@ -842,7 +849,7 @@ VM-8-16-centos
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>21 篇</div>
+          <div>33 篇</div>
         </div>
       
 
@@ -864,7 +871,7 @@ VM-8-16-centos
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>34.6k 字</div>
+          <div>44.5k 字</div>
         </div>
       
 
@@ -890,7 +897,7 @@ VM-8-16-centos
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 07 2020 19:22:52 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 07 2020 20:58:14 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-07 日</div>
           
         </div>

@@ -21,7 +21,7 @@
   
   <title>Linux入门2 常用基本命令 - Sun&#39;s Blog</title>
   
-    <meta name="keywords" content="Linux,Linux基础,用户管理,CentOS,磁盘管理">
+    <meta name="keywords" content="Linux,用户管理,Linux基础,磁盘管理,CentOS">
   
 
   
@@ -479,19 +479,19 @@
 <p><strong>相对路径：</strong><br>路径的写法，不是由 / 写起，而是由当前目录写起    ‘..’ 表示上一级目录</p>
 <p>例如由 /usr/share/doc 要到 /usr/share/man 底下时，可以写成：cd ../man</p>
 </blockquote>
-<h3 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls	# 列出目录
-cd	# 切换目录
-pwd	# 显示目前的目录
-mkdir	# 创建一个新的目录
-rmdir	# 删除一个空的目录
-cp	# 复制文件或目录
-rm	# 移除文件或目录
-mv	# 移动文件与目录，或修改文件与目录的名称<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h3><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">ls</span>	<span class="token comment"># 列出目录</span>
+<span class="token builtin class-name">cd</span>	<span class="token comment"># 切换目录</span>
+<span class="token builtin class-name">pwd</span>	<span class="token comment"># 显示目前的目录</span>
+<span class="token function">mkdir</span>	<span class="token comment"># 创建一个新的目录</span>
+<span class="token function">rmdir</span>	<span class="token comment"># 删除一个空的目录</span>
+<span class="token function">cp</span>	<span class="token comment"># 复制文件或目录</span>
+<span class="token function">rm</span>	<span class="token comment"># 移除文件或目录</span>
+<span class="token function">mv</span>	<span class="token comment"># 移动文件与目录，或修改文件与目录的名称</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>你可以使用 <em>man [命令]</em> 来查看各个命令的使用文档，如 ：man cp。</p>
 <h3 id="ls（列出目录）"><a href="#ls（列出目录）" class="headerlink" title="ls（列出目录）"></a>ls（列出目录）</h3><p>在Linux系统当中， ls 命令可能是最常被运行的。</p>
 <p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls [-aAdfFhilnrRSt] 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">ls</span> <span class="token punctuation">[</span>-aAdfFhilnrRSt<span class="token punctuation">]</span> 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>常用选项与参数：</p>
 <ul>
@@ -499,26 +499,26 @@ mv	# 移动文件与目录，或修改文件与目录的名称<span aria-hidden=
 <li>-l ：长数据串列出，包含文件的属性与权限等等数据；(常用)</li>
 </ul>
 <p>例子</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 将目录下的所有文件列出来(含属性与隐藏档)
-ls -al ~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 将目录下的所有文件列出来(含属性与隐藏档)</span>
+<span class="token function">ls</span> -al ~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h3 id="cd-（切换目录）"><a href="#cd-（切换目录）" class="headerlink" title="cd （切换目录）"></a>cd （切换目录）</h3><p>cd是Change Directory的缩写，这是用来变换工作目录的命令。</p>
 <p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cd [相对路径或绝对路径]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token builtin class-name">cd</span> <span class="token punctuation">[</span>相对路径或绝对路径<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>例子：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 在&#39;&#x2F;&#39;目录下,切换到用户目录下
-[root@localhost &#x2F;]# cd home
-[root@localhost home]# 
-# 回到上一级
-[root@localhost home]# cd ..
-[root@localhost &#x2F;]# 
-# 回到根目录
-[root@localhost &#x2F;]# cd &#x2F;
-[root@localhost &#x2F;]# 
-# 表示回到自己的家目录，亦即是 &#x2F;root 这个目录
-[root@localhost &#x2F;]# cd ~
-[root@localhost ~]# <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 在'/'目录下,切换到用户目录下</span>
+<span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># cd home</span>
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># </span>
+<span class="token comment"># 回到上一级</span>
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># cd ..</span>
+<span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># </span>
+<span class="token comment"># 回到根目录</span>
+<span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># cd /</span>
+<span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># </span>
+<span class="token comment"># 表示回到自己的家目录，亦即是 /root 这个目录</span>
+<span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># cd ~</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>多操作几次应该就可以很好的理解 cd 命令的。</p>
 <h3 id="pwd-显示目前所在的目录"><a href="#pwd-显示目前所在的目录" class="headerlink" title="pwd ( 显示目前所在的目录 )"></a>pwd ( 显示目前所在的目录 )</h3><p>pwd 是 <strong>Print Working Directory</strong> 的缩写，也就是显示目前所在目录的命令。</p>
@@ -526,17 +526,17 @@ ls -al ~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 
 <p>选项与参数：**-P**（注意是大写） ：显示出确实的路径，而非使用连接(link) 路径。</p>
 <p>例子：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 单纯显示出目前的工作目录
-[root@localhost ~]# pwd
-&#x2F;root
-# 如果是链接，要显示真实地址，可以使用 -P参数
-[root@localhost bin]# pwd
-&#x2F;bin
-[root@localhost bin]# pwd -P
-&#x2F;usr&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 单纯显示出目前的工作目录</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pwd</span>
+/root
+<span class="token comment"># 如果是链接，要显示真实地址，可以使用 -P参数</span>
+<span class="token punctuation">[</span>root@localhost bin<span class="token punctuation">]</span><span class="token comment"># pwd</span>
+/bin
+<span class="token punctuation">[</span>root@localhost bin<span class="token punctuation">]</span><span class="token comment"># pwd -P</span>
+/usr/bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="mkdir-（创建新目录）"><a href="#mkdir-（创建新目录）" class="headerlink" title="mkdir （创建新目录）"></a>mkdir （创建新目录）</h3><p>如果想要创建新的目录的话，那么就使用mkdir (make directory)吧。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mkdir [-mp] 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">mkdir</span> <span class="token punctuation">[</span>-mp<span class="token punctuation">]</span> 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
@@ -544,57 +544,57 @@ ls -al ~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <li>-p ：帮助你直接将所需要的目录(包含上一级目录)递归创建起来！</li>
 </ul>
 <p>测试：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 查看当前目录下的目录与文件
-[root@localhost ~]# ls
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 查看当前目录下的目录与文件</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls</span>
 anaconda-ks.cfg  prel  UnixBench  UnixBench5.1.3.tgz
-# 创建一个 test 文件夹
-[root@localhost ~]# mkdir test
-[root@localhost ~]# ls
-anaconda-ks.cfg  prel  test  UnixBench  UnixBench5.1.3.tgz
-# 创建多层级目录
-[root@localhost ~]# mkdir test&#x2F;test1&#x2F;test2&#x2F;test3
-mkdir: cannot create directory ‘test&#x2F;test1&#x2F;test2&#x2F;test3’: No such file or directory  # &lt;&#x3D;&#x3D; 没办法直接创建此目录啊！
-# 加了这个 -p 的选项，可以自行帮你创建多层目录！
-[root@localhost ~]# mkdir -p test&#x2F;test1&#x2F;test2&#x2F;test3
+<span class="token comment"># 创建一个 test 文件夹</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkdir test</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls</span>
+anaconda-ks.cfg  prel  <span class="token builtin class-name">test</span>  UnixBench  UnixBench5.1.3.tgz
+<span class="token comment"># 创建多层级目录</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkdir test/test1/test2/test3</span>
+mkdir: cannot create directory ‘test/test1/test2/test3’: No such <span class="token function">file</span> or directory  <span class="token comment"># &lt;== 没办法直接创建此目录啊！</span>
+<span class="token comment"># 加了这个 -p 的选项，可以自行帮你创建多层目录！</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkdir -p test/test1/test2/test3</span>
 
-# 创建权限为 rwx--x--x 的目录。
-[root@localhost ~]# mkdir -m 711 test1
-[root@localhost ~]# ls -l
-total 260
--rw-------. 1 root root   1260 Dec  1 08:43 anaconda-ks.cfg
--rw-r--r--. 1 root root 116267 Dec  3 00:22 prel
-drwxr-xr-x. 3 root root     19 Dec  3 04:07 test
-drwx--x--x. 2 root root      6 Dec  3 04:08 test1
-drwxr-xr-x. 7 root root    178 Dec  3 00:18 UnixBench
--rw-r--r--. 1 root root 143259 Jun 30  2017 UnixBench5.1.3.tgz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 创建权限为 rwx--x--x 的目录。</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkdir -m 711 test1</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -l</span>
+total <span class="token number">260</span>
+-rw-------. <span class="token number">1</span> root root   <span class="token number">1260</span> Dec  <span class="token number">1</span> 08:43 anaconda-ks.cfg
+-rw-r--r--. <span class="token number">1</span> root root <span class="token number">116267</span> Dec  <span class="token number">3</span> 00:22 prel
+drwxr-xr-x. <span class="token number">3</span> root root     <span class="token number">19</span> Dec  <span class="token number">3</span> 04:07 <span class="token builtin class-name">test</span>
+drwx--x--x. <span class="token number">2</span> root root      <span class="token number">6</span> Dec  <span class="token number">3</span> 04:08 test1
+drwxr-xr-x. <span class="token number">7</span> root root    <span class="token number">178</span> Dec  <span class="token number">3</span> 00:18 UnixBench
+-rw-r--r--. <span class="token number">1</span> root root <span class="token number">143259</span> Jun <span class="token number">30</span>  <span class="token number">2017</span> UnixBench5.1.3.tgz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="rmdir-删除空的目录"><a href="#rmdir-删除空的目录" class="headerlink" title="rmdir ( 删除空的目录 )"></a>rmdir ( 删除空的目录 )</h3><p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rmdir [-p] 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">rmdir</span> <span class="token punctuation">[</span>-p<span class="token punctuation">]</span> 目录名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项与参数：**-p ：**连同上一级『空的』目录也一起删除</p>
 <p>例子：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 看看有多少目录存在？
-[root@kuangshen home]# ls -l
-drwxr-xr-x 2 root root  4096 Mar 12 21:55 test
-drwxr-xr-x 3 root root  4096 Mar 12 21:56 test1
-drwx--x--x 2 root root  4096 Mar 12 21:58 test2
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 看看有多少目录存在？</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># ls -l</span>
+drwxr-xr-x <span class="token number">2</span> root root  <span class="token number">4096</span> Mar <span class="token number">12</span> <span class="token number">21</span>:55 <span class="token builtin class-name">test</span>
+drwxr-xr-x <span class="token number">3</span> root root  <span class="token number">4096</span> Mar <span class="token number">12</span> <span class="token number">21</span>:56 test1
+drwx--x--x <span class="token number">2</span> root root  <span class="token number">4096</span> Mar <span class="token number">12</span> <span class="token number">21</span>:58 test2
 
-# 可直接删除掉，没问题
-[root@localhost ~]# rmdir test1
+<span class="token comment"># 可直接删除掉，没问题</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># rmdir test1</span>
 
-# 因为尚有内容，所以无法删除！
-[root@localhost ~]# rmdir test
+<span class="token comment"># 因为尚有内容，所以无法删除！</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># rmdir test</span>
 rmdir: failed to remove ‘test’: Directory not empty
 
-# 利用 -p 这个选项，立刻就可以将 test1&#x2F;test2&#x2F;test3&#x2F;test4 依次删除。
-[root@localhost ~]# rmdir -p test&#x2F;test1&#x2F;test2&#x2F;test3
-[root@localhost ~]# ls
+<span class="token comment"># 利用 -p 这个选项，立刻就可以将 test1/test2/test3/test4 依次删除。</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># rmdir -p test/test1/test2/test3</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls</span>
 anaconda-ks.cfg  prel  UnixBench  UnixBench5.1.3.tgz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>注意：这个 rmdir 仅能删除空的目录，可以使用 rm 命令来删除非空目录</p>
 <h3 id="cp-复制文件或目录"><a href="#cp-复制文件或目录" class="headerlink" title="cp ( 复制文件或目录 )"></a>cp ( 复制文件或目录 )</h3><p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cp [-adfilprsu] 来源(source) 目标(destination)
-cp [options] source1 source2 source3 .... directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">cp</span> <span class="token punctuation">[</span>-adfilprsu<span class="token punctuation">]</span> 来源<span class="token punctuation">(</span>source<span class="token punctuation">)</span> 目标<span class="token punctuation">(</span>destination<span class="token punctuation">)</span>
+<span class="token function">cp</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> source1 source2 source3 <span class="token punctuation">..</span><span class="token punctuation">..</span> directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
@@ -609,21 +609,21 @@ cp [options] source1 source2 source3 .... directory<span aria-hidden="true" clas
 <li><strong>-u：</strong>若 destination 比 source 旧才升级 destination ！</li>
 </ul>
 <p>例子：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 找一个有文件的目录, 我用的是&#x2F;root
-[root@localhost ~]# ls &#x2F;root
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 找一个有文件的目录, 我用的是/root</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls /root</span>
 anaconda-ks.cfg  prel  UnixBench  UnixBench5.1.3.tgz
 
-# 复制 root目录下的prel 到 home目录下
-[root@localhost ~]# cp &#x2F;root&#x2F;prel &#x2F;home
-[root@localhost ~]# ls &#x2F;home
+<span class="token comment"># 复制 root目录下的prel 到 home目录下</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cp /root/prel /home</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls /home</span>
 prel
 
-# 再次复制，加上-i参数，增加覆盖询问
-[root@localhost ~]# cp -i &#x2F;root&#x2F;prel &#x2F;home
-cp: overwrite ‘&#x2F;home&#x2F;prel’? y  # n(no)不覆盖，y(yes)为覆盖<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 再次复制，加上-i参数，增加覆盖询问</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cp -i /root/prel /home</span>
+cp: overwrite ‘/home/prel’? y  <span class="token comment"># n(no)不覆盖，y(yes)为覆盖</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="rm-移除文件或目录"><a href="#rm-移除文件或目录" class="headerlink" title="rm ( 移除文件或目录 )"></a>rm ( 移除文件或目录 )</h3><p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">rm [-fir] 文件或目录<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">rm</span> <span class="token punctuation">[</span>-fir<span class="token punctuation">]</span> 文件或目录<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
@@ -632,16 +632,16 @@ cp: overwrite ‘&#x2F;home&#x2F;prel’? y  # n(no)不覆盖，y(yes)为覆盖<
 <li>-r ：递归删除啊！最常用在目录的删除了！这是非常危险的选项！！！</li>
 </ul>
 <p>测试：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 将刚刚在 cp 的实例中创建的 prel 删除掉！
-[root@localhost ~]# rm -i &#x2F;home&#x2F;prel
-rm: remove regular file ‘&#x2F;home&#x2F;prel’? y
-# 如果加上 -i 的选项就会主动询问喔，避免误删之类的错误！
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 将刚刚在 cp 的实例中创建的 prel 删除掉！</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># rm -i /home/prel</span>
+rm: remove regular <span class="token function">file</span> ‘/home/prel’? y
+<span class="token comment"># 如果加上 -i 的选项就会主动询问喔，避免误删之类的错误！</span>
 
-# 尽量不要在服务器上使用 rm -rf &#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 尽量不要在服务器上使用 rm -rf /</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="mv-移动文件与目录，或修改名称"><a href="#mv-移动文件与目录，或修改名称" class="headerlink" title="mv  ( 移动文件与目录，或修改名称 )"></a>mv  ( 移动文件与目录，或修改名称 )</h3><p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mv [-fiu] source destination
-mv [options] source1 source2 source3 .... directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">mv</span> <span class="token punctuation">[</span>-fiu<span class="token punctuation">]</span> <span class="token builtin class-name">source</span> destination
+<span class="token function">mv</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> source1 source2 source3 <span class="token punctuation">..</span><span class="token punctuation">..</span> directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
@@ -650,26 +650,26 @@ mv [options] source1 source2 source3 .... directory<span aria-hidden="true" clas
 <li>-u ：若目标文件已经存在，且 source 比较新，才会升级 (update)</li>
 </ul>
 <p>测试：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 复制一个文件到当前目录
-[root@localhost ~]# cp -i &#x2F;root&#x2F;prel &#x2F;home
-# 创建一个文件夹 test
-[root@localhost ~]# cd &#x2F;home
-[root@localhost home]# mkdir test
-[root@localhost home]# 
-# 将复制过来的文件移动到我们创建的目录，并查看
-[root@localhost home]# mv prel test
-[root@localhost home]# ls
-test
-[root@localhost home]# cd test
-[root@localhost test]# ls
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 复制一个文件到当前目录</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cp -i /root/prel /home</span>
+<span class="token comment"># 创建一个文件夹 test</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cd /home</span>
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># mkdir test</span>
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># </span>
+<span class="token comment"># 将复制过来的文件移动到我们创建的目录，并查看</span>
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># mv prel test</span>
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># ls</span>
+<span class="token builtin class-name">test</span>
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># cd test</span>
+<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># ls</span>
 prel
-# 将文件夹重命名，然后再次查看！
-[root@localhost test]# cd ..
-[root@localhost home]# mv test mvtest
-[root@localhost home]# ls
+<span class="token comment"># 将文件夹重命名，然后再次查看！</span>
+<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># cd ..</span>
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># mv test mvtest</span>
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># ls</span>
 mvtest
-[root@localhost home]# cd mvtest&#x2F;
-[root@localhost mvtest]# ls
+<span class="token punctuation">[</span>root@localhost home<span class="token punctuation">]</span><span class="token comment"># cd mvtest/</span>
+<span class="token punctuation">[</span>root@localhost mvtest<span class="token punctuation">]</span><span class="token comment"># ls</span>
 prel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h2><blockquote>
@@ -704,15 +704,15 @@ prel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span
 <p>root用户拥有对所有文件的所有权限</p>
 <p>在以上实例中，boot 文件是一个目录文件，属主和属组都为 root。</p>
 <h3 id="修改文件属性"><a href="#修改文件属性" class="headerlink" title="修改文件属性"></a>修改文件属性</h3><p><strong>1、chgrp：更改文件属组</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">chgrp [-R] 属组名 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chgrp</span> <span class="token punctuation">[</span>-R<span class="token punctuation">]</span> 属组名 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>-R：递归更改文件属组，就是在更改某个目录文件的属组时，如果加上-R的参数，那么该目录下的所有文件的属组都会更改。</p>
 <p><strong>2、chown：更改文件属主，也可以同时更改文件属组</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">chown [–R] 属主名 文件名
-chown [-R] 属主名：属组名 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chown</span> <span class="token punctuation">[</span>–R<span class="token punctuation">]</span> 属主名 文件名
+<span class="token function">chown</span> <span class="token punctuation">[</span>-R<span class="token punctuation">]</span> 属主名：属组名 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>3、chmod：更改文件9个属性</strong></p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">chmod [-R] xyz 文件或目录<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chmod</span> <span class="token punctuation">[</span>-R<span class="token punctuation">]</span> xyz 文件或目录<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>Linux文件属性有两种设置方法，一种是数字，一种是符号。</p>
 <p>Linux文件的基本权限就有九个，分别是owner/group/others三种身份各有自己的read/write/execute权限。</p>
@@ -727,7 +727,7 @@ x:1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 <li>group = rwx = 4+2+1 = 7</li>
 <li>others= — = 0+0+0 = 0</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">chmod 770 filename<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chmod</span> <span class="token number">770</span> filename<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>可以自己下去多进行测试！</p>
 <h2 id="文件内容查看"><a href="#文件内容查看" class="headerlink" title="文件内容查看"></a>文件内容查看</h2><blockquote>
@@ -745,7 +745,7 @@ x:1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 </ul>
 <p>你可以使用 *man [命令]*来查看各个命令的使用文档，如 ：man cp。</p>
 <h3 id="cat-从第一行开始显示文件内容"><a href="#cat-从第一行开始显示文件内容" class="headerlink" title="cat 从第一行开始显示文件内容"></a>cat 从第一行开始显示文件内容</h3><p>语法：一般用来读配置文件之类的，当需要倒着读的时候可以用tac</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">cat [-AbEnTv]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">cat</span> <span class="token punctuation">[</span>-AbEnTv<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
@@ -757,22 +757,22 @@ x:1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 <li>-v ：列出一些看不出来的特殊字符</li>
 </ul>
 <p>测试：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 查看网络配置: 文件地址 &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;
-[root@kuangshen ~]# cat &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0
-DEVICE&#x3D;eth0
-BOOTPROTO&#x3D;dhcp
-ONBOOT&#x3D;yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 查看网络配置: 文件地址 /etc/sysconfig/network-scripts/</span>
+<span class="token punctuation">[</span>root@kuangshen ~<span class="token punctuation">]</span><span class="token comment"># cat /etc/sysconfig/network-scripts/ifcfg-eth0</span>
+<span class="token assign-left variable">DEVICE</span><span class="token operator">=</span>eth0
+<span class="token assign-left variable">BOOTPROTO</span><span class="token operator">=</span>dhcp
+<span class="token assign-left variable">ONBOOT</span><span class="token operator">=</span>yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="tac-从末尾开始显示文件内容"><a href="#tac-从末尾开始显示文件内容" class="headerlink" title="tac 从末尾开始显示文件内容"></a>tac 从末尾开始显示文件内容</h3><p>tac与cat命令刚好相反，文件内容从最后一行开始显示，可以看出 tac 是 cat 的倒着写！如：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@kuangshen ~]# tac &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0
-ONBOOT&#x3D;yes
-BOOTPROTO&#x3D;dhcp
-DEVICE&#x3D;eth0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@kuangshen ~<span class="token punctuation">]</span><span class="token comment"># tac /etc/sysconfig/network-scripts/ifcfg-eth0</span>
+<span class="token assign-left variable">ONBOOT</span><span class="token operator">=</span>yes
+<span class="token assign-left variable">BOOTPROTO</span><span class="token operator">=</span>dhcp
+<span class="token assign-left variable">DEVICE</span><span class="token operator">=</span>eth0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <h3 id="nl-显示行号"><a href="#nl-显示行号" class="headerlink" title="nl  显示行号"></a>nl  显示行号</h3><p>语法：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">nl [-bnw] 文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">nl</span> <span class="token punctuation">[</span>-bnw<span class="token punctuation">]</span> 文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>选项与参数：</p>
 <ul>
@@ -790,10 +790,10 @@ DEVICE&#x3D;eth0<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <li>-w ：行号栏位的占用的位数。</li>
 </ul>
 <p>测试：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@kuangshen ~]# nl &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eth0
-1DEVICE&#x3D;eth0
-2BOOTPROTO&#x3D;dhcp
-3ONBOOT&#x3D;yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@kuangshen ~<span class="token punctuation">]</span><span class="token comment"># nl /etc/sysconfig/network-scripts/ifcfg-eth0</span>
+<span class="token assign-left variable">1DEVICE</span><span class="token operator">=</span>eth0
+<span class="token assign-left variable">2BOOTPROTO</span><span class="token operator">=</span>dhcp
+<span class="token assign-left variable">3ONBOOT</span><span class="token operator">=</span>yes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -806,9 +806,9 @@ DEVICE&#x3D;eth0<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <li>q    ：代表立刻离开 more ，不再显示该文件内容。</li>
 <li>b 或 [ctrl]-b ：代表往回翻页，不过这动作只对文件有用，对管线无用。</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@kuangshen etc]# more &#x2F;etc&#x2F;csh.login
-....(中间省略)....
---More--(28%) # 重点在这一行喔！你的光标也会在这里等待你的命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@kuangshen etc<span class="token punctuation">]</span><span class="token comment"># more /etc/csh.login</span>
+<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">(</span>中间省略<span class="token punctuation">)</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+--More--<span class="token punctuation">(</span><span class="token number">28</span>%<span class="token punctuation">)</span> <span class="token comment"># 重点在这一行喔！你的光标也会在这里等待你的命令</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -823,9 +823,9 @@ DEVICE&#x3D;eth0<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <li>N   ：反向的重复前一个搜寻 (与 / 或 ? 有关！)</li>
 <li>q   ：离开 less 这个程序；</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@kuangshen etc]# more &#x2F;etc&#x2F;csh.login
-....(中间省略)....
-:   # 这里可以等待你输入命令！<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@kuangshen etc<span class="token punctuation">]</span><span class="token comment"># more /etc/csh.login</span>
+<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">(</span>中间省略<span class="token punctuation">)</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
+<span class="token builtin class-name">:</span>   <span class="token comment"># 这里可以等待你输入命令！</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -846,7 +846,7 @@ DEVICE&#x3D;eth0<span aria-hidden="true" class="line-numbers-rows"><span></span>
 <li>-n ：后面接数字，代表显示几行的意思</li>
 </ul>
 <p>默认的情况中，显示最后 10 行！若要显示最后 20 行，就得要这样：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">tail -n 20 &#x2F;etc&#x2F;csh.login<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">tail</span> -n <span class="token number">20</span> /etc/csh.login<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 
 
@@ -1055,7 +1055,7 @@ Filesystem           1K-blocks     Used Available Use% Mounted on
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux基础</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>用户管理</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CentOS/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CentOS</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>磁盘管理</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>用户管理</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux%E5%9F%BA%E7%A1%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux基础</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>磁盘管理</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/CentOS/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CentOS</p></a></div>
 
 
         
@@ -1122,13 +1122,13 @@ Filesystem           1K-blocks     Used Available Use% Mounted on
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/02/Git&GitHub/git%E5%85%A5%E9%97%A8/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Git入门</p>
-          <p class='content'>前言
-本片笔记基于B站up主狂神说java编写
+        <a class='prev' href='/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux入门 目录与文件</p>
+          <p class='content'>
+扩展：Linux软连接和硬链接
+扩展：Vim编辑器
 
-先了解下什么是版本控制
-版本控制版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，...</p>
+目录管理Linux系统目录结构为树状结构，最顶级的目录为根目录 /，一切资源都挂载在根目录下。其他目录通过挂载可以将它们添加到树中，通过解...</p>
         </a>
       
       
@@ -1287,7 +1287,7 @@ Filesystem           1K-blocks     Used Available Use% Mounted on
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>21 篇</div>
+          <div>33 篇</div>
         </div>
       
 
@@ -1309,7 +1309,7 @@ Filesystem           1K-blocks     Used Available Use% Mounted on
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>34.6k 字</div>
+          <div>44.5k 字</div>
         </div>
       
 
@@ -1335,7 +1335,7 @@ Filesystem           1K-blocks     Used Available Use% Mounted on
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 07 2020 19:22:53 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 07 2020 20:58:14 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-07 日</div>
           
         </div>

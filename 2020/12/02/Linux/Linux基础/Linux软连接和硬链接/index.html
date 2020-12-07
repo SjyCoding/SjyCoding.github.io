@@ -475,31 +475,31 @@
 <h2 id="软连接（符号连接）"><a href="#软连接（符号连接）" class="headerlink" title="软连接（符号连接）"></a>软连接（符号连接）</h2><p>另外一种连接称之为符号连接（Symbolic Link），也叫软连接。软链接文件有类似于 Windows 的快捷方式。它实际上是一个特殊的文件。在符号连接中，文件实际上是一个文本文件，其中包含的有另一文件的位置信息。比如：A 是 B 的软链接（A 和 B 都是文件名），A 的目录项中的 inode 节点号与 B 的目录项中的 inode 节点号不相同，A 和 B 指向的是两个不同的 inode，继而指向两块不同的数据块。但是 A 的数据块中存放的只是 B 的路径名（可以根据这个找到 B 的目录项）。A 和 B 之间是“主从”关系，如果 B 被删除了，A 仍然存在（因为两个是不同的文件），但指向的是一个无效的链接。</p>
 <p>简单来说类似windows下的快捷方式</p>
 <p>例子：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">[root@kuangshen &#x2F;]# cd &#x2F;home
-[root@kuangshen home]# touch f1 # 创建一个测试文件f1
-[root@kuangshen home]# ls
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">[</span>root@kuangshen /<span class="token punctuation">]</span><span class="token comment"># cd /home</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># touch f1 # 创建一个测试文件f1</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># ls</span>
 f1
-[root@kuangshen home]# ln f1 f2     # 创建f1的一个硬连接文件f2
-[root@kuangshen home]# ln -s f1 f3   # 创建f1的一个符号连接文件f3
-[root@kuangshen home]# ls -li       # -i参数显示文件的inode节点信息
-397247 -rw-r--r-- 2 root root     0 Mar 13 00:50 f1
-397247 -rw-r--r-- 2 root root     0 Mar 13 00:50 f2
-397248 lrwxrwxrwx 1 root root     2 Mar 13 00:50 f3 -&gt; f1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># ln f1 f2     # 创建f1的一个硬连接文件f2</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># ln -s f1 f3   # 创建f1的一个符号连接文件f3</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># ls -li       # -i参数显示文件的inode节点信息</span>
+<span class="token number">397247</span> -rw-r--r-- <span class="token number">2</span> root root     <span class="token number">0</span> Mar <span class="token number">13</span> 00:50 f1
+<span class="token number">397247</span> -rw-r--r-- <span class="token number">2</span> root root     <span class="token number">0</span> Mar <span class="token number">13</span> 00:50 f2
+<span class="token number">397248</span> lrwxrwxrwx <span class="token number">1</span> root root     <span class="token number">2</span> Mar <span class="token number">13</span> 00:50 f3 -<span class="token operator">></span> f1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>从上面的结果中可以看出，硬连接文件 f2 与原文件 f1 的 inode 节点相同，均为 397247，然而符号连接文件的 inode 节点不同。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># echo 字符串输出 &gt;&gt; f1 输出到 f1文件
-[root@kuangshen home]# echo &quot;I am f1 file&quot; &gt;&gt;f1
-[root@kuangshen home]# cat f1
-I am f1 file
-[root@kuangshen home]# cat f2
-I am f1 file
-[root@kuangshen home]# cat f3
-I am f1 file
-[root@kuangshen home]# rm -f f1
-[root@kuangshen home]# cat f2
-I am f1 file
-[root@kuangshen home]# cat f3
-cat: f3: No such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># echo 字符串输出 >> f1 输出到 f1文件</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># echo "I am f1 file" >>f1</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># cat f1</span>
+I am f1 <span class="token function">file</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># cat f2</span>
+I am f1 <span class="token function">file</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># cat f3</span>
+I am f1 <span class="token function">file</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># rm -f f1</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># cat f2</span>
+I am f1 <span class="token function">file</span>
+<span class="token punctuation">[</span>root@kuangshen home<span class="token punctuation">]</span><span class="token comment"># cat f3</span>
+cat: f3: No such <span class="token function">file</span> or directory<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>通过上面的测试可以看出：当删除原始文件 f1 后，硬连接 f2 不受影响，但是符号连接 f1 文件无效；</p>
 <p>依此您可以做一些相关的测试，可以得到以下全部结论：</p>
@@ -622,17 +622,11 @@ cat: f3: No such file or directory<span aria-hidden="true" class="line-numbers-r
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux更新源</p>
-          <p class='content'>为什么要换源
-大多数官方源的服务器都在国外so…
-
-设置更新源镜像Ubuntu配置文件位置： /etc/apt
-
-# 修改配置文件前建议先备份文件
-
-
-CentOSyum包管理器的配置文件位置 ...</p>
+        <a class='prev' href='/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A81%20%E5%AE%89%E8%A3%85linux/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux入门1 安装Linux</p>
+          <p class='content'>linux概述什么是linux看百科吧     维基百科     百度百科 
+linux入门概述
+严格来说，linux只是一个操作系统内核通常所说的 linux系统 是指以它为内核的一系列操作系...</p>
         </a>
       
       
@@ -783,7 +777,7 @@ CentOSyum包管理器的配置文件位置 ...</p>
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>21 篇</div>
+          <div>33 篇</div>
         </div>
       
 
@@ -805,7 +799,7 @@ CentOSyum包管理器的配置文件位置 ...</p>
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>34.6k 字</div>
+          <div>44.5k 字</div>
         </div>
       
 
@@ -831,7 +825,7 @@ CentOSyum包管理器的配置文件位置 ...</p>
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 07 2020 19:22:53 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 07 2020 20:58:15 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-07 日</div>
           
         </div>

@@ -535,32 +535,32 @@
 </blockquote>
 <p>在linux领域内大多用在服务器上，很少遇到关机的操作。毕竟服务器上跑一个服务是永无止境的，除非特殊情况下，不得已才会关机。</p>
 <p>关机指令为：shutdown ；</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sync # 将数据由内存同步到硬盘中。
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">sync</span> <span class="token comment"># 将数据由内存同步到硬盘中。</span>
 
-shutdown # 关机指令，你可以man shutdown 来看一下帮助文档。例如你可以运行如下命令关机：
+<span class="token function">shutdown</span> <span class="token comment"># 关机指令，你可以man shutdown 来看一下帮助文档。例如你可以运行如下命令关机：</span>
 
-shutdown –h 10 # 这个命令告诉大家，计算机将在10分钟后关机
+<span class="token function">shutdown</span> –h <span class="token number">10</span> <span class="token comment"># 这个命令告诉大家，计算机将在10分钟后关机</span>
 
-shutdown –h now # 立马关机
+<span class="token function">shutdown</span> –h now <span class="token comment"># 立马关机</span>
 
-shutdown –h 20:25 # 系统会在今天20:25关机
+<span class="token function">shutdown</span> –h <span class="token number">20</span>:25 <span class="token comment"># 系统会在今天20:25关机</span>
 
-shutdown –h +10 # 十分钟后关机
+<span class="token function">shutdown</span> –h +10 <span class="token comment"># 十分钟后关机</span>
 
-shutdown –r now # 系统立马重启
+<span class="token function">shutdown</span> –r now <span class="token comment"># 系统立马重启</span>
 
-shutdown –r +10 # 系统十分钟后重启
+<span class="token function">shutdown</span> –r +10 <span class="token comment"># 系统十分钟后重启</span>
 
-reboot # 就是重启，等同于 shutdown –r now
+<span class="token function">reboot</span> <span class="token comment"># 就是重启，等同于 shutdown –r now</span>
 
-halt # 关闭系统，等同于shutdown –h now 和 poweroff<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">halt</span> <span class="token comment"># 关闭系统，等同于shutdown –h now 和 poweroff</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>最后总结一下，不管是重启系统还是关闭系统，首先要运行 <strong>sync</strong> 命令，把内存中的数据写到磁盘中。</p>
 <h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><blockquote>
 <p>系统目录结构</p>
 </blockquote>
 <p>登录系统后，在当前命令窗口下输入命令：</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ls &#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">ls</span> /<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>你会看到如下图所示：</p>
 <p><img src="https://s3.ax1x.com/2020/12/02/D5TUdU.jpg" class="lazyload" data-srcset="https://s3.ax1x.com/2020/12/02/D5TUdU.jpg" srcset="data:image/png;base64,666"><br>树状目录结构：（Linux的一切资源都挂载在这个 / 根节点下）</p>
@@ -704,34 +704,19 @@ halt # 关闭系统，等同于shutdown –h now 和 poweroff<span aria-hidden="
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/02/Hexo%E5%8D%9A%E5%AE%A2/Hexo%E5%AD%90%E5%88%86%E7%B1%BB%E5%92%8C%E7%88%B6%E5%88%86%E7%B1%BB/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Hexo子分类和父分类</p>
-          <p class='content'>前言
-随着博客量的增加，更细致的分类变得更有必要
-
-方法
-格式
-  categories:
-- Diary
-- Life
-
-  这种格式会使分类Life成为Diary的子分类，而不是并列分类
-
-...</p>
+        <a class='prev' href='/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E5%85%A5%E9%97%A8%20%E5%AE%89%E8%A3%85linux/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux入门1 安装Linux</p>
+          <p class='content'>linux概述什么是linux看百科吧     维基百科     百度百科 
+linux入门概述
+严格来说，linux只是一个操作系统内核通常所说的 linux系统 是指以它为内核的一系列操作系...</p>
         </a>
       
       
-        <a class='next' href='/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E6%9B%B4%E6%96%B0%E6%BA%90/'>
-          <p class='title'>Linux更新源<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>为什么要换源
-大多数官方源的服务器都在国外so…
-
-设置更新源镜像Ubuntu配置文件位置： /etc/apt
-
-# 修改配置文件前建议先备份文件
-
-
-CentOSyum包管理器的配置文件位置 ...</p>
+        <a class='next' href='/2020/12/02/Linux/Linux%E5%9F%BA%E7%A1%80/Linux%E8%BD%AF%E8%BF%9E%E6%8E%A5%E5%92%8C%E7%A1%AC%E9%93%BE%E6%8E%A5/'>
+          <p class='title'>Linux软连接和硬链接<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Linux 链接分两种，一种被称为硬链接（Hard Link），另一种被称为符号链接（Symbolic Link）。
+情况下，ln 命令产生硬链接。
+硬连接硬连接指通过索引节点来进行连接。在 L...</p>
         </a>
       
     </div>
@@ -873,7 +858,7 @@ CentOSyum包管理器的配置文件位置 ...</p>
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>21 篇</div>
+          <div>33 篇</div>
         </div>
       
 
@@ -895,7 +880,7 @@ CentOSyum包管理器的配置文件位置 ...</p>
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>34.6k 字</div>
+          <div>44.5k 字</div>
         </div>
       
 
@@ -921,7 +906,7 @@ CentOSyum包管理器的配置文件位置 ...</p>
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 07 2020 19:22:53 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 07 2020 20:58:15 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-07 日</div>
           
         </div>
