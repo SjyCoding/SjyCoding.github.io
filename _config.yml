@@ -5,7 +5,7 @@
 # Site
 #title: Hexo  # 默认属性
 title: Sun's Blog
-favicon: https://s3.ax1x.com/2020/11/24/DNN3Bn.png
+favicon: https://i.loli.net/2020/12/07/n6DKxOmlduWZ7e3.png
 #favicon: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/favicon/favicon.ico
 subtitle: 'CodeSun' # 网站副标题
 description: '这是一段关于这个网站的描述文字' # 网站描述
@@ -105,7 +105,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/ 
-# theme: landscape  # 默认主题
+# theme: landscape  # 默认主题 next  volantis
 theme: volantis
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
