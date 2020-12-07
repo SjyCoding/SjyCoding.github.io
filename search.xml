@@ -62,7 +62,7 @@
       <link href="2020/12/07/MySQL/MySQL%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%BB%93%E6%9E%84/"/>
       <url>2020/12/07/MySQL/MySQL%E4%BF%AE%E6%94%B9%E8%A1%A8%E7%BB%93%E6%9E%84/</url>
       
-        <content type="html"><![CDATA[<h2 id="使用ALTER-TABLE修改表结构"><a href="#使用ALTER-TABLE修改表结构" class="headerlink" title="使用ALTER TABLE修改表结构"></a>使用ALTER TABLE修改表结构</h2><hr><h3 id="1-修改表名称"><a href="#1-修改表名称" class="headerlink" title="1) 修改表名称"></a>1) 修改表名称</h3><p>ALTER TABLE &lt;表名&gt; RENAME &lt;新表名&gt;</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql<span class="token operator">></span> ALTER TABLE game_account RENAME account:<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><hr><h3 id="2-修改表的存储引擎"><a href="#2-修改表的存储引擎" class="headerlink" title="2) 修改表的存储引擎"></a>2) 修改表的存储引擎</h3><p>mysql&gt; ALTER TABLE account ENGINE=MyISAM;</p><hr><h3 id="3-添加字段"><a href="#3-添加字段" class="headerlink" title="3) 添加字段"></a>3) 添加字段</h3><p>ALTER TABLE &lt;表名&gt; ADD &lt;字段名称&gt; &lt;字段定义&gt;</p><p>mysql&gt; ALTER TABLE account ADD Account_gender ENUM(“M”,”F”) NOT NULL;</p><p>mysql&gt; ALTER TABLE account ADD Game_zone VARCHAR(20) NOT NULL DEFAULT “HuaBei” FIRST;</p><p>mysql&gt; ALTER TABLE account ADD Account_money BIGINT AFTER Account_level;</p><hr><h3 id="4-删除字段"><a href="#4-删除字段" class="headerlink" title="4) 删除字段"></a>4) 删除字段</h3><p>ALTER TABLE &lt;表名&gt; DROP &lt;字段名称&gt;</p><p>mysql&gt; ALTER TABLE account DROP Account_role ;</p><hr><h3 id="5-修改字段名称及字段定义"><a href="#5-修改字段名称及字段定义" class="headerlink" title="5) 修改字段名称及字段定义"></a>5) 修改字段名称及字段定义</h3><p>ALTER TABLE &lt;表名&gt; CHANGE &lt;旧字段名称&gt; &lt;新字段名称&gt; &lt;字段定义&gt;</p><p>mysql&gt; ALTER TABLE account CHANGE Account_password password CHAR(25) NOT NULL;</p><p>mysql&gt; ALTER TABLE account CHANGE password password VARCHAR(60) ;</p><hr><h3 id="6-修改字段定义"><a href="#6-修改字段定义" class="headerlink" title="6) 修改字段定义"></a>6) 修改字段定义</h3><p>ALTER TABLE &lt;表名&gt; MODIFY &lt;字段名称&gt; &lt;字段定义&gt;</p><p>mysql&gt; ALTER TABLE account MODIFY Account_name VARCHAR(20) NOT NULL;</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="使用ALTER-TABLE修改表结构"><a href="#使用ALTER-TABLE修改表结构" class="headerlink" title="使用ALTER TABLE修改表结构"></a>使用ALTER TABLE修改表结构</h2><hr><h3 id="1-修改表名称"><a href="#1-修改表名称" class="headerlink" title="1) 修改表名称"></a>1) 修改表名称</h3><p>ALTER TABLE &lt;表名&gt; RENAME &lt;新表名&gt;</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql&gt; ALTER TABLE game_account RENAME account:<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><hr><h3 id="2-修改表的存储引擎"><a href="#2-修改表的存储引擎" class="headerlink" title="2) 修改表的存储引擎"></a>2) 修改表的存储引擎</h3><p>mysql&gt; ALTER TABLE account ENGINE=MyISAM;</p><hr><h3 id="3-添加字段"><a href="#3-添加字段" class="headerlink" title="3) 添加字段"></a>3) 添加字段</h3><p>ALTER TABLE &lt;表名&gt; ADD &lt;字段名称&gt; &lt;字段定义&gt;</p><p>mysql&gt; ALTER TABLE account ADD Account_gender ENUM(“M”,”F”) NOT NULL;</p><p>mysql&gt; ALTER TABLE account ADD Game_zone VARCHAR(20) NOT NULL DEFAULT “HuaBei” FIRST;</p><p>mysql&gt; ALTER TABLE account ADD Account_money BIGINT AFTER Account_level;</p><hr><h3 id="4-删除字段"><a href="#4-删除字段" class="headerlink" title="4) 删除字段"></a>4) 删除字段</h3><p>ALTER TABLE &lt;表名&gt; DROP &lt;字段名称&gt;</p><p>mysql&gt; ALTER TABLE account DROP Account_role ;</p><hr><h3 id="5-修改字段名称及字段定义"><a href="#5-修改字段名称及字段定义" class="headerlink" title="5) 修改字段名称及字段定义"></a>5) 修改字段名称及字段定义</h3><p>ALTER TABLE &lt;表名&gt; CHANGE &lt;旧字段名称&gt; &lt;新字段名称&gt; &lt;字段定义&gt;</p><p>mysql&gt; ALTER TABLE account CHANGE Account_password password CHAR(25) NOT NULL;</p><p>mysql&gt; ALTER TABLE account CHANGE password password VARCHAR(60) ;</p><hr><h3 id="6-修改字段定义"><a href="#6-修改字段定义" class="headerlink" title="6) 修改字段定义"></a>6) 修改字段定义</h3><p>ALTER TABLE &lt;表名&gt; MODIFY &lt;字段名称&gt; &lt;字段定义&gt;</p><p>mysql&gt; ALTER TABLE account MODIFY Account_name VARCHAR(20) NOT NULL;</p>]]></content>
       
       
       <categories>
@@ -489,35 +489,6 @@
     
     
     <entry>
-      <title>Docker搜索超时</title>
-      <link href="2020/12/02/Docker/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Docker%E6%90%9C%E7%B4%A2%E8%B6%85%E6%97%B6/"/>
-      <url>2020/12/02/Docker/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Docker%E6%90%9C%E7%B4%A2%E8%B6%85%E6%97%B6/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Docker搜索超时"><a href="#Docker搜索超时" class="headerlink" title="Docker搜索超时"></a>Docker搜索超时</h2><p>执行<code>docker search centos</code>报错信息如下：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Error response from daemon: Get https://index.docker.io/v1/search?q<span class="token operator">=</span>centos: <span class="token builtin class-name">read</span> tcp <span class="token number">52.200</span>.132.201:443: i/o <span class="token function">timeout</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>docker在中国已经有了仓库：<a href="https://www.docker-cn.com/registry-mirror">https://www.docker-cn.com/registry-mirror</a></p><p>根据上面网站提供的修改方法。</p><p>进入<code>/etc/docker</code>目录下</p><p>查看有没有 daemon.json。这是docker默认的配置文件。</p><p>如果没有新建，如果有，则修改。</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">&#123;</span>  <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"https://registry.docker-cn.com"</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>保存退出。</p><p>重启docker服务：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">service</span> docker restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>成功！</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Docker </category>
-          
-          <category> 常见问题 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Docker </tag>
-            
-            <tag> 镜像源 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Github历史版本回退</title>
       <link href="2020/12/02/Git&amp;GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/"/>
       <url>2020/12/02/Git&amp;GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/</url>
@@ -539,6 +510,35 @@
             <tag> Git </tag>
             
             <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Docker搜索超时</title>
+      <link href="2020/12/02/Docker/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Docker%E6%90%9C%E7%B4%A2%E8%B6%85%E6%97%B6/"/>
+      <url>2020/12/02/Docker/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Docker%E6%90%9C%E7%B4%A2%E8%B6%85%E6%97%B6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Docker搜索超时"><a href="#Docker搜索超时" class="headerlink" title="Docker搜索超时"></a>Docker搜索超时</h2><p>执行<code>docker search centos</code>报错信息如下：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">Error response from daemon: Get https://index.docker.io/v1/search?q<span class="token operator">=</span>centos: <span class="token builtin class-name">read</span> tcp <span class="token number">52.200</span>.132.201:443: i/o <span class="token function">timeout</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>docker在中国已经有了仓库：<a href="https://www.docker-cn.com/registry-mirror">https://www.docker-cn.com/registry-mirror</a></p><p>根据上面网站提供的修改方法。</p><p>进入<code>/etc/docker</code>目录下</p><p>查看有没有 daemon.json。这是docker默认的配置文件。</p><p>如果没有新建，如果有，则修改。</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token punctuation">&#123;</span>  <span class="token string">"registry-mirrors"</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">"https://registry.docker-cn.com"</span><span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>保存退出。</p><p>重启docker服务：</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">service</span> docker restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>成功！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Docker </category>
+          
+          <category> 常见问题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+            <tag> 镜像源 </tag>
             
         </tags>
       

@@ -58,7 +58,7 @@
 <body>
 
 
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+<header id="l_header" class="l_header always shadow blur show"  >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -489,12 +489,12 @@ CREATE TABLE `t_user` (
       
         使用ALTER TABLE修改表结构
 1) 修改表名称ALTER TABLE &lt;表名&gt; RENAME &lt;新表名&gt;
-mysql> ALTER TABLE game_account RENAME account:
+mysql&gt; ALTER TABLE game_account RENAME account:
 
 
 2) 修改表的存储引擎mysql&gt; ALTER TABLE account ENGINE=MyISAM;
 
-3) 添加字段ALTER TABLE &l...
+3) 添加字段ALTER TABLE...
       
     
   </div>
@@ -852,7 +852,7 @@ password：该用户的登陆密...
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Dec 07 2020 21:35:56 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Dec 07 2020 21:38:08 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2020-12-07 日</div>
           
         </div>
