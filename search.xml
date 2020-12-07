@@ -234,6 +234,33 @@
     
     
     <entry>
+      <title>用微软拼音快速输入自定义格式的时间和日期</title>
+      <link href="2020/12/02/Windows/%E5%BE%AE%E8%BD%AF%E6%8B%BC%E9%9F%B3%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/"/>
+      <url>2020/12/02/Windows/%E5%BE%AE%E8%BD%AF%E6%8B%BC%E9%9F%B3%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/</url>
+      
+        <content type="html"><![CDATA[<p>教你如何用微软拼音输入法的用户自定义短语快速输入自定义格式的时间和日期。</p><p>用微软拼音输入 <code>rq</code> 或者 <code>sj</code>，我们可以在第五个候选词分别得到 <code>2017年9月18日</code> 和 <code>22点05分</code>。但是，其实我想输入的是：<code>2017-09-18</code> 和 <code>2017-09-18 22:05:51 +0800</code>。在设置里面折腾一番没找到之后，原本以为只好自己输入了，没想到后面还是找到了方法。</p><hr><p>我不会告诉你我要一个这样的日期是为了写这篇博客的时候能方便地填写编辑时间……</p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>这是我们平时输入日期和时间的方法和效果：<br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-03-01.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-03-01.png" srcset="data:image/png;base64,666" alt="日期"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-03-14.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-03-14.png" srcset="data:image/png;base64,666" alt="时间"></p><p>这是通过阅读本文可以达到的效果：<br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-08-02.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-08-02.png" srcset="data:image/png;base64,666" alt="横线分割的日期"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-10-44.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-10-44.png" srcset="data:image/png;base64,666" alt="UTC 时间"></p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>Windows 10：<code>设置</code>→<code>时间和语言</code>→<code>区域和语言</code>→<code>中文(中华人民共和国)</code>→<code>选项</code>→<code>微软拼音</code>→<code>选项</code>→<code>词库和自学习</code>→<code>添加新的或编辑现有的用户自定义短语</code>→<code>添加</code>。<br>（不想吐槽为什么藏得这么深……）</p><p>然后在短语里面输入以下代码：</p><pre class="line-numbers language-none"><code class="language-none">%yyyy%-%MM%-%dd% %HH%:%mm%:%ss% +0800<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-20-20.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-20-20.png" srcset="data:image/png;base64,666" alt="添加 UTC 时间"></p><p>一些基本的格式化字符串是：</p><table><thead><tr><th>变量</th><th>含义</th></tr></thead><tbody><tr><td>yyyy</td><td>4 位年</td></tr><tr><td>MM</td><td>2 位月</td></tr><tr><td>dd</td><td>2 位日</td></tr><tr><td>HH</td><td>2 位小时（24 小时制）</td></tr><tr><td>mm</td><td>2 位分钟数</td></tr><tr><td>ss</td><td>2 位秒数</td></tr></tbody></table><p>更多格式化变量请参考：<a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings?wt.mc_id=MVP">Custom Date and Time Format Strings</a></p><h2 id="重要的说明"><a href="#重要的说明" class="headerlink" title="重要的说明"></a>重要的说明</h2><ul><li>需要注意，你只能在添加的时候这么写！</li><li>需要注意，你只能在添加的时候这么写！</li><li>需要注意，你只能在添加的时候这么写！</li></ul><p>如果是添加后再编辑，你会发现日期已经变成你点击“编辑”那一刻的时间固定下来了，你必须再把上面的代码敲一遍保存才行！</p><h3 id="如果你找不到设置到底在哪里，下面是附图"><a href="#如果你找不到设置到底在哪里，下面是附图" class="headerlink" title="如果你找不到设置到底在哪里，下面是附图"></a>如果你找不到设置到底在哪里，下面是附图</h3><p><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-19-20.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-19-20.png" srcset="data:image/png;base64,666" alt="设置"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-13-36.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-13-36.png" srcset="data:image/png;base64,666" alt="语言选项"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-14-05.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-14-05.png" srcset="data:image/png;base64,666" alt="输入法选项"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-16-36.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-16-36.png" srcset="data:image/png;base64,666" alt="编辑短语"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-17-08.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-17-08.png" srcset="data:image/png;base64,666" alt="添加短语"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+            <tag> 微软输入法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Github历史版本回退</title>
       <link href="2020/12/02/Git&amp;GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/"/>
       <url>2020/12/02/Git&amp;GitHub/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/Github%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80/</url>
@@ -255,33 +282,6 @@
             <tag> Git </tag>
             
             <tag> GitHub </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>用微软拼音快速输入自定义格式的时间和日期</title>
-      <link href="2020/12/02/Windows/%E5%BE%AE%E8%BD%AF%E6%8B%BC%E9%9F%B3%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/"/>
-      <url>2020/12/02/Windows/%E5%BE%AE%E8%BD%AF%E6%8B%BC%E9%9F%B3%E5%BF%AB%E9%80%9F%E8%BE%93%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4/</url>
-      
-        <content type="html"><![CDATA[<p>教你如何用微软拼音输入法的用户自定义短语快速输入自定义格式的时间和日期。</p><p>用微软拼音输入 <code>rq</code> 或者 <code>sj</code>，我们可以在第五个候选词分别得到 <code>2017年9月18日</code> 和 <code>22点05分</code>。但是，其实我想输入的是：<code>2017-09-18</code> 和 <code>2017-09-18 22:05:51 +0800</code>。在设置里面折腾一番没找到之后，原本以为只好自己输入了，没想到后面还是找到了方法。</p><hr><p>我不会告诉你我要一个这样的日期是为了写这篇博客的时候能方便地填写编辑时间……</p><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>这是我们平时输入日期和时间的方法和效果：<br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-03-01.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-03-01.png" srcset="data:image/png;base64,666" alt="日期"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-03-14.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-03-14.png" srcset="data:image/png;base64,666" alt="时间"></p><p>这是通过阅读本文可以达到的效果：<br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-08-02.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-08-02.png" srcset="data:image/png;base64,666" alt="横线分割的日期"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-10-44.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-10-44.png" srcset="data:image/png;base64,666" alt="UTC 时间"></p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>Windows 10：<code>设置</code>→<code>时间和语言</code>→<code>区域和语言</code>→<code>中文(中华人民共和国)</code>→<code>选项</code>→<code>微软拼音</code>→<code>选项</code>→<code>词库和自学习</code>→<code>添加新的或编辑现有的用户自定义短语</code>→<code>添加</code>。<br>（不想吐槽为什么藏得这么深……）</p><p>然后在短语里面输入以下代码：</p><pre class="line-numbers language-none"><code class="language-none">%yyyy%-%MM%-%dd% %HH%:%mm%:%ss% +0800<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-20-20.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-20-20.png" srcset="data:image/png;base64,666" alt="添加 UTC 时间"></p><p>一些基本的格式化字符串是：</p><table><thead><tr><th>变量</th><th>含义</th></tr></thead><tbody><tr><td>yyyy</td><td>4 位年</td></tr><tr><td>MM</td><td>2 位月</td></tr><tr><td>dd</td><td>2 位日</td></tr><tr><td>HH</td><td>2 位小时（24 小时制）</td></tr><tr><td>mm</td><td>2 位分钟数</td></tr><tr><td>ss</td><td>2 位秒数</td></tr></tbody></table><p>更多格式化变量请参考：<a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings?wt.mc_id=MVP">Custom Date and Time Format Strings</a></p><h2 id="重要的说明"><a href="#重要的说明" class="headerlink" title="重要的说明"></a>重要的说明</h2><ul><li>需要注意，你只能在添加的时候这么写！</li><li>需要注意，你只能在添加的时候这么写！</li><li>需要注意，你只能在添加的时候这么写！</li></ul><p>如果是添加后再编辑，你会发现日期已经变成你点击“编辑”那一刻的时间固定下来了，你必须再把上面的代码敲一遍保存才行！</p><h3 id="如果你找不到设置到底在哪里，下面是附图"><a href="#如果你找不到设置到底在哪里，下面是附图" class="headerlink" title="如果你找不到设置到底在哪里，下面是附图"></a>如果你找不到设置到底在哪里，下面是附图</h3><p><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-19-20.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-19-20.png" srcset="data:image/png;base64,666" alt="设置"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-13-36.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-13-36.png" srcset="data:image/png;base64,666" alt="语言选项"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-14-05.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-14-05.png" srcset="data:image/png;base64,666" alt="输入法选项"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-16-36.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-16-36.png" srcset="data:image/png;base64,666" alt="编辑短语"><br><img src="https://blog.walterlv.com/static/posts/2017-09-18-22-17-08.png" class="lazyload" data-srcset="https://blog.walterlv.com/static/posts/2017-09-18-22-17-08.png" srcset="data:image/png;base64,666" alt="添加短语"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Windows </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Windows </tag>
-            
-            <tag> 微软输入法 </tag>
             
         </tags>
       
